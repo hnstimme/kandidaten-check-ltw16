@@ -1,0 +1,23 @@
+{
+  "name": "landtagswahl-kandidaten-check",
+  "version": "0.0.1",
+  "description": "Kandidaten Quiz for Landtagswahl for Stimme.de",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-sass": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/ohrie/landtagswahl-kandidaten-check.git"
+  },
+  "author": "ohrie",
+  "license": "Copyright",
+  "bugs": {
+    "url": "https://gitlab.com/ohrie/landtagswahl-kandidaten-check/issues"
+  },
+  "homepage": "https://gitlab.com/ohrie/landtagswahl-kandidaten-check#README"
+}

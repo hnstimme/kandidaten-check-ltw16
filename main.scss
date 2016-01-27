@@ -1,0 +1,387 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+$grey: #888;
+$primary: #D05C5C;
+$secondary: #A84A46;
+$complementary: #83bbd6;
+$bg-url: '../img/bg.jpg';
+$bg-mobile-url: '../img/bg-mobil.jpg';
+
+.lw{
+  font-family: 'Open Sans';
+  max-width: 990px;
+
+  header{
+    background-color: $primary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    font-weight: 300;
+    padding: 0 2rem 3.5rem 2rem;
+    box-sizing: border-box;
+    color: white;
+
+    @media screen and (max-width: 900px) {
+      padding: 0 1.5rem 9vw 1.5rem;
+    }
+    @media screen and (max-width: 800px) {
+      padding: 3vw 2rem;
+    }
+    @media screen and (max-width: 715px) {
+      padding: 4vw 2rem;
+      background-size: cover;
+    }
+    @media screen and (max-width: 625px) {
+      padding: 8vw 1.5rem;
+    }
+    @media screen and (max-width: 460px) {
+      padding: 0;
+      background-image: url($bg-mobile-url);
+      background-position: center 100%;
+    }
+
+    h1{
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 3rem;
+      margin: 0;
+
+      @media screen and (min-width: 801px) and (max-width: 900px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 800px) {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 4rem 0 0 0;
+      }
+      @media screen and (max-width: 625px) {
+        margin: 1.2rem 0 0 0;
+      }
+      @media screen and (max-width: 460px) {
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 0;
+        box-sizing: border-box;
+        text-align: center !important;
+      }
+      @media screen and (max-width: 350px) {
+        font-size: 2rem;
+      }
+    }
+
+    h2{
+      font-size: 1.5rem;
+      max-width: 47%;
+      padding-top: 3em;
+      margin: 0;
+      font-weight: 300;
+
+      @media screen and (max-width: 900px) {
+        font-size: 1rem;
+      }
+      @media screen and (max-width: 625px) {
+        margin: 0 0 0.6em 0;
+      }
+      @media screen and (max-width: 460px) {
+        max-width: 100%;
+        padding-bottom: 85vw;
+        margin-bottom: 3rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.2rem;
+      }
+      @media screen and (max-width: 350px) {
+        font-size: 1rem;
+      }
+    }
+    p{
+      max-width: 60%;
+    }
+  }
+  section{
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 625px){
+      margin-bottom: 1rem;
+    }
+
+    h2,
+    h3{
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    h2{
+      font-size: 1.35rem;
+    }
+  }
+
+  section.issues{
+    h2{
+      margin: 3rem auto 1rem auto;
+      line-height: 0.25;
+      text-align: center;
+
+      @media screen and (max-width: 460px){
+        margin: 1.5rem auto 1rem auto;
+      }
+
+      span{
+        display: inline-block;
+        position: relative;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          border-bottom: 1px solid black;
+          top: 0;
+          width: 120%;
+
+          @media screen and (max-width: 900px) {
+            width: 90%;
+          }
+          @media screen and (max-width: 801px) {
+            width: 70%;
+          }
+          @media screen and (max-width: 625px) {
+            width: 50%;
+          }
+          @media screen and (max-width: 500px) {
+            width: 30%;
+          }
+          @media (max-width: 350px) {
+            width: 10%;
+          }
+        }
+        &:before {
+          right: 100%;
+          margin-right: 15px;
+        }
+        &:after {
+          left: 100%;
+          margin-left: 15px;
+        }
+      }
+    }
+
+    p{
+      text-align: center;
+      width: 70%;
+      margin: auto;
+      padding: 1rem;
+      box-sizing: border-box;
+
+      @media screen and (max-width: 625px) {
+        width: 100%;
+      }
+      @media screen and (max-width: 460px) {
+        text-align: left;
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+.sharing-container{
+  margin-bottom: 6.5rem;
+  padding-top: 1.4rem;
+
+  @media screen and (max-width: 940px) {
+    margin-bottom: 5.5rem;
+    padding-top: 1rem;
+  }
+  @media screen and (max-width: 900px) {
+    margin-bottom: 6rem;
+    padding-top: 1rem;
+  }
+  @media screen and (max-width: 800px) {
+    margin-bottom: 4rem;
+    padding-top: 1rem;
+  }
+  @media screen and (max-width: 715px) {
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+  }
+  @media screen and (max-width: 625px) {
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: 460px) {
+    padding-left: 0.5rem;
+  }
+
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li{
+        display: inline;
+        margin: 0 0.2rem;
+
+        img{
+          $icon_size: 30px;
+          width: $icon_size;
+          height: $icon_size;
+        }
+    }
+  }
+}
+
+/* GRID TILES */
+$tile-normal-width: 20%;
+
+.lw .tile-grid {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 70%;
+    margin: auto;
+
+    a{
+      text-decoration: none;
+      color: black;
+    }
+
+    .tile {
+      -webkit-flex: 1 1 $tile-normal-width;
+      -ms-flex: 1 1 $tile-normal-width;
+      flex: 1 1 $tile-normal-width;
+      padding: 4px;
+      box-sizing: border-box;
+      max-width: $tile-normal-width;
+
+      .logo{
+        $logo-size: 100px;
+        $logo-smaller-size: 85px;
+
+        width: $logo-size;
+        height: $logo-size;
+        line-height: $logo-size;
+
+        display: block;
+        border: 1px solid darken($grey, 50%);
+        padding: 3px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        font-size: 2.4rem;
+        margin: auto auto 1rem auto;
+
+        &:hover{
+          border-color: $secondary;
+
+          > span{
+            background: $secondary;
+            border-color: transparent;
+            color: white;
+          }
+        }
+
+        @media screen and (max-width: 900px){
+          width: $logo-smaller-size;
+          height: $logo-smaller-size;
+          line-height: $logo-smaller-size;
+          font-size: 2rem;
+        }
+        @media screen and (max-width: 350px){
+          margin: 0 auto 0.5rem auto;
+        }
+
+        > span{
+          width: $logo-size;
+          height: $logo-size;
+          border-radius: 50%;
+          display: inline-block;
+
+          @media screen and (max-width: 900px){
+            width: $logo-smaller-size;
+            height: $logo-smaller-size;
+            line-height: $logo-smaller-size;
+          }
+        }
+
+        &.icon > span{
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
+        }
+      }
+      .glow{
+        animation-name: glowing;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        background: $complementary;
+        color: white;
+      }
+      @keyframes glowing{
+        from {
+          background: white;
+          color: black;
+        }
+        to {
+          background: $complementary;
+          color: white;
+        }
+      }
+    }
+
+    .title {
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 600;
+      max-width: 400px;
+      box-sizing: border-box;
+      margin: auto auto 0.3rem auto;
+      font-size: 1rem;
+
+      @media screen and (max-width: 350px){
+        margin: 0 auto 1.2rem auto;
+      }
+    }
+}
+
+// Flex Grid
+@mixin flex-size($width) {
+  -webkit-flex-basis: $width;
+  -ms-flex-preferred-size: $width;
+  flex-basis: $width;
+  max-width: $width;
+}
+
+@media screen and (max-width: 900px) {
+    .lw .tile-grid .tile {
+        @include flex-size(33.33%);
+      }
+    }
+@media screen and (max-width: 625px) {
+    .lw .tile-grid .tile {
+        @include flex-size(50%);
+
+        &:nth-child(odd):last-child{
+          @include flex-size(100%);
+        }
+      }
+    }
+@media screen and (max-width: 350px) {
+    .lw .tile-grid{
+      width: 100%;
+
+      .tile {
+          font-size: 12px;
+        }
+      }
+    }
