@@ -9,6 +9,7 @@
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
 
       <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+      <script src="js/quiz.js"></script>
   </head>
   <body>
     <div class="lw">
@@ -24,28 +25,29 @@
       </section>
 
       <!-- Frage -->
-      <section>
+      <section class="wahlkreis">
         <h3>Wähle deinen Wahlkreis</h3>
         <div class="tile-grid">
-          <button class="lastQuestion" type="submit"><img class="twisted" src="img/next.svg"></button>
-          <div class="tile"><span class="logo" id="wk-19"><span>EP</span></span><div class="title">Eppingen</div></div>
-          <div class="tile"><span class="logo" id="wk-18"><span>HN</span></span><div class="title">Heilbronn</div></div>
-          <div class="tile"><span class="logo" id="wk-20"><span>NSU</span></span><div class="title">Neckarsulm</div></div>
-          <div class="tile"><span class="logo" id="wk-21"><span>HOH</span></span><div class="title">Hohenlohe</div></div>
-          <button class="nextQuestion" type="submit"><img src="img/next.svg"></button>
+          <div class="tile" id="Eppingen"><span class="logo"><span>EP</span></span><div class="title">Eppingen</div></div>
+          <div class="tile" id="Heilbronn"><span class="logo"><span>HN</span></span><div class="title">Heilbronn</div></div>
+          <div class="tile" id="Neckarsulm"><span class="logo"><span>NSU</span></span><div class="title">Neckarsulm</div></div>
+          <div class="tile" id="Hohenlohe"><span class="logo"><span>HOH</span></span><div class="title">Hohenlohe</div></div>
+        </div>
+        <button class="nextQuestion"><img src="img/next.svg"></button>
       </section>
       <!-- /Frage -->
 
       <!-- Frage -->
-      <section>
+      <section class="question">
         <h3>Was ist dein Lieblingsessen?</h3>
+        <button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>
         <div class="tile-grid">
-          <button class="lastQuestion" type="submit"><img class="twisted" src="img/next.svg"></button>
-          <div class="tile"><span class="logo answer"></span><div class="title">Pasta</div></div>
-          <div class="tile"><span class="logo answer"></span><div class="title">Pizza</div></div>
-          <div class="tile"><span class="logo answer"></span><div class="title">Spätzle</div></div>
-          <div class="tile"><span class="logo answer"></span><div class="title">Kaiserschmarrn</div></div>
-          <button class="nextQuestion" type="submit"><img src="img/next.svg"></button>
+          <div class="tile" data-index="0"><span class="logo answer"></span><div class="title">Pasta</div></div>
+          <div class="tile" data-index="1"><span class="logo answer"></span><div class="title">Pizza</div></div>
+          <div class="tile" data-index="2"><span class="logo answer"></span><div class="title">Spätzle</div></div>
+          <div class="tile" data-index="3"><span class="logo answer"></span><div class="title">Kaiserschmarrn</div></div>
+        </div>
+        <button class="nextQuestion"><img src="img/next.svg"></button>
       </section>
       <!-- /Frage -->
 

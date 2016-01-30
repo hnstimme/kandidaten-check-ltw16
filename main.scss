@@ -344,6 +344,7 @@ $tile-normal-width: 20%;
         -webkit-border-radius: 50%;
         font-size: 2.4rem;
         margin: auto auto 1rem auto;
+        cursor: pointer;
 
         &:hover{
           border-color: $secondary;
@@ -389,6 +390,19 @@ $tile-normal-width: 20%;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
+          border: 2px solid $primary;
+        }
+      }
+
+      &.picked{
+        .logo{
+          border-color: $secondary;
+
+          > span{
+            background: $secondary;
+            border-color: transparent;
+            color: white;
+          }
         }
       }
 

@@ -1,0 +1,33 @@
+{
+  "Eppingen":[
+        {
+          "id": 0,
+          "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
+          "antworten":
+            {
+              "Gurr-Hirsch": "Selbstgemachte Maultaschen mit Kartoffelsalat",
+              "Blättgen": "Rindsroulade",
+              "Winkler": "Linsen mit Spätzle",
+              "Heitlinger": "Spätzle"
+            },
+            "typ": "politisch"
+        },
+        {
+          "id": 1,
+          "frage": "Die Kandidaten haben uns ihren Lieblingsort in der Region verraten. Wo gefällt es Ihnen am besten?",
+          "antworten":
+            {
+              "Gurr-Hirsch": "Joggingstrecke durch Untergruppenbach",
+              "Blättgen": "Wald, egal wo",
+              "Winkler": "Weinausschank am Zweifelberg bei gutem Wetter, bei mir daheim vorm Kachelofen bei schlechtem Wetter",
+              "Heitlinger": "Drei-Burgen-Blick Rohrbach"
+            },
+            "typ": "privat"
+        }
+      ]
+    }
+  ],
+  "Neckarsulm": [],
+  "Heilbronn": [],
+  "Hohenlohe": []
+}
