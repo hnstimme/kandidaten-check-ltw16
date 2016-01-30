@@ -2,6 +2,9 @@ body{
   margin: 0;
   padding: 0;
 }
+.twisted{
+  transform: rotate(180deg);
+}
 
 $grey: #888;
 $primary: #D05C5C;
@@ -186,6 +189,68 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       }
     }
   }
+
+  $candidate-size: 170px;
+
+  section.personal-result{
+
+    .candidates{
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+
+      .candidate{
+        max-width: 50%;
+
+        .percentage{
+          width: $candidate-size;
+          height: $candidate-size;
+          border: 3px solid $primary;
+          margin: auto auto 1rem auto;
+
+          padding: 7px;
+
+          border-radius: 50%;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+
+          .picture{
+            width: $candidate-size;
+            height: $candidate-size;
+            overflow: hidden;
+
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+
+            img{
+              width: $candidate-size;
+            }
+          }
+        }
+
+        .info{
+          color: darken($grey, 10%);
+          text-align: center;
+          max-width: 80%;
+          margin: auto;
+        }
+
+        h2{
+          color: $secondary;
+          font-size: 3rem;
+          font-weight: 300;
+          margin: 0.3rem 0;
+        }
+        .topic{
+          font-size: 0.9rem;
+          text-align: center;
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 .sharing-container{
@@ -318,7 +383,15 @@ $tile-normal-width: 20%;
           background-position: center;
           cursor: pointer;
         }
+
+        &.answer{
+          background-image: url("../img/antwort.jpg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
       }
+
       .glow{
         animation-name: glowing;
         animation-duration: 0.3s;
@@ -351,6 +424,14 @@ $tile-normal-width: 20%;
       @media screen and (max-width: 350px){
         margin: 0 auto 1.2rem auto;
       }
+    }
+
+    button[type="submit"]{
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      height: 130px;
     }
 }
 

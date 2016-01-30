@@ -23,27 +23,52 @@
         <p>Dies wurde am Dienstagabend im Kupferzeller Gemeinderat bekannt. Das Landratsamt Hohenlohekreis forderte die Gemeinde auf, Stellung zu den Plänen des Bürgerwindparks Hohenlohe zu nehmen. Ihre Unterlagen hat die Firma bereits bei der Behörde zur Genehmigung eingereicht.</p>
       </section>
 
+      <!-- Frage -->
       <section>
         <h3>Wähle deinen Wahlkreis</h3>
         <div class="tile-grid">
-          <button type="submit">Zurück</button>
-          <div class="tile"><a class="logo" id="wk-19"><span>EP</span></a><div class="title">Eppingen</div></div>
-          <div class="tile"><a class="logo" id="wk-18"><span>HN</span></a><div class="title">Heilbronn</div></div>
-          <div class="tile"><a class="logo" id="wk-20"><span>NSU</span></a><div class="title">Neckarsulm</div></div>
-          <div class="tile"><a class="logo" id="wk-21"><span>HOH</span></a><div class="title">Hohenlohe</div></div>
-          <button type="submit">Weiter</button>
+          <button class="lastQuestion" type="submit"><img class="twisted" src="img/next.svg"></button>
+          <div class="tile"><span class="logo" id="wk-19"><span>EP</span></span><div class="title">Eppingen</div></div>
+          <div class="tile"><span class="logo" id="wk-18"><span>HN</span></span><div class="title">Heilbronn</div></div>
+          <div class="tile"><span class="logo" id="wk-20"><span>NSU</span></span><div class="title">Neckarsulm</div></div>
+          <div class="tile"><span class="logo" id="wk-21"><span>HOH</span></span><div class="title">Hohenlohe</div></div>
+          <button class="nextQuestion" type="submit"><img src="img/next.svg"></button>
       </section>
+      <!-- /Frage -->
 
+      <!-- Frage -->
       <section>
         <h3>Was ist dein Lieblingsessen?</h3>
         <div class="tile-grid">
-          <button type="submit">Zurück</button>
-          <div class="tile"><a class="logo"><span>PST</span></a><div class="title">Pasta</div></div>
-          <div class="tile"><a class="logo"><span>PZZ</span></a><div class="title">Pizza</div></div>
-          <div class="tile"><a class="logo"><span>SPTZL</span></a><div class="title">Spätzle</div></div>
-          <div class="tile"><a class="logo"><span>KSR</span></a><div class="title">Kaiserschmarrn</div></div>
-          <button type="submit">Weiter</button>
+          <button class="lastQuestion" type="submit"><img class="twisted" src="img/next.svg"></button>
+          <div class="tile"><span class="logo answer"></span><div class="title">Pasta</div></div>
+          <div class="tile"><span class="logo answer"></span><div class="title">Pizza</div></div>
+          <div class="tile"><span class="logo answer"></span><div class="title">Spätzle</div></div>
+          <div class="tile"><span class="logo answer"></span><div class="title">Kaiserschmarrn</div></div>
+          <button class="nextQuestion" type="submit"><img src="img/next.svg"></button>
       </section>
+      <!-- /Frage -->
+
+      <!-- Endergebnis -->
+      <section class="personal-result">
+        <h3>Dein Ergebnis</h3>
+
+        <div class="candidates">
+          <div class="candidate">
+            <div class="percentage"><div class="picture"><img src="img/kandidat1.jpg"></div></div>
+            <p class="info">Max Mustermann, Die Partei, 34 Jahre, verheiratet, ein Kind, Neckarsulm</p>
+            <h2>62%</h2>
+            <div class="topic">Politisch</div>
+          </div>
+          <div class="candidate">
+            <div class="percentage"><div class="picture"><img src="img/kandidat2.jpg"></div></div>
+            <p class="info">Gertrud Mustermann, Die Gute Partei, 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p>
+            <h2>62%</h2>
+            <div class="topic">Privat</div>
+          </div>
+        </div>
+      </section>
+      <!-- /Endergebnis -->
 
     </div>
     <script>
