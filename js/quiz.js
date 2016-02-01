@@ -1,8 +1,6 @@
-var currentQuestion = 0,
-candidateA = 0,
-candidateB = 0,
-candidateC = 0,
-candidateD = 0,
+var currentQuestionID = 0,
+currentQuestion,
+selections = [], // [questionId, selectionId, type(privat/politisch)]
 selectedWahlkreis = "",
 picked;
 
@@ -44,22 +42,29 @@ $(document).ready(function (){
       "typ": "privat"
   }];
 
+  // Load data of correct next question from JSON
   function loadData(){
+    // Iterate through questions & search for requested question
     $.each(quiz, function(key, val) {
-      if(val.id == currentQuestion){
+      if( val.id == currentQuestionID ){
         $(".question > h3").text(val.frage);
+        currentQuestion = val;
       }
 
+      // Iterate through answers of current question
       var i=0;
       $.each(val.antworten, function(key_answer, val_answer){
-        if(val.id==currentQuestion){
+        if(val.id==currentQuestionID){
           $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>')
           i=i+1;
         }
       })
     })
+
+    $(".tile-grid").randomize(".tile");
   }
 
+  // Prepare for new question or wahlkreis selection
   function loadQuestion(){
     $(".question > h3").empty();
     $(".tile-grid .tile").remove();
@@ -72,9 +77,10 @@ $(document).ready(function (){
       changeToWahlkreis();
     }
 
-    console.log("Current: "+currentQuestion);
+    console.log("Current: "+currentQuestionID);
   }
 
+  // Change div containing the wahlkreis selection to the question markup
   function changeToQuestion (){
     $(".wahlkreis").addClass("question").removeClass("wahlkreis");
     $(".tile-grid .tile:first-child").before('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
@@ -82,6 +88,7 @@ $(document).ready(function (){
     loadQuestion();
   }
 
+  // Change div containing a question to the wahlkreis selection
   function changeToWahlkreis (){
     $(".question").addClass("wahlkreis").removeClass("question");
     $(".tile-grid").empty()
@@ -92,14 +99,20 @@ $(document).ready(function (){
 
     $(".wahlkreis h3").html('Wähle deinen Wahlkreis');
 
-    currentQuestion = 0;
+    currentQuestionID = 0;
   }
 
   $("section").on('click', '.nextQuestion' ,function () {
 
     console.log("Load next question");
     if($(".question").length != 0){
-      currentQuestion+=1;
+      // Save the answer selection from user
+      selections[currentQuestionID] = new Array();
+      selections[currentQuestionID].push(picked, currentQuestion.typ)
+      console.log(selections);
+
+      // Initialize new question
+      currentQuestionID+=1;
       loadQuestion();
     }
     else{
@@ -107,10 +120,11 @@ $(document).ready(function (){
     }
   })
   $("section").on('click', '.previousQuestion' ,function () {
-
     console.log("Load previous question");
+
+    // Initialize previous question
     if($(".question").length != 0){
-      currentQuestion-=1;
+      currentQuestionID-=1;
       loadQuestion();
     }
     else{
@@ -118,16 +132,33 @@ $(document).ready(function (){
     }
   })
 
+  // User selected an answer: Show "next" button & save picked answer
   $("section").on( 'click', '.tile' ,function () {
+    // Save picked answer
     picked=$(this).attr("data-index");
+    // New CSS style for picked answer
     $(".tile").removeClass("picked");
     $(this).addClass("picked");
+
+    // Show button
     if($(".nextQuestion").length == 0){
       $(".tile-grid .tile:last-child").after('<button class="nextQuestion"><img src="img/next.svg"></button>')
     }
   })
 
+  // Save wahlkreis id, the user selected
   $("body").on('click', '.wahlkreis .tile' ,function () {
     selectedWahlkreis = $(this).attr("id");
   })
+
+  // Randomize order of potential answers
+  $.fn.randomize = function(selector){
+    (selector ? this.find(selector) : this).parent().each(function(){
+        $(this).children(selector).sort(function(){
+            return Math.random() - 0.5;
+        }).detach().appendTo(this);
+    });
+
+    return this;
+  };
 });

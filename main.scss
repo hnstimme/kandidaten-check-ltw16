@@ -190,6 +190,14 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     }
   }
 
+  section.wahlkreis,
+  section.question{
+    h3{
+      max-width: 85%;
+      margin: auto;
+    }
+  }
+
   $candidate-size: 170px;
   section.personal-result{
 
