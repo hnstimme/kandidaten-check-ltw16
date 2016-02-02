@@ -425,6 +425,15 @@ $tile-normal-width: 22%;
         }
       }
 
+      &.blind{
+        opacity: 0.7;
+        transition: opacity 0.1s;
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+
       .glow{
         animation-name: glowing;
         animation-duration: 0.3s;

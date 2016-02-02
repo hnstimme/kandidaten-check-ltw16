@@ -3,77 +3,23 @@ currentQuestionOrderID = 0,
 currentQuestion, // Array
 questionOrder = [],
 selections = [], // [selectionId, type(privat/politisch)]
-selectedWahlkreis = "",
-picked;
+selectedWahlkreis,
+picked,
+quiz;
 
 $(document).ready(function (){
-  var quiz=[{
-    "id": 0,
-    "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
-    "antworten":
-      {
-        "Gurr-Hirsch": "Selbstgemachte Maultaschen mit Kartoffelsalat",
-        "Blättgen": "Rindsroulade",
-        "Winkler": "Linsen mit Spätzle",
-        "Heitlinger": "Spätzle"
-      },
-      "typ": "privat"
-  },
-  {
-    "id": 1,
-    "frage": "Die Kandidaten haben uns ihren Lieblingsort in der Region verraten. Wo gefällt es Ihnen am besten?",
-    "antworten":
-      {
-        "Gurr-Hirsch": "Joggingstrecke durch Untergruppenbach",
-        "Blättgen": "Wald, egal wo",
-        "Winkler": "Weinausschank am Zweifelberg bei gutem Wetter, bei mir daheim vorm Kachelofen bei schlechtem Wetter",
-        "Heitlinger": "Drei-Burgen-Blick Rohrbach"
-      },
-      "typ": "privat"
-  },
-  {
-    "id": 2,
-    "frage": "Auch Politiker singen gerne unter der Dusche. Welches Lied ist das Beste?",
-    "antworten":
-      {
-        "Gurr-Hirsch": "Die Gedanken sind frei",
-        "Blättgen": "Bruce Guthro: The Songsmith",
-        "Winkler": "Somewhere aus der West Side Story",
-        "Heitlinger": "Nirvana - Smells like Teen Spirit"
-      },
-      "typ": "privat"
-  },
-  {
-    "id": 3,
-    "frage": "Welchen Lieblingsfilm der Kandidaten mögen Sie  am meisten?",
-    "antworten":
-      {
-        "Gurr-Hirsch": "Vom Winde verweht",
-        "Blättgen": "Herr der Ringe",
-        "Winkler": "Ziemlich beste Freunde",
-        "Heitlinger": "Cowboys & Alien"
-      },
-      "typ": "privat"
-  },
-  {
-    "id": 4,
-    "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten  gerne einmal lesen?",
-    "antworten":
-      {
-        "Gurr-Hirsch": "Südliche Hemisphäre hat aufgeholt - frühere Entwicklungsländer werden nicht mehr ausgebeutet",
-        "Blättgen": "Heute keine schlechten Nachrichten zu vermelden!",
-        "Winkler": "Arabischer Frühling kehrt zurück – Junge Demokratien rund ums Mittelmeer blühen auf",
-        "Heitlinger": "Weltweit kein Krieg mehr"
-      },
-      "typ": "privat"
-  }];
-
   // Generate order of questions, for randomize
   function generateQuestionOrder (){
     for(var g=0; g < 5; g++){
       questionOrder.push(g);
     }
     shuffle(questionOrder);
+
+    //Insert "challenges"
+    questionOrder.splice(2, 0, 10);
+    questionOrder.splice(6, 0, 11);
+    questionOrder.splice(9, 0, 12);
+
     console.log(questionOrder);
   }
 
@@ -87,25 +33,32 @@ $(document).ready(function (){
     if(currentQuestionOrderID != -1){
       currentQuestionID = questionOrder[currentQuestionOrderID];
 
-      // Iterate through questions & search for requested question
-      $.each(quiz, function(key, val) {
-        if( val.id == currentQuestionID ){
-          $(".question > h3").text(val.frage);
-          currentQuestion = val;
-        }
+      // Search for correct wahlkreis
+     $.each(quiz, function(wahlkreis, questions){
+        if( wahlkreis === selectedWahlkreis ){
+          // Iterate through questions & search for requested question
+          $.each(questions, function(key, val) {
+            if( val.id == currentQuestionID ){
+              $(".question > h3").text(val.frage);
+              currentQuestion = val;
+            }
 
-        // Iterate through answers of current question
-        var i=0;
-        $.each(val.antworten, function(key_answer, val_answer){
-          if(val.id==currentQuestionID){
-            $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>')
-            i=i+1;
-          }
-        })
-      })
+            // Iterate through answers of current question
+            var i=0;
+            $.each(val.antworten, function(key_answer, val_answer){
+              if(val.id==currentQuestionID){
+                $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>');
+                i=i+1;
+              }
+            });
+          });
+        }
+      });
 
       $(".tile-grid").randomize(".tile");
-      $(".tile-grid:last-child").append('<div class="waitForTheButton nextQuestion"></div>');
+      if($("div.nextQuestion").length == 0){
+        $(".tile-grid .tile:last-child").after('<div class="waitForTheButton nextQuestion"></div>');
+      }
     }
     else {
       changeToWahlkreis();
@@ -141,13 +94,11 @@ $(document).ready(function (){
   }
 
   $("section").on('click', 'button.nextQuestion' ,function () {
-    console.log("Load next question");
 
     if($(".question").length != 0){
       // Save the answer selection from user
       selections[currentQuestionOrderID] = new Array();
       selections[currentQuestionOrderID].push(picked, currentQuestion.typ)
-      console.log(selections);
 
       // Initialize new question
       currentQuestionOrderID+=1;
@@ -158,15 +109,10 @@ $(document).ready(function (){
     }
   })
   $("section").on('click', 'button.previousQuestion' ,function () {
-    console.log("Load previous question");
-
     // Initialize previous question
     if($(".question").length != 0){
       currentQuestionOrderID-=1;
       loadQuestion();
-    }
-    else{
-      changeToQuestion();
     }
   })
 
@@ -176,7 +122,9 @@ $(document).ready(function (){
     picked=$(this).attr("data-index");
     // New CSS style for picked answer
     $(".tile").removeClass("picked");
+    $(".tile").removeClass("blind");
     $(this).addClass("picked");
+    $(".tile:not(.picked)").addClass("blind");
 
     // Show button
     if($("button.nextQuestion").length == 0){
@@ -192,13 +140,19 @@ $(document).ready(function (){
   function init (){
     // Before anything else generate shuffled question order
     generateQuestionOrder();
+
+    // Load JSON
+    $.getJSON('js/quiz.json', function (json){
+      quiz=json;
+    });
+
   }
 
   init();
 
   /* Functions */
   // Randomize order of potential answers
-  $.fn.randomize = function(selector){
+  $.fn.randomize = function (selector){
     (selector ? this.find(selector) : this).parent().each(function(){
         $(this).children(selector).sort(function(){
             return Math.random() - 0.5;
@@ -209,22 +163,22 @@ $(document).ready(function (){
   };
 
   // Shuffle an array
-  function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+  function shuffle (array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
-
-  return array;
-}
 });
