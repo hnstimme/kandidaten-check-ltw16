@@ -1,3 +1,4 @@
+// Global Style
 body{
   margin: 0;
   padding: 0;
@@ -6,6 +7,15 @@ body{
   transform: rotate(180deg);
 }
 
+// Mixins
+@mixin flex-size($width) {
+  -webkit-flex-basis: $width;
+  -ms-flex-preferred-size: $width;
+  flex-basis: $width;
+  max-width: $width;
+}
+
+// Variables
 $grey: #888;
 $primary: #D05C5C;
 $secondary: #A84A46;
@@ -13,6 +23,8 @@ $complementary: #83bbd6;
 $bg-url: '../img/bg.jpg';
 $bg-mobile-url: '../img/bg-mobil.jpg';
 
+
+// Styles
 .lw{
   font-family: 'Open Sans';
   max-width: 990px;
@@ -306,7 +318,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 }
 
 /* GRID TILES */
-$tile-normal-width: 20%;
+$tile-normal-width: 22%;
 
 .lw .tile-grid {
     display: -webkit-flex;
@@ -317,8 +329,8 @@ $tile-normal-width: 20%;
     flex-wrap: wrap;
     justify-content: center;
 
-    width: 70%;
-    margin: auto;
+    width: 85%;
+    margin: 1rem auto;
 
     a{
       text-decoration: none;
@@ -326,12 +338,12 @@ $tile-normal-width: 20%;
     }
 
     .tile {
-      -webkit-flex: 1 1 $tile-normal-width;
-      -ms-flex: 1 1 $tile-normal-width;
-      flex: 1 1 $tile-normal-width;
+      @include flex-size( $tile-normal-width);
+      -webkit-flex: 1 1;
+      -ms-flex: 1 1;
+      flex: 1 1;
       padding: 4px;
       box-sizing: border-box;
-      max-width: $tile-normal-width;
 
       .logo{
         $logo-size: 100px;
@@ -441,29 +453,31 @@ $tile-normal-width: 20%;
       box-sizing: border-box;
       margin: auto auto 0.3rem auto;
       font-size: 1rem;
+      word-wrap: break-word;
+      width: 97%;
 
       @media screen and (max-width: 350px){
         margin: 0 auto 1.2rem auto;
       }
     }
 
-    button[type="submit"]{
+    button.nextQuestion,
+    button.previousQuestion{
+      @include flex-size( 6% );
       background: none;
       border: none;
       outline: none;
       cursor: pointer;
-      height: 130px;
+      height: 125px;
+    }
+
+    div.waitForTheButton.nextQuestion,
+    div.waitForTheButton.previousQuestion{
+      @include flex-size( 6% );
     }
 }
 
 // Flex Grid
-@mixin flex-size($width) {
-  -webkit-flex-basis: $width;
-  -ms-flex-preferred-size: $width;
-  flex-basis: $width;
-  max-width: $width;
-}
-
 @media screen and (max-width: 900px) {
     .lw .tile-grid .tile {
         @include flex-size(33.33%);

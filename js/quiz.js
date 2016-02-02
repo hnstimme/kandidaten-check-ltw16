@@ -1,6 +1,8 @@
 var currentQuestionID = 0,
-currentQuestion,
-selections = [], // [questionId, selectionId, type(privat/politisch)]
+currentQuestionOrderID = 0,
+currentQuestion, // Array
+questionOrder = [],
+selections = [], // [selectionId, type(privat/politisch)]
 selectedWahlkreis = "",
 picked;
 
@@ -40,51 +42,85 @@ $(document).ready(function (){
         "Heitlinger": "Nirvana - Smells like Teen Spirit"
       },
       "typ": "privat"
+  },
+  {
+    "id": 3,
+    "frage": "Welchen Lieblingsfilm der Kandidaten mögen Sie  am meisten?",
+    "antworten":
+      {
+        "Gurr-Hirsch": "Vom Winde verweht",
+        "Blättgen": "Herr der Ringe",
+        "Winkler": "Ziemlich beste Freunde",
+        "Heitlinger": "Cowboys & Alien"
+      },
+      "typ": "privat"
+  },
+  {
+    "id": 4,
+    "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten  gerne einmal lesen?",
+    "antworten":
+      {
+        "Gurr-Hirsch": "Südliche Hemisphäre hat aufgeholt - frühere Entwicklungsländer werden nicht mehr ausgebeutet",
+        "Blättgen": "Heute keine schlechten Nachrichten zu vermelden!",
+        "Winkler": "Arabischer Frühling kehrt zurück – Junge Demokratien rund ums Mittelmeer blühen auf",
+        "Heitlinger": "Weltweit kein Krieg mehr"
+      },
+      "typ": "privat"
   }];
 
-  // Load data of correct next question from JSON
-  function loadData(){
-    // Iterate through questions & search for requested question
-    $.each(quiz, function(key, val) {
-      if( val.id == currentQuestionID ){
-        $(".question > h3").text(val.frage);
-        currentQuestion = val;
-      }
-
-      // Iterate through answers of current question
-      var i=0;
-      $.each(val.antworten, function(key_answer, val_answer){
-        if(val.id==currentQuestionID){
-          $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>')
-          i=i+1;
-        }
-      })
-    })
-
-    $(".tile-grid").randomize(".tile");
+  // Generate order of questions, for randomize
+  function generateQuestionOrder (){
+    for(var g=0; g < 5; g++){
+      questionOrder.push(g);
+    }
+    shuffle(questionOrder);
+    console.log(questionOrder);
   }
 
   // Prepare for new question or wahlkreis selection
   function loadQuestion(){
     $(".question > h3").empty();
     $(".tile-grid .tile").remove();
-    $(".nextQuestion").remove();
+    $("button.nextQuestion").remove();
 
-    if(currentQuestion != -1){
-      loadData();
+    // Load data of correct next question from JSON
+    if(currentQuestionOrderID != -1){
+      currentQuestionID = questionOrder[currentQuestionOrderID];
+
+      // Iterate through questions & search for requested question
+      $.each(quiz, function(key, val) {
+        if( val.id == currentQuestionID ){
+          $(".question > h3").text(val.frage);
+          currentQuestion = val;
+        }
+
+        // Iterate through answers of current question
+        var i=0;
+        $.each(val.antworten, function(key_answer, val_answer){
+          if(val.id==currentQuestionID){
+            $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>')
+            i=i+1;
+          }
+        })
+      })
+
+      $(".tile-grid").randomize(".tile");
+      $(".tile-grid:last-child").append('<div class="waitForTheButton nextQuestion"></div>');
     }
     else {
       changeToWahlkreis();
     }
 
-    console.log("Current: "+currentQuestionID);
+    console.log("currentQuestionID: "+currentQuestionID);
+    console.log("currentQuestionOrderID: "+currentQuestionOrderID);
   }
 
   // Change div containing the wahlkreis selection to the question markup
   function changeToQuestion (){
     $(".wahlkreis").addClass("question").removeClass("wahlkreis");
-    $(".tile-grid .tile:first-child").before('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
+    $(".tile-grid .previousQuestion").replaceWith('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
 
+    currentQuestionOrderID = 0;
     loadQuestion();
   }
 
@@ -92,39 +128,41 @@ $(document).ready(function (){
   function changeToWahlkreis (){
     $(".question").addClass("wahlkreis").removeClass("question");
     $(".tile-grid").empty()
+    $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
     $(".tile-grid").append('<div class="tile" id="Eppingen"><span class="logo"><span>EP</span></span><div class="title">Eppingen</div></div>')
     $(".tile-grid").append('<div class="tile" id="Heilbronn"><span class="logo"><span>HN</span></span><div class="title">Heilbronn</div></div>')
     $(".tile-grid").append('<div class="tile" id="Neckarsulm"><span class="logo"><span>NSU</span></span><div class="title">Neckarsulm</div></div>')
     $(".tile-grid").append('<div class="tile" id="Hohenlohe"><span class="logo"><span>HOH</span></span><div class="title">Hohenlohe</div></div>');
+    $(".tile-grid").append('<div class="waitForTheButton nextQuestion"></div>');
 
     $(".wahlkreis h3").html('Wähle deinen Wahlkreis');
 
     currentQuestionID = 0;
   }
 
-  $("section").on('click', '.nextQuestion' ,function () {
-
+  $("section").on('click', 'button.nextQuestion' ,function () {
     console.log("Load next question");
+
     if($(".question").length != 0){
       // Save the answer selection from user
-      selections[currentQuestionID] = new Array();
-      selections[currentQuestionID].push(picked, currentQuestion.typ)
+      selections[currentQuestionOrderID] = new Array();
+      selections[currentQuestionOrderID].push(picked, currentQuestion.typ)
       console.log(selections);
 
       // Initialize new question
-      currentQuestionID+=1;
+      currentQuestionOrderID+=1;
       loadQuestion();
     }
     else{
       changeToQuestion();
     }
   })
-  $("section").on('click', '.previousQuestion' ,function () {
+  $("section").on('click', 'button.previousQuestion' ,function () {
     console.log("Load previous question");
 
     // Initialize previous question
     if($(".question").length != 0){
-      currentQuestionID-=1;
+      currentQuestionOrderID-=1;
       loadQuestion();
     }
     else{
@@ -141,8 +179,8 @@ $(document).ready(function (){
     $(this).addClass("picked");
 
     // Show button
-    if($(".nextQuestion").length == 0){
-      $(".tile-grid .tile:last-child").after('<button class="nextQuestion"><img src="img/next.svg"></button>')
+    if($("button.nextQuestion").length == 0){
+      $(".tile-grid div.nextQuestion").replaceWith('<button class="nextQuestion"><img src="img/next.svg"></button>')
     }
   })
 
@@ -151,6 +189,14 @@ $(document).ready(function (){
     selectedWahlkreis = $(this).attr("id");
   })
 
+  function init (){
+    // Before anything else generate shuffled question order
+    generateQuestionOrder();
+  }
+
+  init();
+
+  /* Functions */
   // Randomize order of potential answers
   $.fn.randomize = function(selector){
     (selector ? this.find(selector) : this).parent().each(function(){
@@ -161,4 +207,24 @@ $(document).ready(function (){
 
     return this;
   };
+
+  // Shuffle an array
+  function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 });
