@@ -5,76 +5,100 @@ questionOrder = [],
 selections = [], // [selectionId, type(privat/politisch)]
 selectedWahlkreis,
 picked,
-quiz;
+quiz,
+numberOfQuestions;
 
 $(document).ready(function (){
   // Generate order of questions, for randomize
   function generateQuestionOrder (){
-    for(var g=0; g < 5; g++){
+    for(var g=0; g < numberOfQuestions; g++){
       questionOrder.push(g);
     }
     shuffle(questionOrder);
 
     //Insert "challenges"
+    /*
+    !!!!
+    Temporarily deactivated
     questionOrder.splice(2, 0, 10);
     questionOrder.splice(6, 0, 11);
-    questionOrder.splice(9, 0, 12);
+    questionOrder.splice(9, 0, 12);*/
 
     console.log(questionOrder);
   }
 
   // Prepare for new question or wahlkreis selection
-  function loadQuestion(){
+  function processQuestion(){
     $(".question > h3").empty();
     $(".tile-grid .tile").remove();
     $("button.nextQuestion").remove();
 
-    // Load data of correct next question from JSON
-    if(currentQuestionOrderID != -1){
-      currentQuestionID = questionOrder[currentQuestionOrderID];
 
       // Search for correct wahlkreis
-     $.each(quiz, function(wahlkreis, questions){
-        if( wahlkreis === selectedWahlkreis ){
-          // Iterate through questions & search for requested question
-          $.each(questions, function(key, val) {
-            if( val.id == currentQuestionID ){
-              $(".question > h3").text(val.frage);
-              currentQuestion = val;
-            }
+      $.each(quiz, function(wahlkreis, questions){
+        // Set number of questions
+        numberOfQuestions = questions.length;
 
-            // Iterate through answers of current question
-            var i=0;
-            $.each(val.antworten, function(key_answer, val_answer){
-              if(val.id==currentQuestionID){
-                $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>');
-                i=i+1;
-              }
-            });
-          });
+        if( wahlkreis === selectedWahlkreis ){
+          // Generate shuffled question order
+          if(questionOrder.length == 0){
+            generateQuestionOrder();
+          }
+
+          // Load data of correct next question from JSON
+          if(currentQuestionOrderID != -1){
+            currentQuestionID = questionOrder[currentQuestionOrderID];
+
+            // If there are stilly any questions to answer
+            if(currentQuestionOrderID < numberOfQuestions){
+              displayAnswers(questions);
+          }
+          // If there are no more questions
+          else {
+            console.log("OHNO");
+            changeToResult();
+          }
         }
-      });
+        // If user want to display the wahlkreise
+        else {
+          changeToWahlkreis();
+        }
+      }
 
       $(".tile-grid").randomize(".tile");
       if($("div.nextQuestion").length == 0){
         $(".tile-grid .tile:last-child").after('<div class="waitForTheButton nextQuestion"></div>');
       }
-    }
-    else {
-      changeToWahlkreis();
-    }
-
-    console.log("currentQuestionID: "+currentQuestionID);
-    console.log("currentQuestionOrderID: "+currentQuestionOrderID);
+    });
   }
 
+  function displayAnswers(questions){
+    // Iterate through questions & search for requested question
+    $.each(questions, function(key, val) {
+      if( val.id == currentQuestionID ){
+        $(".question > h3").text(val.frage);
+        currentQuestion = val;
+      }
+
+      // Iterate through answers of current question
+      var i=0;
+      $.each(val.antworten, function(key_answer, val_answer){
+        if(val.id==currentQuestionID){
+          $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>');
+          i=i+1;
+        }
+      });
+    });
+  }
+
+  /*>>CHANGE QUIZ HTML STRUCTURE<< FUNCTIONS **/
   // Change div containing the wahlkreis selection to the question markup
   function changeToQuestion (){
     $(".wahlkreis").addClass("question").removeClass("wahlkreis");
     $(".tile-grid .previousQuestion").replaceWith('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
 
     currentQuestionOrderID = 0;
-    loadQuestion();
+    processQuestion();
   }
 
   // Change div containing a question to the wahlkreis selection
@@ -90,19 +114,36 @@ $(document).ready(function (){
 
     $(".wahlkreis h3").html('Wähle deinen Wahlkreis');
 
+    // Reset variables
     currentQuestionID = 0;
+    questionOrder = [];
+  }
+
+  // Show personal result of user (change from questions to result div)
+  function changeToResult (){
+    $(".question").addClass("personal-result").removeClass("question");
+    $(".personal-result > h3").html("Dein Ergebnis");
+    $(".tile-grid").remove();
+    $(".personal-result > h3").after('<div class="candidates"></div>');
+
+    var candidates= '<div class="candidate"></div>';
+    $(".candidates").html(candidates + candidates);
+
+    $(".candidate").html('<div class="percentage"><div class="picture"><img src="img/kandidat1.jpg"></div></div> <p class="info">Max Mustermann, Die Partei, 34 Jahre, verheiratet, ein Kind, Neckarsulm</p> <h2>62%</h2><div class="topic">Politisch</div>');
+    $(".candidate:last-child").html('<div class="percentage"><div class="picture"><img src="img/kandidat2.jpg"></div></div> <p class="info">Gertrud Mustermann, Die Gute Partei, 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p> <h2>62%</h2> <div class="topic">Privat</div>');
   }
 
   $("section").on('click', 'button.nextQuestion' ,function () {
-
     if($(".question").length != 0){
       // Save the answer selection from user
       selections[currentQuestionOrderID] = new Array();
       selections[currentQuestionOrderID].push(picked, currentQuestion.typ)
 
+      console.log(selections);
+
       // Initialize new question
       currentQuestionOrderID+=1;
-      loadQuestion();
+      processQuestion();
     }
     else{
       changeToQuestion();
@@ -112,7 +153,7 @@ $(document).ready(function (){
     // Initialize previous question
     if($(".question").length != 0){
       currentQuestionOrderID-=1;
-      loadQuestion();
+      processQuestion();
     }
   })
 
@@ -137,15 +178,26 @@ $(document).ready(function (){
     selectedWahlkreis = $(this).attr("id");
   })
 
-  function init (){
-    // Before anything else generate shuffled question order
-    generateQuestionOrder();
+  function getResult(type){
+    var frequency = [[0][1][2][3]]
+    currentPerson,
+    numberOfAnswers;
 
+    for(var h=0; h<selections.length; h++){
+      if(selections[h][1] === type){
+        currentPerson = frequency[selections[h][0]];
+        numberOfAnswers = frequency[selections[currentPerson][0]];
+        frequency[selections[currentPerson][0]].push(numberOfAnswers + 1);
+      }
+    }
+    console.log();
+  }
+
+  function init (){
     // Load JSON
     $.getJSON('js/quiz.json', function (json){
       quiz=json;
     });
-
   }
 
   init();

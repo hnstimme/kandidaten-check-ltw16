@@ -38,7 +38,7 @@
     },
     {
       "id": 3,
-      "frage": "Welchen Lieblingsfilm der Kandidaten mögen Sie  am meisten?",
+      "frage": "Welchen Lieblingsfilm der Kandidaten mögen Sie am meisten?",
       "antworten":
         {
           "Gurr-Hirsch": "Vom Winde verweht",
@@ -50,7 +50,7 @@
     },
     {
       "id": 4,
-      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten  gerne einmal lesen?",
+      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten gerne einmal lesen?",
       "antworten":
         {
           "Gurr-Hirsch": "Südliche Hemisphäre hat aufgeholt - frühere Entwicklungsländer werden nicht mehr ausgebeutet",
@@ -61,7 +61,68 @@
         "typ": "privat"
     }
   ],
-  "Neckarsulm": [],
+  "Neckarsulm": [
+    {
+      "id": 0,
+      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
+      "antworten":
+        {
+          "Gall": "Vom Winde verweht",
+          "Lasotta": "Herr der Ringe",
+          "Waldbüßer": "Ziemlich beste Freunde",
+          "Zeplin": "Cowboys & Alien"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 1,
+      "frage": "Auch Politiker singen gerne unter der Dusche. Welches Lied ist das Beste?",
+      "antworten":
+        {
+          "Gall": "„Mademoiselle chante le blues“ von Patricia Kaas",
+          "Lasotta": "Namika – Lieblingsmensch oder Joris – Herz über Kopf.",
+          "Waldbüßer": "Wish You Were Here von Pink Floyd",
+          "Zeplin": "Going Home von den Dire Straits"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 2,
+      "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten?",
+      "antworten":
+        {
+          "Gall": "emotional, Kumpeltyp, zuverlässig",
+          "Lasotta": "- offen<br>- engagiert<br>- manchmal etwas dickköpfig",
+          "Waldbüßer": "authentisch, hilfsbereit, freundlich",
+          "Zeplin": "Locker / Frech / Belesen"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 3,
+      "frage": "Welcher Lieblingsfilm der Kandidaten ist Ihr Favorit?",
+      "antworten":
+        {
+          "Gall": "Papillon mit Dustin Hoffmann",
+          "Lasotta": "Alle Teile von Star Wars.",
+          "Waldbüßer": "Ziemlich Beste Freunde",
+          "Zeplin": "Soylent Green"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 4,
+      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin würden Sie am liebsten mitkommen?",
+      "antworten":
+        {
+          "Gall": "In die 1920er, um den Lebensstil den man aus Filmen kennt einmal zu erleben. Obwohl die Realität oft anders war.",
+          "Lasotta": "Etwa 500 Jahre in die Zukunft.",
+          "Waldbüßer": "200 Jahre in die Zukunft, ins Jahr 2216.",
+          "Zeplin": "In das Rom zu Caesars Zeiten"
+        },
+        "typ": "privat"
+    }
+  ],
   "Heilbronn": [],
   "Hohenlohe": []
 }
