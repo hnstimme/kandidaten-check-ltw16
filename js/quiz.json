@@ -59,6 +59,66 @@
           "Heitlinger": "Weltweit kein Krieg mehr"
         },
         "typ": "privat"
+    },
+    {
+      "id": 5,
+      "frage": "Die Kandidaten haben uns ihre wichtigsten Themen verraten. Welche davon haben auch für Sie höchste Priorität?",
+      "antworten":
+        {
+          "Gurr-Hirsch": "Integration, Politik für den ländlichen Raum, Bildung",
+          "Blättgen": "Schulentwicklung, regenerative Energien, soziale Gerechtigkeit",
+          "Winkler": "Energiewende, Integration von Zuwanderern, Landwirtschaft",
+          "Heitlinger": "Landwirtschaft, Verbraucherschutz, Lobbyismus als Problem"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 6,
+      "frage": "Der Umgang mit den Flüchtlingen ist eine der zentralen Herausforderungen in den nächsten Jahren. Welcher Lösungsansatz klingt am vielversprechendsten?",
+      "antworten":
+        {
+          "Gurr-Hirsch": "Flüchtlinge müssen alle registriert werden, sollen sofort Deutsch lernen, Kommune muss sich dem Thema stellen und Ehrenamtliche stärken",
+          "Blättgen": "Wir nehmen die Menschen auf, versorgen und integrieren sie. Diejenigen, die keine Anerkennung als Flüchtling erhalten, schicken wir wieder nach Hause. Wir arbeiten mit der EU parallel intensiv daran, die Flüchtlinge zu kontingentieren und innerhalb der EU zu verteilen. Mit der EU und anderen Partnern bekämpfen wir aber vor allem die Fluchtursachen, um den Zustrom zu stoppen.",
+          "Winkler": "Ich wünsche mir, dass die derzeit erlebbare Willkommenskultur durch viele ehrenamtliche Helfer weitergeführt werden kann.",
+          "Heitlinger": "Freundlich aufnehmen; aber bei Verfehlungen hart durchgreifen. Am besten in dezentrale kleine Einheiten verteilen."
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 7,
+      "frage": "Wie können die Politiker den Wahlkreis noch  familienfreundlicher machen?",
+      "antworten":
+        {
+          "Gurr-Hirsch": "Vereinbarkeit von Familie und Beruf durch gute Strukturen muss weiter gewährleistet werden, Schaffung von Familienzentren",
+          "Blättgen": "Die Betreuungs- und Bildungsangebote noch weiter ausbauen, vor allem in Richtung Ganztagesbetreuung. Bildung und Betreuung muss bezahlbar und sozialverträglich sein und wir brauchen flexiblere Arbeitszeitmodelle, gerade für Familien.",
+          "Winkler": "Ich will, dass der eingeschlagenen Weg der Unterstützung der Kommunen durch das Land beim Ausbau der Betreuungsmöglichkeiten weitergeht. Und dass beispielsweise im ländlichen Raum Tagesbetreuung in einem familiären Rahmen weiterhin gut möglich ist.",
+          "Heitlinger": "Ausbau der Kinderbetreuung und des öffentlichen Nahverkehrs, Familientickets im öffentlichen Nahverkehr"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 8,
+      "frage": "Welche Idee halten Sie für am Besten, um den Wahlkreis für junge Menschen attraktiv zu machen?",
+      "antworten":
+        {
+          "Gurr-Hirsch": "Angebote in Sport, Freizeit, Kultur, Jugendzentren als Begegnungsmöglichkeiten, zwei Mal im Jahr sollen Jugendliche im Gemeinderat gehört werden und kleines Budget für eigene Projekte bekommen",
+          "Blättgen": "Dafür sorgen, dass der ländliche Raum als Lebensort erhalten bleibt. Dazu gehören ein attraktiver Nahverkehr, wohnortnahe Bildungsstandorte und lebendige Ortskerne. Das städtebauliche Sanierungsprogramm der Landesregierung leistet hier wertvolle Hilfe.",
+          "Winkler": "Das Thema Mobilitätskonzept steht bei mir im Vordergrund. Hier sehe ich in der Region durchaus noch Entwicklungsmöglichkeiten.",
+          "Heitlinger": "Flächendeckendes Breitbandinternet, bezahlbares Bauland"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 9,
+      "frage": "Wie gelingt es am ehesten, die Region noch nachhaltiger und grüner machen?",
+      "antworten":
+        {
+          "Gurr-Hirsch": "Regionale Wirtschaftskreisläufe unterstützen, „grüne Berufe“ wertschätzen, Ökopunktesystem z.B. für Bewirtschaftung von Mauerweinbergen oder Streuobstwiesen",
+          "Blättgen": "Die regionale Landwirtschaft stärken. Regionale Produkte sind eine Marke und unterstützen die heimischen Erzeuger. Außerdem setzt die Landesregierung im Forschungsbereich auf  nachhaltige Mobilität und Umwelttechnik. Durch eine moderne und nachhaltige Industriepolitik machen wir die Wirtschaft fit für die Zukunft und tun etwas für die Umwelt.",
+          "Winkler": "Einerseits durch das Thema Mobilitätskonzept, andererseits setzte ich mich dafür ein, dass wir uns über eine regionale Energieversorgung mehr Gedanken machen. Es müsste noch ein, zwei Standorte mit kleineren Windparks hier geben. Außerdem setze ich mich dafür ein, dass der anfallende Biomüll in der Region zur Energiegewinnung eingesetzt wird und Wirtschaftsbereiche ohne erhöhten Ressourcenverbrauch gestärkt werden.",
+          "Heitlinger": "Förderung von bäuerlichen Familienbetrieben"
+        },
+        "typ": "politisch"
     }
   ],
   "Neckarsulm": [
@@ -121,6 +181,66 @@
           "Zeplin": "In das Rom zu Caesars Zeiten"
         },
         "typ": "privat"
+    },
+    {
+      "id": 5,
+      "frage": "Die Kandidaten haben uns ihre wichtigsten Themen verraten. Welche davon haben auch für Sie höchste Priorität?",
+      "antworten":
+        {
+          "Gall": "Flächendeckende Internetverbindung, Ausbau der Ganztages- und Gemeinschaftsschulen, gelungene Integration der Flüchtlinge",
+          "Lasotta": "Medizinische Versorgung<br>Integration<br>Verkehrsinfrastruktur",
+          "Waldbüßer": "Flüchtlingssituation / Klimawandel, erneuerbare Energien / sozialer Mietwohnungsbau",
+          "Zeplin": "Verbesserung der Infrastruktur / Verbesserund der Medizinischen Versorgung / Optimierung des Schulwesens"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 6,
+      "frage": "Die Kandidaten haben die Menschen im Wahlkreis in wenigen Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
+      "antworten":
+        {
+          "Gall": "verantwortungsbewusst, eigen-verantwortlich, sehr hohes bürgerliches Engagement, lebensfroh",
+          "Lasotta": "Weltoffen<br>Heimatverbunden<br>Engagier",
+          "Waldbüßer": "Fleißig, gesellig, dickköpfig, naturverbunden, hilfsbereit",
+          "Zeplin": "Selbstbewusst/ Eher konservativ / Heimatbewusst"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 7,
+      "frage": "Die Flüchtlinge sind ein zentrales Thema, auch auf Landesebene. Doch wie sollte man mit den Neuankömmlingen umgehen?",
+      "antworten":
+        {
+          "Gall": "Die Menschen mit offenen Armen aufnehmen, in Ruhe entscheiden wie es weitergeht",
+          "Lasotta": "Das Land und die Kommunen müssen für eine gute Integration derer Menschen sorgen, die länger hierbleiben. Ansätze zur Begrenzung der Flüchtlinge laufen dann vor allem auf europäischer Ebene.",
+          "Waldbüßer": "Landratsämter und ehrenamtliche Helfer müssen eng zusammenarbeiten, Vereine und Menschen Scheu verlieren vor den Menschen, schnell Sprache erlernen, Wirtschaft muss Arbeitsplätze anbieten (besonders im Handwerk)",
+          "Zeplin": "Man sollte klar unterscheiden zwischen Kriegsflüchtling und Wirtschaftsflüchtling. Außerdem braucht es ein Einwanderungsgesetz."
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 8,
+      "frage": "Welche Idee halten Sie für am Besten, um den Wahlkreis für junge Menschen attraktiv zu machen?",
+      "antworten":
+        {
+          "Gall": "Ausbildung und Bildung fördern, Lebensperspektive geben, Anreize bieten, dass andere Menschen zum Arbeiten kommen und bleiben",
+          "Lasotta": "Durch gute Ausbildungs-  und Arbeitsverhältnisse und innovative Hochschulen.",
+          "Waldbüßer": "Heilbronn zur Universitätsstadt formen schafft Anreize für junge Menschen, viele Jugendtreffs, Vereine, Einrichtungen vorhanden",
+          "Zeplin": "Die duale Ausbildung fördern und den jugendlichen klar machen, dass es nicht unbedingt ein Studium sein muss, um beruflich weiter zu kommen"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 9,
+      "frage": "Wie gelingt es am ehesten, die Region noch nachhaltiger und grüner machen?",
+      "antworten":
+        {
+          "Gall": "Auf dem Land gleiche Infrastruktur wie in Ballungsräumen schaffen, Internetanbindung verbessern, Kommunen attraktiv machen, Zugang zu Bildung, Freizeit, Wirtschaft fördern",
+          "Lasotta": "Es gibt noch Potenzial beim Ausbau der regenerativen Projekte. Außerdem sollte die Nutzung von Wasserstraßen gefördert werden. Auch beim Thema Mobilität sollte das Land Unternehmen und Forschungen zum Thema Elektromobilität unterstützen.",
+          "Waldbüßer": "Ausbau erneuerbarer Energien / Kohlekraftwerk Heilbronn in absehbarer Zeit abschalten / Weinbau auf kontrolliert biologischen Anbau umstellen / Nachhaltige Waldwirtschaft",
+          "Zeplin": "Biomasse und Holzschnitzelkraftwerke finde ich sinnvoll, außerdem Biogasanalgen"
+        },
+        "typ": "politisch"
     }
   ],
   "Heilbronn": [],

@@ -1,0 +1,56 @@
+{
+  "Eppingen":[
+    {
+      "id": 0,
+      "kandidaten_name": "Friedlinde Gurr-Hirsch",
+      "partei": "CDU",
+      "bild_url": ""
+    },
+    {
+      "id": 1,
+      "kandidaten_name": "Hans-Heribert Blättgen",
+      "partei": "SPD",
+      "bild_url": ""
+    },
+    {
+      "id": 2,
+      "kandidaten_name": "Jürgen Winkler",
+      "partei": "Grüne",
+      "bild_url": ""
+    },
+    {
+      "id": 3,
+      "kandidaten_name": "Georg Heitlinger",
+      "partei": "FDP",
+      "bild_url": ""
+    }
+  ],
+  "Neckarsulm": [
+    {
+      "id": 0,
+      "kandidaten_name": "Reinhold Gall",
+      "partei": "CDU",
+      "bild_url": "Gall.jpg"
+    },
+    {
+      "id": 1,
+      "kandidaten_name": "Bernhard Lasotta",
+      "partei": "SPD",
+      "bild_url": "Lasotta.jpg"
+    },
+    {
+      "id": 2,
+      "kandidaten_name": "Armin Waldbüßer",
+      "partei": "Grüne",
+      "bild_url": ""
+    },
+    {
+      "id": 3,
+      "kandidaten_name": "Harald Zeplin",
+      "partei": "FDP",
+      "bild_url": "Zeplin.jpg"
+    }
+  ],
+  "Heilbronn": [],
+  "Hohenlohe": []
+}

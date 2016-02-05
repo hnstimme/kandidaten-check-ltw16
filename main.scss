@@ -405,7 +405,6 @@ $tile-normal-width: 22%;
         }
 
         &.answer{
-          background-image: url("../img/antwort.jpg");
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -452,6 +451,19 @@ $tile-normal-width: 22%;
           color: white;
         }
       }
+    }
+
+    .tile:nth-of-type(1n) .answer {
+      background-image: url("../img/antwort-a.jpg");
+    }
+    .tile:nth-of-type(2n) .answer {
+      background-image: url("../img/antwort-b.jpg");
+    }
+    .tile:nth-of-type(3n) .answer {
+      background-image: url("../img/antwort-c.jpg");
+    }
+    .tile:nth-of-type(4n) .answer {
+      background-image: url("../img/antwort-d.jpg");
     }
 
     .title {

@@ -6,7 +6,8 @@ selections = [], // [selectionId, type(privat/politisch)]
 selectedWahlkreis,
 picked,
 quiz,
-numberOfQuestions;
+numberOfQuestions,
+candidates;
 
 $(document).ready(function (){
   // Generate order of questions, for randomize
@@ -64,7 +65,7 @@ $(document).ready(function (){
         }
       }
 
-      $(".tile-grid").randomize(".tile");
+      //$(".tile-grid").randomize(".tile");
       if($("div.nextQuestion").length == 0){
         $(".tile-grid .tile:last-child").after('<div class="waitForTheButton nextQuestion"></div>');
       }
@@ -94,15 +95,19 @@ $(document).ready(function (){
   function getResult (type){
     var personsPoints = 0,
     highestPoints = 0,
-    personWithHighestPoints = 0;
+    personWithHighestPoints = 0,
+    numberOfQuestionsOfType = 0;
 
     // Iterate through persons
     for(var h=0; h < 4; h++){
       // Iterate through answers
       for( var j=0; j < selections.length; j++){
         // if type of answer and person matchtes, increment counter
-        if (selections[j][1] === type && selections[j][0] == h){
-          personsPoints++;
+        if (selections[j][1] === type){
+          numberOfQuestionsOfType++;
+          if(selections[j][0] == h){
+            personsPoints++;
+          }
         }
       }
       // Perhaps replace new highest points
@@ -112,9 +117,27 @@ $(document).ready(function (){
       }
       personsPoints = 0;
     }
+    numberOfQuestionsOfType /= 4;
 
-    var percentageOfAccordance = Math.round(highestPoints / selections.length * 100)
-    return [personWithHighestPoints, percentageOfAccordance];
+    var percentageOfAccordance = Math.round((highestPoints / numberOfQuestionsOfType ) * 100)
+    return [personWithHighestPoints, percentageOfAccordance, numberOfQuestionsOfType];
+  }
+
+  // Returns the candidate JSON object
+  function getCandidate(wahlkreis, id){
+    var saveCandidate = {};
+
+    $.each(candidates, function (json_wahlkreis, wahlkreis_kandidaten){
+      $.each(wahlkreis_kandidaten, function(json_next_wahlkreis, candidate){
+        if(json_wahlkreis == wahlkreis){
+          if(candidate.id == id){
+            saveCandidate = candidate;
+          }
+        }
+      });
+    });
+
+    return saveCandidate;
   }
 
   /*>>CHANGE QUIZ HTML STRUCTURE<< FUNCTIONS **/
@@ -147,19 +170,23 @@ $(document).ready(function (){
 
   // Show personal result of user (change from questions to result div)
   function changeToResult (){
+    // Get results [return datatype is Array]
     var privateResult = getResult("privat");
-    console.log(privateResult);
+    var politicalResult = getResult("politisch");
+
+    var privateCandidate = getCandidate(selectedWahlkreis, privateResult[0])
+    var politicalCandidate = getCandidate(selectedWahlkreis, politicalResult[0])
 
     $(".question").addClass("personal-result").removeClass("question");
     $(".personal-result > h3").html("Dein Ergebnis");
     $(".tile-grid").remove();
     $(".personal-result > h3").after('<div class="candidates"></div>');
 
-    var candidates= '<div class="candidate"></div>';
-    $(".candidates").html(candidates + candidates);
+    var candidatesDisplay= '<div class="candidate"></div>';
+    $(".candidates").html(candidatesDisplay + candidatesDisplay);
 
-    $(".candidate").html('<div class="percentage"><div class="picture"><img src="img/kandidat1.jpg"></div></div> <p class="info">Max Mustermann, Die Partei, 34 Jahre, verheiratet, ein Kind, Neckarsulm</p> <h2>62%</h2><div class="topic">Politisch</div>');
-    $(".candidate:last-child").html('<div class="percentage"><div class="picture"><img src="img/kandidat2.jpg"></div></div> <p class="info">Gertrud Mustermann, Die Gute Partei, 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p> <h2>62%</h2> <div class="topic">Privat</div>');
+    $(".candidate").html('<div class="percentage"><div class="picture"><img src="img/kandidaten/'+ politicalCandidate.bild_url +'"></div></div> <p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', 34 Jahre, verheiratet, ein Kind, Neckarsulm</p> <h2>'+politicalResult[1]+'%</h2><div class="topic">Politisch</div>');
+    $(".candidate:last-child").html('<div class="percentage"><div class="picture"><img src="img/kandidaten/'+ politicalCandidate.bild_url +'"></div></div> <p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p> <h2>'+privateResult[1]+'%</h2> <div class="topic">Privat</div>');
   }
 
   $("section").on('click', 'button.nextQuestion' ,function () {
@@ -167,8 +194,6 @@ $(document).ready(function (){
       // Save the answer selection from user
       selections[currentQuestionOrderID] = new Array();
       selections[currentQuestionOrderID].push(picked, currentQuestion.typ)
-
-      console.log(selections);
 
       // Initialize new question
       currentQuestionOrderID+=1;
@@ -208,9 +233,14 @@ $(document).ready(function (){
   })
 
   function init (){
-    // Load JSON
+    // Load quiz JSON
     $.getJSON('js/quiz.json', function (json){
       quiz=json;
+    });
+
+    // Load candidates JSON
+    $.getJSON('js/candidates.json', function (json){
+      candidates=json;
     });
   }
 
