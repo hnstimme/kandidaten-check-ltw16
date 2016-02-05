@@ -55,7 +55,6 @@ $(document).ready(function (){
           }
           // If there are no more questions
           else {
-            console.log("OHNO");
             changeToResult();
           }
         }
@@ -91,6 +90,33 @@ $(document).ready(function (){
     });
   }
 
+  // Calculate results for result page; returns person and percentage of accordance
+  function getResult (type){
+    var personsPoints = 0,
+    highestPoints = 0,
+    personWithHighestPoints = 0;
+
+    // Iterate through persons
+    for(var h=0; h < 4; h++){
+      // Iterate through answers
+      for( var j=0; j < selections.length; j++){
+        // if type of answer and person matchtes, increment counter
+        if (selections[j][1] === type && selections[j][0] == h){
+          personsPoints++;
+        }
+      }
+      // Perhaps replace new highest points
+      if(personsPoints > highestPoints){
+        highestPoints = personsPoints;
+        personWithHighestPoints = h;
+      }
+      personsPoints = 0;
+    }
+
+    var percentageOfAccordance = Math.round(highestPoints / selections.length * 100)
+    return [personWithHighestPoints, percentageOfAccordance];
+  }
+
   /*>>CHANGE QUIZ HTML STRUCTURE<< FUNCTIONS **/
   // Change div containing the wahlkreis selection to the question markup
   function changeToQuestion (){
@@ -121,6 +147,9 @@ $(document).ready(function (){
 
   // Show personal result of user (change from questions to result div)
   function changeToResult (){
+    var privateResult = getResult("privat");
+    console.log(privateResult);
+
     $(".question").addClass("personal-result").removeClass("question");
     $(".personal-result > h3").html("Dein Ergebnis");
     $(".tile-grid").remove();
@@ -178,21 +207,6 @@ $(document).ready(function (){
     selectedWahlkreis = $(this).attr("id");
   })
 
-  function getResult(type){
-    var frequency = [[0][1][2][3]]
-    currentPerson,
-    numberOfAnswers;
-
-    for(var h=0; h<selections.length; h++){
-      if(selections[h][1] === type){
-        currentPerson = frequency[selections[h][0]];
-        numberOfAnswers = frequency[selections[currentPerson][0]];
-        frequency[selections[currentPerson][0]].push(numberOfAnswers + 1);
-      }
-    }
-    console.log();
-  }
-
   function init (){
     // Load JSON
     $.getJSON('js/quiz.json', function (json){
@@ -202,7 +216,7 @@ $(document).ready(function (){
 
   init();
 
-  /* Functions */
+  /* Not own functions */
   // Randomize order of potential answers
   $.fn.randomize = function (selector){
     (selector ? this.find(selector) : this).parent().each(function(){
