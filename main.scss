@@ -318,16 +318,16 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 }
 
 /* GRID TILES */
-$tile-normal-width: 22%;
+$tile-normal-width: 25%;
 
 .lw .tile-grid {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    justify-content: center;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 
     width: 85%;
     margin: 1rem auto;
@@ -337,133 +337,144 @@ $tile-normal-width: 22%;
       color: black;
     }
 
-    .tile {
-      @include flex-size( $tile-normal-width);
-      -webkit-flex: 1 1;
-      -ms-flex: 1 1;
-      flex: 1 1;
-      padding: 4px;
-      box-sizing: border-box;
+    .tiles{
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      @include flex-size( 80% );
 
-      .logo{
-        $logo-size: 100px;
-        $logo-smaller-size: 85px;
+      .tile {
+        @include flex-size( $tile-normal-width);
+        -webkit-flex: 1 1;
+        -ms-flex: 1 1;
+        flex: 1 1;
+        padding: 4px;
+        box-sizing: border-box;
 
-        width: $logo-size;
-        height: $logo-size;
-        line-height: $logo-size;
+        .logo{
+          $logo-size: 100px;
+          $logo-smaller-size: 85px;
 
-        display: block;
-        border: 1px solid darken($grey, 50%);
-        padding: 3px;
-        text-align: center;
-        vertical-align: middle;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-        font-size: 2.4rem;
-        margin: auto auto 1rem auto;
-        cursor: pointer;
-
-        &:hover{
-          border-color: $secondary;
-
-          > span{
-            background: $secondary;
-            border-color: transparent;
-            color: white;
-          }
-        }
-
-        @media screen and (max-width: 900px){
-          width: $logo-smaller-size;
-          height: $logo-smaller-size;
-          line-height: $logo-smaller-size;
-          font-size: 2rem;
-        }
-        @media screen and (max-width: 350px){
-          margin: 0 auto 0.5rem auto;
-        }
-
-        > span{
           width: $logo-size;
           height: $logo-size;
+          line-height: $logo-size;
+
+          display: block;
+          border: 1px solid darken($grey, 50%);
+          padding: 3px;
+          text-align: center;
+          vertical-align: middle;
           border-radius: 50%;
-          display: inline-block;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          font-size: 2.4rem;
+          margin: auto auto 1rem auto;
+          cursor: pointer;
+
+          &:hover{
+            border-color: $secondary;
+
+            > span{
+              background: $secondary;
+              border-color: transparent;
+              color: white;
+            }
+          }
 
           @media screen and (max-width: 900px){
             width: $logo-smaller-size;
             height: $logo-smaller-size;
             line-height: $logo-smaller-size;
+            font-size: 2rem;
+          }
+          @media screen and (max-width: 350px){
+            margin: 0 auto 0.5rem auto;
+          }
+
+          > span{
+            width: $logo-size;
+            height: $logo-size;
+            border-radius: 50%;
+            display: inline-block;
+
+            @media screen and (max-width: 900px){
+              width: $logo-smaller-size;
+              height: $logo-smaller-size;
+              line-height: $logo-smaller-size;
+            }
+          }
+
+          &.icon > span{
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+          }
+
+          &.answer{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 2px solid $primary;
           }
         }
 
-        &.icon > span{
-          background-repeat: no-repeat;
-          background-position: center;
-          cursor: pointer;
+        &.picked{
+          .logo{
+            border-color: $secondary;
+
+            > span{
+              background: $secondary;
+              border-color: transparent;
+              color: white;
+            }
+          }
         }
 
-        &.answer{
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          border: 2px solid $primary;
+        &.blind{
+          opacity: 0.7;
+          transition: opacity 0.1s;
+
+          &:hover{
+            opacity: 1;
+          }
         }
-      }
 
-      &.picked{
-        .logo{
-          border-color: $secondary;
-
-          > span{
-            background: $secondary;
-            border-color: transparent;
+        .glow{
+          animation-name: glowing;
+          animation-duration: 0.3s;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in-out;
+          background: $complementary;
+          color: white;
+        }
+        @keyframes glowing{
+          from {
+            background: white;
+            color: black;
+          }
+          to {
+            background: $complementary;
             color: white;
           }
         }
       }
 
-      &.blind{
-        opacity: 0.7;
-        transition: opacity 0.1s;
-
-        &:hover{
-          opacity: 1;
-        }
+      .tile:nth-of-type(1n) .answer {
+        background-image: url("../img/antwort-a.jpg");
       }
-
-      .glow{
-        animation-name: glowing;
-        animation-duration: 0.3s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease-in-out;
-        background: $complementary;
-        color: white;
+      .tile:nth-of-type(2n) .answer {
+        background-image: url("../img/antwort-b.jpg");
       }
-      @keyframes glowing{
-        from {
-          background: white;
-          color: black;
-        }
-        to {
-          background: $complementary;
-          color: white;
-        }
+      .tile:nth-of-type(3n) .answer {
+        background-image: url("../img/antwort-c.jpg");
       }
-    }
-
-    .tile:nth-of-type(1n) .answer {
-      background-image: url("../img/antwort-a.jpg");
-    }
-    .tile:nth-of-type(2n) .answer {
-      background-image: url("../img/antwort-b.jpg");
-    }
-    .tile:nth-of-type(3n) .answer {
-      background-image: url("../img/antwort-c.jpg");
-    }
-    .tile:nth-of-type(4n) .answer {
-      background-image: url("../img/antwort-d.jpg");
+      .tile:nth-of-type(4n) .answer {
+        background-image: url("../img/antwort-d.jpg");
+      }
     }
 
     .title {
@@ -484,17 +495,17 @@ $tile-normal-width: 22%;
 
     button.nextQuestion,
     button.previousQuestion{
-      @include flex-size( 6% );
+      @include flex-size( 10% );
       background: none;
       border: none;
       outline: none;
       cursor: pointer;
       height: 125px;
+      padding: 0;
     }
-
-    div.waitForTheButton.nextQuestion,
-    div.waitForTheButton.previousQuestion{
-      @include flex-size( 6% );
+    div.nextQuestion,
+    div.previousQuestion{
+      @include flex-size( 10% );
     }
 }
 

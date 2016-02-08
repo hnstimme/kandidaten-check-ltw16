@@ -31,9 +31,8 @@ $(document).ready(function (){
   // Prepare for new question or wahlkreis selection
   function processQuestion(){
     $(".question > h3").empty();
-    $(".tile-grid .tile").remove();
+    $(".tiles .tile").remove();
     $("button.nextQuestion").remove();
-
 
       // Search for correct wahlkreis
       $.each(quiz, function(wahlkreis, questions){
@@ -65,9 +64,9 @@ $(document).ready(function (){
         }
       }
 
-      //$(".tile-grid").randomize(".tile");
+      $(".tiles").randomize(".tile");
       if($("div.nextQuestion").length == 0){
-        $(".tile-grid .tile:last-child").after('<div class="waitForTheButton nextQuestion"></div>');
+        $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
       }
     });
   }
@@ -84,11 +83,28 @@ $(document).ready(function (){
       var i=0;
       $.each(val.antworten, function(key_answer, val_answer){
         if(val.id==currentQuestionID){
-          $(".tile-grid").append('<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>');
+          var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
+
+          $(".tiles").append(displayTile);
           i=i+1;
         }
       });
     });
+
+    if(currentQuestionOrderID in selections){
+      var pickedId = +selections[currentQuestionOrderID][0];
+      var pickedElement = $('.tile').eq(pickedId);
+
+      // New CSS style for picked answer
+      setPickedClass(pickedElement);
+    }
+  }
+
+  function setPickedClass (HtmlElement){
+    $(".tile").removeClass("picked");
+    $(".tile").removeClass("blind");
+    $(HtmlElement).addClass("picked");
+    $(".tile:not(.picked)").addClass("blind");
   }
 
   // Calculate results for result page; returns person and percentage of accordance
@@ -155,11 +171,12 @@ $(document).ready(function (){
     $(".question").addClass("wahlkreis").removeClass("question");
     $(".tile-grid").empty()
     $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
-    $(".tile-grid").append('<div class="tile" id="Eppingen"><span class="logo"><span>EP</span></span><div class="title">Eppingen</div></div>')
-    $(".tile-grid").append('<div class="tile" id="Heilbronn"><span class="logo"><span>HN</span></span><div class="title">Heilbronn</div></div>')
-    $(".tile-grid").append('<div class="tile" id="Neckarsulm"><span class="logo"><span>NSU</span></span><div class="title">Neckarsulm</div></div>')
-    $(".tile-grid").append('<div class="tile" id="Hohenlohe"><span class="logo"><span>HOH</span></span><div class="title">Hohenlohe</div></div>');
-    $(".tile-grid").append('<div class="waitForTheButton nextQuestion"></div>');
+    $(".tile-grid").append('<div class="tiles"></div>');
+    $(".tiles").append('<div class="tile" id="Eppingen"><span class="logo"><span>EP</span></span><div class="title">Eppingen</div></div>')
+    $(".tiles").append('<div class="tile" id="Heilbronn"><span class="logo"><span>HN</span></span><div class="title">Heilbronn</div></div>')
+    $(".tiles").append('<div class="tile" id="Neckarsulm"><span class="logo"><span>NSU</span></span><div class="title">Neckarsulm</div></div>')
+    $(".tiles").append('<div class="tile" id="Hohenlohe"><span class="logo"><span>HOH</span></span><div class="title">Hohenlohe</div></div>');
+    $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
 
     $(".wahlkreis h3").html('Wähle deinen Wahlkreis');
 
@@ -216,10 +233,7 @@ $(document).ready(function (){
     // Save picked answer
     picked=$(this).attr("data-index");
     // New CSS style for picked answer
-    $(".tile").removeClass("picked");
-    $(".tile").removeClass("blind");
-    $(this).addClass("picked");
-    $(".tile:not(.picked)").addClass("blind");
+    setPickedClass(this);
 
     // Show button
     if($("button.nextQuestion").length == 0){
