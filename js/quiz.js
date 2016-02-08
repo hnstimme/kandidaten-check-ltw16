@@ -28,6 +28,27 @@ $(document).ready(function (){
     console.log(questionOrder);
   }
 
+  function createCircles (politicalPercent, privatePercent){
+    var politicalCircle = Circles.create({
+      id:                  'politicalCandidate',
+      radius:              95,
+      value:               politicalPercent,
+      width:               3,
+      text:                '',
+      colors:              ['white', '#D05C5C'],
+      duration:            400,
+    });
+    var privateCircle = Circles.create({
+      id:                  'privateCandidate',
+      radius:              95,
+      value:               privatePercent,
+      width:               3,
+      text:                '',
+      colors:              ['white', '#D05C5C'],
+      duration:            400,
+    });
+  }
+
   // Prepare for new question or wahlkreis selection
   function processQuestion(){
     $(".question > h3").empty();
@@ -64,11 +85,14 @@ $(document).ready(function (){
         }
       }
 
+      // Randomize order of answers
       $(".tiles").randomize(".tile");
-      if($("div.nextQuestion").length == 0){
-        $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
-      }
     });
+
+    // Show "next" button or placeholder
+    if($("div.nextQuestion").length == 0 && $(".picked").length == 0){
+      $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
+    }
   }
 
   function displayAnswers(questions){
@@ -202,8 +226,15 @@ $(document).ready(function (){
     var candidatesDisplay= '<div class="candidate"></div>';
     $(".candidates").html(candidatesDisplay + candidatesDisplay);
 
-    $(".candidate").html('<div class="percentage"><div class="picture"><img src="img/kandidaten/'+ politicalCandidate.bild_url +'"></div></div> <p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', 34 Jahre, verheiratet, ein Kind, Neckarsulm</p> <h2>'+politicalResult[1]+'%</h2><div class="topic">Politisch</div>');
-    $(".candidate:last-child").html('<div class="percentage"><div class="picture"><img src="img/kandidaten/'+ politicalCandidate.bild_url +'"></div></div> <p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p> <h2>'+privateResult[1]+'%</h2> <div class="topic">Privat</div>');
+    $(".candidate").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', 34 Jahre, verheiratet, ein Kind, Neckarsulm</p> <h2>'+politicalResult[1]+'%</h2><div class="topic">Politisch</div>');
+    $(".candidate:last-child").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p> <h2>'+privateResult[1]+'%</h2> <div class="topic">Privat</div>');
+    $(".candidate:first-child .picture").css('background-image', 'url("img/kandidaten/'+ politicalCandidate.bild_url +'")')
+    $(".candidate:last-child .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
+
+    $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
+    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht!%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
+
+    createCircles(politicalResult[1], privateResult[1]);
   }
 
   $("section").on('click', 'button.nextQuestion' ,function () {
@@ -225,6 +256,9 @@ $(document).ready(function (){
     if($(".question").length != 0){
       currentQuestionOrderID-=1;
       processQuestion();
+    }
+    if(currentQuestionOrderID in selections){
+      $("div.nextQuestion").replaceWith('<button class="nextQuestion"><img src="img/next.svg"></button>');
     }
   })
 

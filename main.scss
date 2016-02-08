@@ -225,27 +225,27 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         .percentage{
           width: $candidate-size;
           height: $candidate-size;
-          border: 3px solid $primary;
+
           margin: auto auto 1rem auto;
 
-          padding: 7px;
+          position: relative;
 
-          border-radius: 50%;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
+          .chart{
+            position: absolute;
+          }
 
           .picture{
             width: $candidate-size;
             height: $candidate-size;
             overflow: hidden;
+            position: absolute;;
+            margin: 10px;
+
+            background-size: cover;
 
             border-radius: 50%;
             -moz-border-radius: 50%;
             -webkit-border-radius: 50%;
-
-            img{
-              width: $candidate-size;
-            }
           }
         }
 
@@ -502,6 +502,7 @@ $tile-normal-width: 25%;
       cursor: pointer;
       height: 125px;
       padding: 0;
+      margin: 0;
     }
     div.nextQuestion,
     div.previousQuestion{

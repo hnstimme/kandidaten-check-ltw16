@@ -5,11 +5,14 @@
       <title>Kandidaten-Check</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="css/main.min.css">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+
+      <!-- For productive: <script src="js/all.js"></script> -->
 
       <script src="js/jquery-2.2.0.min.js"></script>
       <script src="js/quiz.js"></script>
+      <script src="js/circles.min.js"></script>
   </head>
   <body>
     <div class="lw">
@@ -46,13 +49,18 @@
 
         <div class="candidates">
           <div class="candidate">
-            <div class="percentage"><div class="picture"><img src="img/kandidat1.jpg"></div></div>
+            <div class="percentage">
+              <div class="chart" id="kandidat-1"></div>
+              <div class="picture"><img src="img/kandidaten/Gall.jpg"></div>
+            </div>
+
             <p class="info">Max Mustermann, Die Partei, 34 Jahre, verheiratet, ein Kind, Neckarsulm</p>
             <h2>62%</h2>
             <div class="topic">Politisch</div>
           </div>
           <div class="candidate">
-            <div class="percentage"><div class="picture"><img src="img/kandidat2.jpg"></div></div>
+            <div class="percentage"></div>
+            <div class="picture"><img src="img/kandidat2.jpg"></div>
             <p class="info">Gertrud Mustermann, Die Gute Partei, 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p>
             <h2>62%</h2>
             <div class="topic">Privat</div>
@@ -60,6 +68,25 @@
         </div>
       </section>-->
       <!-- /Endergebnis -->
+
+      <script>
+      var myCircle = Circles.create({
+        id:                  'kandidat-1',
+        radius:              95,
+        value:               65,
+        maxValue:            100,
+        width:               3,
+        text:                '',
+        colors:              ['white', '#D05C5C'],
+        duration:            400,
+        wrpClass:            'circles-wrp',
+        textClass:           'circles-text',
+        valueStrokeClass:    'circles-valueStroke',
+        maxValueStrokeClass: 'circles-maxValueStroke',
+        styleWrapper:        true,
+        styleText:           true
+      });
+      </script>
 
     </div>
     <script>
