@@ -7,6 +7,7 @@ selectedWahlkreis,
 picked,
 quiz,
 numberOfQuestions,
+numberOfChallenges = 0,
 candidates;
 
 $(document).ready(function (){
@@ -21,10 +22,11 @@ $(document).ready(function (){
     }
     shuffle(questionOrder);
 
-    //Insert "challenges"
-    questionOrder.splice(2, 0, 10);
-    questionOrder.splice(6, 0, 11);
-    questionOrder.splice(9, 0, 12);
+    //Insert challenges
+    for(var o=0; o<numberOfChallenges; o++){
+      var challengePosition = Math.round(((numberOfQuestions+numberOfChallenges)/(o+1))-1);
+      questionOrder.splice(challengePosition, 0, numberOfQuestions+numberOfChallenges-o-1);
+    }
 
     console.log(questionOrder);
   }
@@ -58,12 +60,19 @@ $(document).ready(function (){
 
       // Search for correct wahlkreis
       $.each(quiz, function(wahlkreis, questions){
-        // Set number of questions
-        numberOfQuestions = questions.length;
 
         if( wahlkreis === selectedWahlkreis ){
           // Generate shuffled question order
           if(questionOrder.length == 0){
+            // Set number of questions
+            numberOfQuestions = questions.length;
+
+            $.each(questions, function(question, data){
+              if(data.typ == 'challenge'){
+                numberOfChallenges++;
+              }
+            });
+            numberOfQuestions -= numberOfChallenges;
             generateQuestionOrder();
           }
 
@@ -72,7 +81,7 @@ $(document).ready(function (){
             currentQuestionID = questionOrder[currentQuestionOrderID];
 
             // If there are stilly any questions to answer
-            if(currentQuestionOrderID < numberOfQuestions){
+            if(currentQuestionOrderID < numberOfQuestions+numberOfChallenges){
               displayAnswers(questions);
           }
           // If there are no more questions
