@@ -8,7 +8,8 @@ picked,
 quiz,
 numberOfQuestions,
 numberOfChallenges = 0,
-candidates;
+candidates,
+displayedText;
 
 $(document).ready(function (){
   // Generate order of questions, for randomize
@@ -219,8 +220,9 @@ $(document).ready(function (){
 
   /*>>CHANGE QUIZ HTML STRUCTURE<< FUNCTIONS **/
   // Change div containing the wahlkreis selection to the question markup
-  function changeToQuestion (){
-    $(".wahlkreis").addClass("question").removeClass("wahlkreis");
+  function changeToQuestion (cssClassToRemove){
+    $("."+cssClassToRemove).addClass("question").removeClass(cssClassToRemove);
+    $('.tiles').empty();
     $(".tile-grid .previousQuestion").replaceWith('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
 
     currentQuestionOrderID = 0;
@@ -274,7 +276,14 @@ $(document).ready(function (){
     createCircles(politicalResult[1], privateResult[1]);
   }
 
+  // Change from wahlkreis to display Text
+  function changeToText(textString){
+    $(".tiles").empty();
+    $(".tiles").append('<p>'+textString + '</p>');
+  }
+
   $("section").on('click', 'button.nextQuestion' ,function () {
+    // If there was a previous question
     if($(".question").length != 0){
       // Save the answer selection from user
       selections[currentQuestionOrderID] = new Array();
@@ -285,7 +294,14 @@ $(document).ready(function (){
       processQuestion();
     }
     else{
-      changeToQuestion();
+      if(selectedWahlkreis == 'Eppingen' && displayedText == false){
+        var text = 'Die Kandidaten des Wahlkreises Eppingen haben leider nicht an unseren Challenges teilnehmen wollen, bitte entschuldigen sie das!';
+        changeToText(text);
+        displayedText = true;
+      }
+      else{
+        changeToQuestion('wahlkreis');
+      }
     }
   })
   $("section").on('click', 'button.previousQuestion' ,function () {
@@ -327,6 +343,8 @@ $(document).ready(function (){
     $.getJSON('js/candidates.json', function (json){
       candidates=json;
     });
+
+    displayedText = false;
   }
 
   init();
