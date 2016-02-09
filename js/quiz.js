@@ -12,18 +12,19 @@ candidates;
 $(document).ready(function (){
   // Generate order of questions, for randomize
   function generateQuestionOrder (){
+    if(questionOrder.length != 0){
+      questionOrder == [];
+    }
+
     for(var g=0; g < numberOfQuestions; g++){
       questionOrder.push(g);
     }
     shuffle(questionOrder);
 
     //Insert "challenges"
-    /*
-    !!!!
-    Temporarily deactivated
     questionOrder.splice(2, 0, 10);
     questionOrder.splice(6, 0, 11);
-    questionOrder.splice(9, 0, 12);*/
+    questionOrder.splice(9, 0, 12);
 
     console.log(questionOrder);
   }
@@ -107,10 +108,18 @@ $(document).ready(function (){
       var i=0;
       $.each(val.antworten, function(key_answer, val_answer){
         if(val.id==currentQuestionID){
-          var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
+          if(val.typ != 'challenge'){
+            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
 
-          $(".tiles").append(displayTile);
-          i=i+1;
+            $(".tiles").append(displayTile);
+            i=i+1;
+          }
+          else if(val.typ == 'challenge'){
+            var displayTile = '<div class="tile" data-index="'+ i +'"><img class="challenge" src="img/challenges/'+ val_answer +'"></div>'
+
+            $(".tiles").append(displayTile);
+            i=i+1;
+          }
         }
       });
     });
@@ -132,7 +141,7 @@ $(document).ready(function (){
   }
 
   // Calculate results for result page; returns person and percentage of accordance
-  function getResult (type){
+  function getResult (type, alternative_type){
     var personsPoints = 0,
     highestPoints = 0,
     personWithHighestPoints = 0,
@@ -142,6 +151,25 @@ $(document).ready(function (){
     for(var h=0; h < 4; h++){
       // Iterate through answers
       for( var j=0; j < selections.length; j++){
+        // If alternative type is set, count this also
+        if(typeof alternative_type != undefined){
+          // if type of answer and person matchtes, increment counter
+          if (selections[j][1] === type || selections[j][1] === alternative_type){
+            numberOfQuestionsOfType++;
+            if(selections[j][0] == h){
+              personsPoints++;
+            }
+          }
+          else {
+            // if type of answer and person matchtes, increment counter
+            if (selections[j][1] === type){
+              numberOfQuestionsOfType++;
+              if(selections[j][0] == h){
+                personsPoints++;
+              }
+            }
+          }
+        }
         // if type of answer and person matchtes, increment counter
         if (selections[j][1] === type){
           numberOfQuestionsOfType++;
@@ -212,7 +240,7 @@ $(document).ready(function (){
   // Show personal result of user (change from questions to result div)
   function changeToResult (){
     // Get results [return datatype is Array]
-    var privateResult = getResult("privat");
+    var privateResult = getResult("privat", "challenge");
     var politicalResult = getResult("politisch");
 
     var privateCandidate = getCandidate(selectedWahlkreis, privateResult[0])

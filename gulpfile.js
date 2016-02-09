@@ -25,7 +25,6 @@ gulp.task('sass:watch', function () {
 gulp.task('compress', function() {
   return gulp.src('js/*.js')
     .pipe(uglify())
-    .pipe(concat('all.js'))
     .pipe(gulp.dest('js'));
 });
 

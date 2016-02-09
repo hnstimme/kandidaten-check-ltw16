@@ -243,6 +243,284 @@
         "typ": "politisch"
     }
   ],
-  "Heilbronn": [],
-  "Hohenlohe": []
+  "Heilbronn": [
+    {
+      "id": 0,
+      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten  schmeckt Ihnen am meisten? ",
+      "antworten":
+        {
+          "Throm": "Gute Pasta",
+          "Hinderer": "Käsepätzle",
+          "Bay": "Kartoffelschnitz und Spätzle",
+          "Weinmann": "Linsen mit Spätzle und Saiten"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 1,
+      "frage": "Die Kandidaten haben uns ihren Lieblingsort in ihrem Wahlkreis verraten? Wo gefällt es Ihnen am besten?",
+      "antworten":
+        {
+          "Throm": "Heilbronner Wald rund um den Gaffenberg",
+          "Hinderer": "Die renaturierte Waldheide – vom Militärstandort zum Naherholungsgebiet",
+          "Bay": "Gaffenberg",
+          "Weinmann": "Der WeinPanoramaWeg unterhalb des Wartbergs"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 2,
+      "frage": "Welcher Lieblingssong der Kandidaten ist der Beste?",
+      "antworten":
+        {
+          "Throm": "Scorpions, Bryan Adams",
+          "Hinderer": "Der Mond ist aufgegangen",
+          "Bay": "Over The Rainbow & What A Wonderful World",
+          "Weinmann": "Fleetwood Mac – Don't stop thinking about tomorrow"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 3,
+      "frage": "Welches dieser Bücher gefällt Ihnen am meisten?",
+      "antworten":
+        {
+          "Throm": "„Die Firma“ von John Grisham",
+          "Hinderer": "die Bibel, als Fundgrube wegweisender und bereichernder Weisheit ",
+          "Bay": "„Amerika“ von T. C. Boyle",
+          "Weinmann": "Martin Suter: Montecristo"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 4,
+      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin  würden Sie am liebsten mitkommen?",
+      "antworten":
+        {
+          "Throm": "In die Zukunft",
+          "Hinderer": "Auf den 14. März 2016, um auf eine erfolgreiche Landtagswahl zurückzublicken",
+          "Bay": "In die Flower Power-Zeit der 60er Jahre",
+          "Weinmann": "2200"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 5,
+      "frage": "Die Kandidaten haben uns ihre wichtigsten Themen verraten. Welche davon haben auch für Sie höchste Priorität?",
+      "antworten":
+        {
+          "Throm": "Förderung von jungen Familien, gute Bildung, sicheres Leben",
+          "Hinderer": "Soziale Gerechtigkeit, gute Bildungschancen, Gesundheitspolitik",
+          "Bay": "Klimaschutz und Wirtschaft zusammen bringen, Sozialer Zusammenhalt in der Gesellschaft, Bildung",
+          "Weinmann": "Bildung, Marktwirtschaft und Bürgerrechte"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 6,
+      "frage": "Welche drei Themen bewegen die Menschen im Wahlkreis am meisten?",
+      "antworten":
+        {
+          "Throm": "Die aktuelle Flüchtlingsthematik, die starke Zunahme an Wohnungseinbrüchen und Diebstählen und das unstrukturierte Bildungssystem",
+          "Hinderer": "die Frage der Integration der Flüchtlinge, gute und sichere Arbeitsplätze, dass Familien - Junge und Alte - gut und zukunftssicher miteinander zusammenleben können",
+          "Bay": "Gesundheitsversorgung, Schule und Bildung, Wohnraumversorgung, Flüchtlinge",
+          "Weinmann": "Flüchtlingspolitik inkl. Wohnungsbau, Wirtschaftspolitik und Rechtstaatlichkeit"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 7,
+      "frage": "Die Kandidaten haben die Heilbronner in drei Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
+      "antworten":
+        {
+          "Throm": "Fleißig, ideenreich, bodenständig",
+          "Hinderer": "fleißig, freundlich, solidarisch.",
+          "Bay": "gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
+          "Weinmann": "leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 8,
+      "frage": "Welche Idee halten Sie für am Besten, um den Wahlkreis für junge Menschen attraktiv zu machen?",
+      "antworten":
+        {
+          "Throm": "Heilbronn ist für Berufseinsteiger bereits hochattraktiv. Die Region bietet interessante Arbeitsplätze, die allerdings weiter ausgebaut werden müssen – ebenso wie die berufliche Bildung und Hochschulen",
+          "Hinderer": "Vielfältige Beteiligungsmöglichkeiten schaffen, gute Ausbildungsangebote sichern und jugendgemäße Freizeitangebote weiterentwickeln (z.B. Hip Island)",
+          "Bay": "Junge Menschen sollten unser kulturelles Leben mit ihren eigenen Ideen mitgestalten können – dazu müssen wir ihnen Raum zur Entfaltung geben. Mehr und unterschiedlichere Orte zum Feiern.",
+          "Weinmann": "Weitere Verbesserung der Ausgeh- und Einkaufsmöglichkeiten, Willkommenskultur für Studierende inkl. ausreichend bezahlbarem Wohnraum, bessere und technisch zeitgemäße Ausstattung unserer Schulen"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 9,
+      "frage": "Heilbronn in fünf Jahren:  Was sollte sich bis dahin geändert haben?",
+      "antworten":
+        {
+          "Throm": "Die Attraktivität der Heilbronner Innenstadt sollte weiter zunehmen, sowohl im Einzelhandel als auch in der Gastronomie",
+          "Hinderer": "In fünf Jahren wird ein erheblicher Teil der Flüchtlinge gut Deutsch sprechen, eine Berufsausbildung machen oder in Arbeit zur Wertschöpfung in unserer Region beitragen und unsere Gesellschaft bereichern.",
+          "Bay": "Wegen erfolgreicher Buga und allem, was damit zusammen hängt gilt HN als attraktive Stadt, es gibt genug bezahlbare Wohnungen, im Straßenverkehr herrscht Rücksichtsmaßnahme.",
+          "Weinmann": "Durch die BUGA hat die Region weiter an Attraktivität gewonnen, Studierende aus allen Ländern bereichern das Stadtbild, die Integration ist gelungen, wir gelten noch immer als eine dynamische und wirtschaftlich starke Region, Heilbronn ist die sicherste Großstadt in Land"
+        },
+        "typ": "politisch"
+    }
+  ],
+  "Hohenlohe": [
+    {
+      "id": 0,
+      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten  schmeckt Ihnen am meisten? ",
+      "antworten":
+        {
+          "Eyb": "Bartkartoffeln mit Spiegelei",
+          "Saknus": "Spaghetti mit Soße",
+          "Kern": "Maultaschen",
+          "Brauer": "Rinderrouladen mit Rotkraut"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 1,
+      "frage": "Auch Politiker singen gerne unter der Dusche. Welches Lied ist das Beste? ",
+      "antworten":
+        {
+          "Eyb": "Unter der Dusche übe ich meine Reden",
+          "Saknus": "Hello von Adele",
+          "Kern": "Happy von Pharell Williams",
+          "Brauer": "Maschin von Bilderbuch"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 2,
+      "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten ?",
+      "antworten":
+        {
+          "Eyb": "Zuverlässig und ausgeglichen",
+          "Saknus": "Neugierig, rastlos, zuverlässig",
+          "Kern": "Lustig, engagiert, originell",
+          "Brauer": "Direkt, ehrlich, humorvoll"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 3,
+      "frage": "Welches dieser Bücher gefällt Ihnen am meisten?",
+      "antworten":
+        {
+          "Eyb": "Albert Camus – der erste Mensch",
+          "Saknus": "Joachim Bauer –Warum ich fühle, was du fühlst, das Geheimnis der Spiegelneuronen",
+          "Kern": "Carlos Ruiz Zafón – er Schatten des Windes",
+          "Brauer": "Ayn Rand – der Streik"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 4,
+      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten  gerne einmal lesen?",
+      "antworten":
+        {
+          "Eyb": "„Tatsächlich 100 Jahre alt geworden und pumperlgesund“",
+          "Saknus": "„Hohenlohe schickt einen SPD-Abgeordneten nach Stuttgart“",
+          "Kern": "Grüne schaffen S-Bahn-Finanzierung! (bis nach Waldenburg)",
+          "Brauer": "„Brauer deutlich in Landtag“"
+        },
+        "typ": "privat"
+    },
+    {
+      "id": 5,
+      "frage": "Die Kandidaten haben uns ihre wichtigsten Themen verraten. Welche davon haben auch für Sie höchste Priorität?",
+      "antworten":
+        {
+          "Eyb": "Ressourcen und Infrastruktur für den ländlichen Raum und Berufspolitik",
+          "Saknus": "Bildung, Jugend und Familie",
+          "Kern": "Mobilität, Barrierefreiheit, ökologische Landwirtschaft",
+          "Brauer": "Bildung, Wirtschaft, Bürgerrechte"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 6,
+      "frage": "Was fehlt im Wahlkreis am meisten?",
+      "antworten":
+        {
+          "Eyb": "Würde mir wünschen, dass mehr Menschen Hohenlohe, nicht nur wirtschaftlich ein Begriff ist",
+          "Saknus": "Der Nahverkehr sollte besser ausgebaut werden, gerade für die Jugend",
+          "Kern": "Die Barrierefreiheit steht noch am Anfang",
+          "Brauer": "Bezahlbarer Wohnraum"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 7,
+      "frage": "Die Kandidaten haben die Hohenloher in fünf Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
+      "antworten":
+        {
+          "Eyb": "Zurückhaltend, fleißig, zuverlässig, knits, schätzen das Ehrenamt",
+          "Saknus": "Eigenwillig, zurückhaltend, zuverlässig, treu und hilfsbereit",
+          "Kern": "Fleißig, bodenständig, genügsam, loyal, verbindlich",
+          "Brauer": "Schaffig, ehrlich, herzlich, wenig diplomatisch und können genießen"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 8,
+      "frage": "Die Flüchtlinge sind ein zentrales Thema, auch auf Landesebene. Doch wie sollte man mit den Neuankömmlingen umgehen?",
+      "antworten":
+        {
+          "Eyb": "Solange sie bei uns sind, müssen wir sie so gut behandeln, wie es die Umstände zulassen",
+          "Saknus": "Menschlich, wertschätzend, unterstützend und freundlich",
+          "Kern": "Experten sagen seit Jahren, dass unsere Insel der Glückseligkeit nicht so bleiben wird, deshalb sollten wir die Flüchtlingsströme als Chance sehen",
+          "Brauer": "Man muss ihnen vorab mitteilen, was wir von ihnen erwarten und was unsere Werte sind"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 9,
+      "frage": "Wie können die Politiker den Wahlkreis noch familienfreundlicher machen?",
+      "antworten":
+        {
+          "Eyb": "Der Staat sollte nicht zu viel vorgeben, alle Menschen sollten ihre Pläne verwirklichen können",
+          "Saknus": "Erziehungsurlaub für Väter stärken, Kinderbetreuung und Beratungsangebote ausbauen",
+          "Kern": "Gute Kleinkindbetreuung, gute Ganztagsschulen, flexible Arbeitsmöglichkeiten",
+          "Brauer": "Kinderbetreuung, die auf Wahlfreiheit setzt"
+        },
+        "typ": "politisch"
+    },
+    {
+      "id": 10,
+      "frage": "Gefordert war das kurioseste Selfie: Wer hat die Aufgabe am besten gelöst?",
+      "antworten":
+        {
+          "Eyb": "Selfie-vonEyb.jpg",
+          "Saknus": "SelfieSaknus.jpg",
+          "Kern": "SelfieCatherine.jpg",
+          "Brauer": "SelfieBrauer.jpg"
+        },
+        "typ": "challenge"
+    },
+    {
+      "id": 11,
+      "frage": "Die Kandidaten sollten ihr wichtigstes Wahlkampfthema auf einem Foto darstellen. Wem ist das am besten gelungen?",
+      "antworten":
+        {
+          "Eyb": "Thema-vonEyb.jpg",
+          "Saknus": "ThemaSaknus.jpg",
+          "Kern": "ThemaKern.jpg",
+          "Brauer": "ThemaBrauer.jpg"
+        },
+        "typ": "challenge"
+    },
+    {
+      "id": 12,
+      "frage": "Wir haben die Kandidaten aufgefordert, sich selbst zu Zeichnen: Welches Bild gefällt Ihnen am besten?",
+      "antworten":
+        {
+          "Eyb": "Selbstprotrait-vonEyb.jpg",
+          "Saknus": "SelbstportraitSaknus.jpg",
+          "Kern": "SelbstportraitKern.jpg",
+          "Brauer": "SelbstprotraitBrauer.jpg"
+        },
+        "typ": "challenge"
+    }
+  ]
 }
