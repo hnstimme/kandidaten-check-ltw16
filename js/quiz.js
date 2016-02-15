@@ -56,7 +56,7 @@ $(document).ready(function (){
 
   // Update progressbar & progresstext
   function updateProgress ( current, total ){
-    $(".progress .currentProgress").css('width', (current / total) * 100 +'%');
+    $(".progress .currentProgress").css('width', ((current - 1) / total) * 100 +'%');
     $(".progress .progresstext").html('Frage '+ current + ' von ' + (total))
   }
 
@@ -276,7 +276,7 @@ $(document).ready(function (){
     $(".candidate:last-child .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
 
     $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
-    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht!%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
+    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21&url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
 
     $(".progress").hide();
 

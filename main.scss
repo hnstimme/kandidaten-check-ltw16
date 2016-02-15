@@ -221,8 +221,8 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         max-width: 50%;
 
         .percentage{
-          width: $candidate-size;
-          height: $candidate-size;
+          width: $candidate-size + 20px;
+          height: $candidate-size + 20px;
 
           margin: auto auto 1rem auto;
 
@@ -272,7 +272,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 
 .progress {
   display: none;
-  
+
   .progresstext{
     text-align: center;
   }
