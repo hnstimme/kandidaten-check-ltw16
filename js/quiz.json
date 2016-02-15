@@ -127,10 +127,10 @@
       "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
       "antworten":
         {
-          "Gall": "Vom Winde verweht",
-          "Lasotta": "Herr der Ringe",
-          "Waldbüßer": "Ziemlich beste Freunde",
-          "Zeplin": "Cowboys & Alien"
+          "Gall": "Bratengerichte",
+          "Lasotta": "Fisch und Gemüse.",
+          "Waldbüßer": "Indische Küche",
+          "Zeplin": "Erbspüree mit Kassler und Saubohnen"
         },
         "typ": "privat"
     },

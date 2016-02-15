@@ -99,11 +99,6 @@ $(document).ready(function (){
       // Randomize order of answers
       $(".tiles").randomize(".tile");
     });
-
-    // Show "next" button or placeholder
-    if($("div.nextQuestion").length == 0 && $(".picked").length == 0){
-      $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
-    }
   }
 
   function displayAnswers(questions){
@@ -282,7 +277,38 @@ $(document).ready(function (){
     $(".tiles").append('<p>'+textString + '</p>');
   }
 
-  $("section").on('click', 'button.nextQuestion' ,function () {
+  $("section").on('click', 'button.previousQuestion' ,function () {
+    // Initialize previous question
+    if($(".question").length != 0){
+      currentQuestionOrderID-=1;
+      processQuestion();
+    }
+  })
+
+  // Save wahlkreis id, the user selected
+  $("body").on('click', '.wahlkreis .tile' ,function () {
+    selectedWahlkreis = $(this).attr("id");
+
+    if(selectedWahlkreis == 'Eppingen' && displayedText == false){
+      var text = 'Die Kandidaten des Wahlkreises Eppingen haben leider nicht an unseren Challenges teilnehmen wollen, bitte entschuldigen sie das!';
+      changeToText(text);
+      displayedText = true;
+      $("div.nextQuestion").replaceWith('<button class="nextQuestion"><img src="img/next.svg"></button>');
+    }
+    else{
+      changeToQuestion('wahlkreis');
+    }
+  })
+
+  // User selected an answer: load next question & save picked answer
+  $("body").on( 'click', '.question .tile' ,function () {
+    // Save picked answer
+    picked=$(this).attr("data-index");
+    // New CSS style for picked answer
+    setPickedClass(this);
+
+    console.log(picked);
+
     // If there was a previous question
     if($(".question").length != 0){
       // Save the answer selection from user
@@ -292,45 +318,30 @@ $(document).ready(function (){
       // Initialize new question
       currentQuestionOrderID+=1;
       processQuestion();
-    }
-    else{
-      if(selectedWahlkreis == 'Eppingen' && displayedText == false){
-        var text = 'Die Kandidaten des Wahlkreises Eppingen haben leider nicht an unseren Challenges teilnehmen wollen, bitte entschuldigen sie das!';
-        changeToText(text);
-        displayedText = true;
-      }
-      else{
-        changeToQuestion('wahlkreis');
-      }
+      picked = null;
     }
   })
-  $("section").on('click', 'button.previousQuestion' ,function () {
-    // Initialize previous question
-    if($(".question").length != 0){
-      currentQuestionOrderID-=1;
-      processQuestion();
-    }
-    if(currentQuestionOrderID in selections){
-      $("div.nextQuestion").replaceWith('<button class="nextQuestion"><img src="img/next.svg"></button>');
-    }
+
+  $("section").on( 'click', 'button.nextQuestion' ,function () {
+    changeToQuestion('wahlkreis');
   })
 
   // User selected an answer: Show "next" button & save picked answer
-  $("section").on( 'click', '.tile' ,function () {
-    // Save picked answer
-    picked=$(this).attr("data-index");
+  $("section").on( 'mouseenter mouseleave', '.tile' ,function () {
     // New CSS style for picked answer
     setPickedClass(this);
-
-    // Show button
-    if($("button.nextQuestion").length == 0){
-      $(".tile-grid div.nextQuestion").replaceWith('<button class="nextQuestion"><img src="img/next.svg"></button>')
-    }
   })
 
-  // Save wahlkreis id, the user selected
-  $("body").on('click', '.wahlkreis .tile' ,function () {
-    selectedWahlkreis = $(this).attr("id");
+  // Mouse leaves tiles -> remove styles if nothing is picked
+  $("section").on( 'mouseleave', '.tiles' ,function () {
+    if(typeof picked == "undefined" || picked == null){
+      $(".tile").removeClass("picked");
+      $(".tile").removeClass("blind");
+    }
+    else if(typeof picked != "undefined"){
+      var pickedHtmlElement = $('.tile[data-index='+picked+']');
+      setPickedClass(pickedHtmlElement);
+    }
   })
 
   function init (){

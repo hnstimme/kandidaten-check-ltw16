@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
 var header = require('gulp-header');
 var rename = require('gulp-rename');
 
@@ -22,12 +21,13 @@ gulp.task('sass:watch', function () {
   gulp.watch('*.scss', ['sass']);
 });
 
-gulp.task('compress', function() {
-  return gulp.src('js/*.js')
+gulp.task('compress-quiz', function() {
+  return gulp.src('js/quiz.js')
     .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('js'));
 });
 
-gulp.task('compress:watch', function () {
-  gulp.watch('js/*.js', ['compress']);
+gulp.task('compress-quiz:watch', function () {
+  gulp.watch('js/quiz.js', ['compress']);
 });

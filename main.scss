@@ -60,7 +60,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     }
 
     h1{
-      text-transform: uppercase;
       font-weight: 300;
       font-size: 3rem;
       margin: 0;
@@ -423,14 +422,10 @@ $tile-normal-width: 25%;
         }
 
         &.picked{
-          .logo{
-            border-color: $secondary;
-
-            > span{
-              background: $secondary;
-              border-color: transparent;
-              color: white;
-            }
+          .logo > span{
+            background: $secondary;
+            border-color: transparent;
+            color: white;
           }
         }
 
@@ -482,7 +477,6 @@ $tile-normal-width: 25%;
     }
 
     .title {
-      text-transform: uppercase;
       text-align: center;
       font-weight: 600;
       max-width: 400px;
