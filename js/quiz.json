@@ -393,10 +393,10 @@
       "frage": "Wir haben die Kandidaten aufgefordert, sich selbst zu Zeichnen: Welches Bild gefällt Ihnen am besten?",
       "antworten":
         {
-          "Throm": "SelbstprotraitThrom.jpg",
+          "Throm": "SelbstportraitThrom.jpg",
           "Hinderer": "SelbstportraitHinderer.jpg",
           "Bay": "SelbstportraitBay.jpg",
-          "Weinmann": "SelbstprotraitWeinmann.jpg"
+          "Weinmann": "SelbstportraitWeinmann.jpg"
         },
         "typ": "challenge"
     }
@@ -551,10 +551,10 @@
       "frage": "Wir haben die Kandidaten aufgefordert, sich selbst zu Zeichnen: Welches Bild gefällt Ihnen am besten?",
       "antworten":
         {
-          "Eyb": "Selbstprotrait-vonEyb.jpg",
+          "Eyb": "Selbstportrait-vonEyb.jpg",
           "Saknus": "SelbstportraitSaknus.jpg",
           "Kern": "SelbstportraitKern.jpg",
-          "Brauer": "SelbstprotraitBrauer.jpg"
+          "Brauer": "SelbstportraitBrauer.jpg"
         },
         "typ": "challenge"
     }

@@ -128,7 +128,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     h3{
       font-weight: 600;
       text-align: center;
-      text-transform: uppercase;
     }
     h2{
       font-size: 1.35rem;
@@ -267,6 +266,28 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
           display: block;
         }
       }
+    }
+  }
+}
+
+.progress {
+  display: none;
+  
+  .progresstext{
+    text-align: center;
+  }
+
+  .progressbar{
+    background-color: #aaa;
+    width: 80%;
+    margin: 1rem auto;
+    height: 3px;
+
+    .currentProgress{
+      width: 0%;
+      height: 3px;
+      transition: 0.2s width;
+      background-color: $primary;
     }
   }
 }
@@ -477,8 +498,9 @@ $tile-normal-width: 25%;
     }
 
     .title {
-      text-align: center;
-      font-weight: 600;
+      hyphens: auto;
+      text-align: justify;
+      font-weight: 300;
       max-width: 400px;
       box-sizing: border-box;
       margin: auto auto 0.3rem auto;

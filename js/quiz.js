@@ -5,7 +5,7 @@ questionOrder = [],
 selections = [], // [selectionId, type(privat/politisch)]
 selectedWahlkreis,
 picked,
-quiz,
+quiz_data,
 numberOfQuestions,
 numberOfChallenges = 0,
 candidates,
@@ -32,6 +32,7 @@ $(document).ready(function (){
     console.log(questionOrder);
   }
 
+  // Creates percentage circles at results (with jQuery library)
   function createCircles (politicalPercent, privatePercent){
     var politicalCircle = Circles.create({
       id:                  'politicalCandidate',
@@ -53,6 +54,12 @@ $(document).ready(function (){
     });
   }
 
+  // Update progressbar & progresstext
+  function updateProgress ( current, total ){
+    $(".progress .currentProgress").css('width', (current / total) * 100 +'%');
+    $(".progress .progresstext").html('Frage '+ current + ' von ' + (total))
+  }
+
   // Prepare for new question or wahlkreis selection
   function processQuestion(){
     $(".question > h3").empty();
@@ -60,7 +67,7 @@ $(document).ready(function (){
     $("button.nextQuestion").remove();
 
       // Search for correct wahlkreis
-      $.each(quiz, function(wahlkreis, questions){
+      $.each(quiz_data, function(wahlkreis, questions){
 
         if( wahlkreis === selectedWahlkreis ){
           // Generate shuffled question order
@@ -84,6 +91,7 @@ $(document).ready(function (){
             // If there are stilly any questions to answer
             if(currentQuestionOrderID < numberOfQuestions+numberOfChallenges){
               displayAnswers(questions);
+              updateProgress(currentQuestionOrderID+1, (numberOfChallenges+numberOfQuestions));
           }
           // If there are no more questions
           else {
@@ -219,8 +227,9 @@ $(document).ready(function (){
     $("."+cssClassToRemove).addClass("question").removeClass(cssClassToRemove);
     $('.tiles').empty();
     $(".tile-grid .previousQuestion").replaceWith('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
+    $(".progress").show();
 
-    currentQuestionOrderID = 0;
+    currentQuestionOrderID = 0
     processQuestion();
   }
 
@@ -237,6 +246,7 @@ $(document).ready(function (){
     $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
 
     $(".wahlkreis h3").html('Wähle deinen Wahlkreis');
+    $(".progress").hide();
 
     // Reset variables
     currentQuestionID = 0;
@@ -267,6 +277,8 @@ $(document).ready(function (){
 
     $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
     $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht!%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
+
+    $(".progress").hide();
 
     createCircles(politicalResult[1], privateResult[1]);
   }
@@ -307,8 +319,6 @@ $(document).ready(function (){
     // New CSS style for picked answer
     setPickedClass(this);
 
-    console.log(picked);
-
     // If there was a previous question
     if($(".question").length != 0){
       // Save the answer selection from user
@@ -347,7 +357,7 @@ $(document).ready(function (){
   function init (){
     // Load quiz JSON
     $.getJSON('js/quiz.json', function (json){
-      quiz=json;
+      quiz_data=json;
     });
 
     // Load candidates JSON
