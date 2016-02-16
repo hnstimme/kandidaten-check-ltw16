@@ -180,16 +180,31 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     }
   }
 
-  $candidate-size: 170px;
+  $candidate-size: 130px;
   section.personal-result{
 
     .candidates{
       display: -ms-flexbox;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
+
+      &:first-of-type{
+        margin-bottom: 2rem;
+
+        .percentage{
+          width: $candidate-size + 70px !important;
+          height: $candidate-size + 70px !important;
+          opacity: 1;
+        }
+        .picture{
+          width: $candidate-size + 50px !important;
+          height: $candidate-size + 50px !important;
+        }
+      }
 
       .candidate{
         max-width: 50%;
+        opacity: 0.8;
 
         .percentage{
           width: $candidate-size + 20px;

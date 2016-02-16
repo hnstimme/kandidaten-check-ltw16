@@ -38,7 +38,7 @@ $(document).ready(function (){
   function createCircles (politicalPercent, privatePercent){
     var politicalCircle = Circles.create({
       id:                  'politicalCandidate',
-      radius:              95,
+      radius:              100,
       value:               politicalPercent,
       width:               3,
       text:                '',
@@ -47,7 +47,7 @@ $(document).ready(function (){
     });
     var privateCircle = Circles.create({
       id:                  'privateCandidate',
-      radius:              95,
+      radius:              100,
       value:               privatePercent,
       width:               3,
       text:                '',
@@ -60,6 +60,12 @@ $(document).ready(function (){
   function updateProgress ( current, total ){
     $(".progress .currentProgress").css('width', ((current - 1) / total) * 100 +'%');
     $(".progress .progresstext").html('Frage '+ current + ' von ' + (total))
+  }
+
+  function setCorrectImgHeight ( element ){
+    var widthHeader = $( element ).outerWidth();
+    var heightHeader = Math.round(widthHeader / aspectRatio) - 1;
+    $( element ).css( 'height', heightHeader);
   }
 
   // Prepare for new question or wahlkreis selection
@@ -160,7 +166,9 @@ $(document).ready(function (){
     var personsPoints = 0,
     highestPoints = 0,
     personWithHighestPoints = 0,
-    numberOfQuestionsOfType = 0;
+    numberOfQuestionsOfType = 0,
+    percentageOfAccordance,
+    result = [];
 
     // Iterate through persons
     for(var h=0; h < 4; h++){
@@ -193,17 +201,28 @@ $(document).ready(function (){
           }
         }
       }
-      // Perhaps replace new highest points
-      if(personsPoints > highestPoints){
-        highestPoints = personsPoints;
-        personWithHighestPoints = h;
-      }
+
+      // Calculate percentage - based on number of questions
+      percentageOfAccordance = Math.round((personsPoints / (numberOfQuestionsOfType / (h+1))) * 100)
+      // [ person id , percentage ]
+      result.push([h, percentageOfAccordance ])
+
       personsPoints = 0;
     }
-    numberOfQuestionsOfType /= 4;
 
-    var percentageOfAccordance = Math.round((highestPoints / numberOfQuestionsOfType ) * 100)
-    return [personWithHighestPoints, percentageOfAccordance, numberOfQuestionsOfType];
+    result.sort(function (a, b) {
+      if( a[1] > b[1] ){
+        return -1;
+      }
+      else if ( a[1] === b[1] ){
+        return 0;
+      }
+      else {
+        return 1;
+      }
+    });
+
+    return result;
   }
 
   // Returns the candidate JSON object
@@ -257,32 +276,47 @@ $(document).ready(function (){
 
   // Show personal result of user (change from questions to result div)
   function changeToResult (){
-    // Get results [return datatype is Array]
-    var privateResult = getResult("privat", "challenge");
-    var politicalResult = getResult("politisch");
-
-    var privateCandidate = getCandidate(selectedWahlkreis, privateResult[0])
-    var politicalCandidate = getCandidate(selectedWahlkreis, politicalResult[0])
-
+    // Prepare HTML structure for candidates
     $(".question").addClass("personal-result").removeClass("question");
     $(".personal-result > h3").html("Dein Ergebnis");
     $(".tile-grid").remove();
-    $(".personal-result > h3").after('<div class="candidates"></div>');
-
-    var candidatesDisplay= '<div class="candidate"></div>';
-    $(".candidates").html(candidatesDisplay + candidatesDisplay);
-
-    $(".candidate").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p> <h2>'+politicalResult[1]+'%</h2><div class="topic">Politisch</div>');
-    $(".candidate:last-child").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p> <h2>'+privateResult[1]+'%</h2> <div class="topic">Privat</div>');
-    $(".candidate:first-child .picture").css('background-image', 'url("img/kandidaten/'+ politicalCandidate.bild_url +'")')
-    $(".candidate:last-child .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
-
-    $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
-    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21&url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
-
     $(".progress").hide();
 
-    createCircles(politicalResult[1], privateResult[1]);
+    // Get results [return datatype is a two-dimensional array]
+    var privateResult = getResult("privat", "challenge");
+    var politicalResult = getResult("politisch");
+
+    // Iterate through candidates
+    for(var w = 0; w < 4; w++){
+      var privateCandidate = getCandidate(selectedWahlkreis, privateResult[w][0])
+      var politicalCandidate = getCandidate(selectedWahlkreis, politicalResult[w][0])
+
+      // Add next candidates container
+      if($(".candidates").length == 0){
+          $(".personal-result > h3").after('<div class="candidates"></div>');
+      }
+      else {
+        $(".candidates:last-of-type").after('<div class="candidates"></div>');
+      }
+
+      // Add first candidate
+      $(".candidates:last-of-type").append('<div class="candidate"></div>');
+      $(".candidates:last-of-type .candidate:first-of-type").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p> <h2>'+politicalResult[w][1]+'%</h2><div class="topic">Politisch</div>');
+
+      // Add second candidate
+      $(".candidates:last-of-type").append('<div class="candidate"></div>');
+      $(".candidates:last-of-type .candidate:last-of-type").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p> <h2>'+privateResult[w][1]+'%</h2> <div class="topic">Privat</div>');
+
+      // Add candidate image
+      $(".candidates:last-of-type .candidate:first-of-type .picture").css('background-image', 'url("img/kandidaten/'+ politicalCandidate.bild_url +'")')
+      $(".candidates:last-of-type .candidate:last-of-type .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
+    }
+
+    createCircles(politicalResult[0][1], privateResult[0][1]);
+
+    // Show sharing container
+    $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
+    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21&url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
   }
 
   // Change from wahlkreis to display Text
@@ -383,19 +417,16 @@ $(document).ready(function (){
   $( window ).resize(function() {
     //Set header background-image height
     setCorrectImgHeight ( "header" )
-    if($(window).width() < 350){
+
+    // !!! Check this before release
+    // Hide issue, when starting the quiz
+    if($(window).width() < 350 ){
       $("section.issues").hide();
     }
     else if ($(window).width() > 350 && $("section.issues").is(":hidden")) {
       $("section.issues").show();
     }
   });
-
-  function setCorrectImgHeight ( element ){
-    var widthHeader = $( element ).outerWidth();
-    var heightHeader = Math.round(widthHeader / aspectRatio) - 1;
-    $( element ).css( 'height', heightHeader);
-  }
 
   /* Not own functions */
   // Randomize order of potential answers
