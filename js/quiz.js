@@ -380,13 +380,13 @@ $(document).ready(function (){
 
   // Mouse leaves tiles -> remove styles if nothing is picked
   $("section").on( 'mouseleave', '.tiles' ,function () {
-    if(typeof picked == "undefined" || picked == null){
+    if(currentQuestionOrderID in selections){
+      var pickedHtmlElement = $('.tile[data-index='+selections[currentQuestionOrderID][0]+']');
+      setPickedClass(pickedHtmlElement);
+    }
+    else if(typeof picked == "undefined" || picked == null){
       $(".tile").removeClass("picked");
       $(".tile").removeClass("blind");
-    }
-    else if(typeof picked != "undefined"){
-      var pickedHtmlElement = $('.tile[data-index='+picked+']');
-      setPickedClass(pickedHtmlElement);
     }
   })
 

@@ -191,10 +191,12 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       &:first-of-type{
         margin-bottom: 2rem;
 
+        .candidate{
+          opacity: 1;
+        }
         .percentage{
           width: $candidate-size + 70px !important;
           height: $candidate-size + 70px !important;
-          opacity: 1;
         }
         .picture{
           width: $candidate-size + 50px !important;
