@@ -9,7 +9,9 @@ quiz_data,
 numberOfQuestions,
 numberOfChallenges = 0,
 candidates,
-displayedText;
+displayedText,
+aspectRatio,
+headerImg;
 
 $(document).ready(function (){
   // Generate order of questions, for randomize
@@ -270,8 +272,8 @@ $(document).ready(function (){
     var candidatesDisplay= '<div class="candidate"></div>';
     $(".candidates").html(candidatesDisplay + candidatesDisplay);
 
-    $(".candidate").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', 34 Jahre, verheiratet, ein Kind, Neckarsulm</p> <h2>'+politicalResult[1]+'%</h2><div class="topic">Politisch</div>');
-    $(".candidate:last-child").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', 45 Jahre, verheiratet, fünf Kinder, Neckarsulm</p> <h2>'+privateResult[1]+'%</h2> <div class="topic">Privat</div>');
+    $(".candidate").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p> <h2>'+politicalResult[1]+'%</h2><div class="topic">Politisch</div>');
+    $(".candidate:last-child").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p> <h2>'+privateResult[1]+'%</h2> <div class="topic">Privat</div>');
     $(".candidate:first-child .picture").css('background-image', 'url("img/kandidaten/'+ politicalCandidate.bild_url +'")')
     $(".candidate:last-child .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
 
@@ -365,10 +367,35 @@ $(document).ready(function (){
       candidates=json;
     });
 
+    //Set header background-image height
+    headerImg = new Image();
+    headerImg.onload = function() {
+      aspectRatio = this.width / this.height;
+      setCorrectImgHeight ( "header" )
+    }
+    headerImg.src = 'img/header_bg.jpg';
+
     displayedText = false;
   }
 
   init();
+
+  $( window ).resize(function() {
+    //Set header background-image height
+    setCorrectImgHeight ( "header" )
+    if($(window).width() < 350){
+      $("section.issues").hide();
+    }
+    else if ($(window).width() > 350 && $("section.issues").is(":hidden")) {
+      $("section.issues").show();
+    }
+  });
+
+  function setCorrectImgHeight ( element ){
+    var widthHeader = $( element ).outerWidth();
+    var heightHeader = Math.round(widthHeader / aspectRatio) - 1;
+    $( element ).css( 'height', heightHeader);
+  }
 
   /* Not own functions */
   // Randomize order of potential answers

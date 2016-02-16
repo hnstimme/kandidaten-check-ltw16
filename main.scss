@@ -9,7 +9,6 @@ body{
 
 // Mixins
 @mixin flex-size($width) {
-  -webkit-flex-basis: $width;
   -ms-flex-preferred-size: $width;
   flex-basis: $width;
   max-width: $width;
@@ -20,7 +19,7 @@ $grey: #888;
 $primary: #D05C5C;
 $secondary: #A84A46;
 $complementary: #83bbd6;
-$bg-url: '../img/bg.jpg';
+$bg-url: '../img/header_bg.jpg';
 $bg-mobile-url: '../img/bg-mobil.jpg';
 
 
@@ -30,33 +29,19 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
   max-width: 990px;
 
   header{
-    background-color: $primary;
+    background-image: url($bg-url);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100%;
     font-weight: 300;
-    padding: 0 2rem 3.5rem 2rem;
+    padding: 2em 2em 0 35%;
     box-sizing: border-box;
     color: white;
+    text-align: right;
 
-    @media screen and (max-width: 900px) {
-      padding: 0 1.5rem 9vw 1.5rem;
-    }
-    @media screen and (max-width: 800px) {
-      padding: 3vw 2rem;
-    }
-    @media screen and (max-width: 715px) {
-      padding: 4vw 2rem;
-      background-size: cover;
-    }
-    @media screen and (max-width: 625px) {
-      padding: 8vw 1.5rem;
-    }
-    @media screen and (max-width: 460px) {
-      padding: 0;
-      background-image: url($bg-mobile-url);
-      background-position: center 100%;
+    @media screen and (max-width: 350px){
+      padding: 2em 1em 0 35%;
     }
 
     h1{
@@ -64,47 +49,31 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       font-size: 3rem;
       margin: 0;
 
-      @media screen and (min-width: 801px) and (max-width: 900px) {
-        font-size: 2rem;
-      }
       @media screen and (max-width: 800px) {
         font-size: 1.8rem;
         font-weight: 600;
-        margin: 4rem 0 0 0;
-      }
-      @media screen and (max-width: 625px) {
-        margin: 1.2rem 0 0 0;
       }
       @media screen and (max-width: 460px) {
-        font-size: 2.5rem;
-        font-weight: 300;
+        font-size: 1.5rem;
         margin-bottom: 0;
         box-sizing: border-box;
-        text-align: center !important;
       }
       @media screen and (max-width: 350px) {
-        font-size: 2rem;
+        font-size: 1.3rem;
       }
     }
 
     h2{
       font-size: 1.5rem;
-      max-width: 47%;
       padding-top: 3em;
       margin: 0;
       font-weight: 300;
 
-      @media screen and (max-width: 900px) {
-        font-size: 1rem;
-      }
       @media screen and (max-width: 625px) {
         margin: 0 0 0.6em 0;
+        padding-top: 0;
       }
       @media screen and (max-width: 460px) {
-        max-width: 100%;
-        padding-bottom: 85vw;
-        margin-bottom: 3rem;
-        text-align: center;
         text-transform: uppercase;
         font-weight: 300;
         font-size: 1.2rem;
@@ -113,8 +82,11 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         font-size: 1rem;
       }
     }
+
     p{
-      max-width: 60%;
+      @media screen and (max-width: 350px){
+        display: none;
+      }
     }
   }
   section{
@@ -212,7 +184,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
   section.personal-result{
 
     .candidates{
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       justify-content: center;
@@ -243,7 +214,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 
             border-radius: 50%;
             -moz-border-radius: 50%;
-            -webkit-border-radius: 50%;
           }
         }
 
@@ -341,216 +311,209 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 $tile-normal-width: 25%;
 
 .lw .tile-grid {
-    display: -webkit-flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+
+  width: 85%;
+  margin: 1rem auto;
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .tiles{
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: space-around;
+    @include flex-size( 80% );
 
-    width: 85%;
-    margin: 1rem auto;
+    margin: auto;
 
-    a{
-      text-decoration: none;
-      color: black;
-    }
+    .tile {
+      @include flex-size( $tile-normal-width);
+      -ms-flex: 1 1;
+      flex: 1 1;
+      padding: 4px;
+      box-sizing: border-box;
 
-    .tiles{
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      justify-content: space-around;
-      @include flex-size( 80% );
+      .logo{
+        $logo-size: 100px;
+        $logo-smaller-size: 85px;
 
-      .tile {
-        @include flex-size( $tile-normal-width);
-        -webkit-flex: 1 1;
-        -ms-flex: 1 1;
-        flex: 1 1;
-        padding: 4px;
-        box-sizing: border-box;
+        width: $logo-size;
+        height: $logo-size;
+        line-height: $logo-size;
 
-        .logo{
-          $logo-size: 100px;
-          $logo-smaller-size: 85px;
+        display: block;
+        border: 1px solid darken($grey, 50%);
+        padding: 3px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        font-size: 2.4rem;
+        margin: auto auto 1rem auto;
+        cursor: pointer;
 
-          width: $logo-size;
-          height: $logo-size;
-          line-height: $logo-size;
-
-          display: block;
-          border: 1px solid darken($grey, 50%);
-          padding: 3px;
-          text-align: center;
-          vertical-align: middle;
-          border-radius: 50%;
-          -moz-border-radius: 50%;
-          -webkit-border-radius: 50%;
-          font-size: 2.4rem;
-          margin: auto auto 1rem auto;
-          cursor: pointer;
-
-          &:hover{
-            border-color: $secondary;
-
-            > span{
-              background: $secondary;
-              border-color: transparent;
-              color: white;
-            }
-          }
-
-          @media screen and (max-width: 900px){
-            width: $logo-smaller-size;
-            height: $logo-smaller-size;
-            line-height: $logo-smaller-size;
-            font-size: 2rem;
-          }
-          @media screen and (max-width: 350px){
-            margin: 0 auto 0.5rem auto;
-          }
+        &:hover{
+          border-color: $secondary;
 
           > span{
-            width: $logo-size;
-            height: $logo-size;
-            border-radius: 50%;
-            display: inline-block;
-
-            @media screen and (max-width: 900px){
-              width: $logo-smaller-size;
-              height: $logo-smaller-size;
-              line-height: $logo-smaller-size;
-            }
-          }
-
-          &.icon > span{
-            background-repeat: no-repeat;
-            background-position: center;
-            cursor: pointer;
-          }
-
-          &.answer{
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border: 2px solid $primary;
-          }
-        }
-
-        &.picked{
-          .logo > span{
             background: $secondary;
             border-color: transparent;
             color: white;
           }
         }
 
-        &.blind{
-          opacity: 0.7;
-          transition: opacity 0.1s;
+        @media screen and (max-width: 900px){
+          width: $logo-smaller-size;
+          height: $logo-smaller-size;
+          line-height: $logo-smaller-size;
+          font-size: 2rem;
+        }
+        @media screen and (max-width: 350px){
+          margin: 0 auto 0.5rem auto;
+        }
 
-          &:hover{
-            opacity: 1;
+        > span{
+          width: $logo-size;
+          height: $logo-size;
+          border-radius: 50%;
+          display: inline-block;
+
+          @media screen and (max-width: 900px){
+            width: $logo-smaller-size;
+            height: $logo-smaller-size;
+            line-height: $logo-smaller-size;
           }
         }
 
-        .challenge{
-          width: 100%;
+        &.icon > span{
+          background-repeat: no-repeat;
+          background-position: center;
+          cursor: pointer;
         }
 
-        .glow{
-          animation-name: glowing;
-          animation-duration: 0.3s;
-          animation-iteration-count: 1;
-          animation-timing-function: ease-in-out;
+        &.answer{
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          border: 2px solid $primary;
+        }
+      }
+
+      &.picked{
+        .logo > span{
+          background: $secondary;
+          border-color: transparent;
+          color: white;
+        }
+      }
+
+      &.blind{
+        opacity: 0.7;
+        transition: opacity 0.1s;
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+      .challenge{
+        width: 100%;
+      }
+
+      .glow{
+        animation-name: glowing;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        background: $complementary;
+        color: white;
+      }
+      @keyframes glowing{
+        from {
+          background: white;
+          color: black;
+        }
+        to {
           background: $complementary;
           color: white;
         }
-        @keyframes glowing{
-          from {
-            background: white;
-            color: black;
-          }
-          to {
-            background: $complementary;
-            color: white;
-          }
-        }
-      }
-
-      .tile:nth-of-type(1n) .answer {
-        background-image: url("../img/antwort-a.jpg");
-      }
-      .tile:nth-of-type(2n) .answer {
-        background-image: url("../img/antwort-b.jpg");
-      }
-      .tile:nth-of-type(3n) .answer {
-        background-image: url("../img/antwort-c.jpg");
-      }
-      .tile:nth-of-type(4n) .answer {
-        background-image: url("../img/antwort-d.jpg");
       }
     }
 
-    .title {
-      hyphens: auto;
-      text-align: justify;
-      font-weight: 300;
-      max-width: 400px;
-      box-sizing: border-box;
-      margin: auto auto 0.3rem auto;
-      font-size: 1rem;
-      word-wrap: break-word;
-      width: 97%;
+    .tile:nth-of-type(1n) .answer {
+      background-image: url("../img/antwort-a.jpg");
+    }
+    .tile:nth-of-type(2n) .answer {
+      background-image: url("../img/antwort-b.jpg");
+    }
+    .tile:nth-of-type(3n) .answer {
+      background-image: url("../img/antwort-c.jpg");
+    }
+    .tile:nth-of-type(4n) .answer {
+      background-image: url("../img/antwort-d.jpg");
+    }
+  }
 
-      @media screen and (max-width: 350px){
-        margin: 0 auto 1.2rem auto;
-      }
-    }
+  .title {
+    hyphens: auto;
+    text-align: justify;
+    font-weight: 300;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: auto auto 0.3rem auto;
+    font-size: 1rem;
+    word-wrap: break-word;
+    width: 97%;
 
-    button.nextQuestion,
-    button.previousQuestion{
-      @include flex-size( 10% );
-      background: none;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      height: 125px;
-      padding: 0;
-      margin: 0;
+    @media screen and (max-width: 350px){
+      margin: 0 auto 1.2rem auto;
     }
-    div.nextQuestion,
-    div.previousQuestion{
-      @include flex-size( 10% );
-    }
+  }
+
+  button.nextQuestion,
+  button.previousQuestion{
+    @include flex-size( 10% );
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 125px;
+    padding: 0;
+    margin: 0;
+  }
+  div.nextQuestion,
+  div.previousQuestion{
+    @include flex-size( 10% );
+  }
 }
 
 // Flex Grid
-@media screen and (max-width: 900px) {
-    .lw .tile-grid .tile {
-        @include flex-size(33.33%);
-      }
-    }
 @media screen and (max-width: 625px) {
-    .lw .tile-grid .tile {
-        @include flex-size(50%);
+  .lw .tile-grid .tiles .tile {
+    @include flex-size(50%);
 
-        &:nth-child(odd):last-child{
-          @include flex-size(100%);
-        }
-      }
+    &:nth-child(odd):last-child{
+      @include flex-size(100%);
     }
-@media screen and (max-width: 350px) {
-    .lw .tile-grid{
-      width: 100%;
+  }
+}
+@media screen and (max-width: 460px) {
+  .lw .tile-grid{
+    width: 100%;
 
-      .tile {
-          font-size: 12px;
-        }
-      }
+    .tile {
+        font-size: 12px;
     }
+  }
+}

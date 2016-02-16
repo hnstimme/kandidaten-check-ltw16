@@ -4,25 +4,29 @@
       "id": 0,
       "kandidaten_name": "Friedlinde Gurr-Hirsch",
       "partei": "CDU",
-      "bild_url": ""
+      "bild_url": "",
+      "alter": 0
     },
     {
       "id": 1,
       "kandidaten_name": "Hans-Heribert Blättgen",
       "partei": "SPD",
-      "bild_url": ""
+      "bild_url": "",
+      "alter": 0
     },
     {
       "id": 2,
       "kandidaten_name": "Jürgen Winkler",
       "partei": "Grüne",
-      "bild_url": ""
+      "bild_url": "",
+      "alter": 0
     },
     {
       "id": 3,
       "kandidaten_name": "Georg Heitlinger",
       "partei": "FDP",
-      "bild_url": ""
+      "bild_url": "",
+      "alter": 0
     }
   ],
   "Neckarsulm": [
@@ -30,27 +34,89 @@
       "id": 0,
       "kandidaten_name": "Reinhold Gall",
       "partei": "CDU",
-      "bild_url": "Gall.jpg"
+      "bild_url": "Gall.jpg",
+      "alter": 0
     },
     {
       "id": 1,
       "kandidaten_name": "Bernhard Lasotta",
       "partei": "SPD",
-      "bild_url": "Lasotta.jpg"
+      "bild_url": "Lasotta.jpg",
+      "alter": 0
     },
     {
       "id": 2,
       "kandidaten_name": "Armin Waldbüßer",
       "partei": "Grüne",
-      "bild_url": ""
+      "bild_url": "",
+      "alter": 0
     },
     {
       "id": 3,
       "kandidaten_name": "Harald Zeplin",
       "partei": "FDP",
-      "bild_url": "Zeplin.jpg"
+      "bild_url": "Zeplin.jpg",
+      "alter": 0
     }
   ],
-  "Heilbronn": [],
-  "Hohenlohe": []
+  "Heilbronn": [
+    {
+      "id": 0,
+      "kandidaten_name": "Alexander Throm",
+      "partei": "CDU",
+      "bild_url": "",
+      "alter": 0
+    },
+    {
+      "id": 1,
+      "kandidaten_name": "Rainer Hinderer",
+      "partei": "SPD",
+      "bild_url": "",
+      "alter": 0
+    },
+    {
+      "id": 2,
+      "kandidaten_name": "Susanne Bay",
+      "partei": "Grüne",
+      "bild_url": "",
+      "alter": 0
+    },
+    {
+      "id": 3,
+      "kandidaten_name": "Nico Weinmann",
+      "partei": "FDP",
+      "bild_url": "",
+      "alter": 0
+    }
+  ],
+  "Hohenlohe": [
+    {
+      "id": 0,
+      "kandidaten_name": "Arnulf von Eyb",
+      "partei": "CDU",
+      "bild_url": "",
+      "alter": 0
+    },
+    {
+      "id": 1,
+      "kandidaten_name": "Hans-Jürgen Saknus",
+      "partei": "SPD",
+      "bild_url": "",
+      "alter": 0
+    },
+    {
+      "id": 2,
+      "kandidaten_name": "Catherine Kern",
+      "partei": "Grüne",
+      "bild_url": "",
+      "alter": 0
+    },
+    {
+      "id": 3,
+      "kandidaten_name": "Stephen Brauer",
+      "partei": "FDP",
+      "bild_url": "",
+      "alter": 0
+    }
+  ]
 }
