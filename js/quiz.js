@@ -11,7 +11,10 @@ numberOfChallenges = 0,
 candidates,
 displayedText,
 aspectRatio,
-headerImg;
+headerImg,
+privateResult,
+politicalResult,
+lastWindowWidth;
 
 $(document).ready(function (){
   // Generate order of questions, for randomize
@@ -35,25 +38,28 @@ $(document).ready(function (){
   }
 
   // Creates percentage circles at results (with jQuery library)
-  function createCircles (politicalPercent, privatePercent){
+  function createCircle (percentageValue, candidateId, radius){
     var politicalCircle = Circles.create({
-      id:                  'politicalCandidate',
-      radius:              100,
-      value:               politicalPercent,
+      id:                  candidateId,
+      radius:              radius,
+      value:               percentageValue,
       width:               3,
       text:                '',
       colors:              ['white', '#D05C5C'],
       duration:            400,
     });
-    var privateCircle = Circles.create({
-      id:                  'privateCandidate',
-      radius:              100,
-      value:               privatePercent,
-      width:               3,
-      text:                '',
-      colors:              ['white', '#D05C5C'],
-      duration:            400,
-    });
+  }
+
+  function updateCircles(politicalResultValue, privateResultValue) {
+    var radius = 100;
+    if($(window).width() > 460){
+      radius = 100;
+    }
+    else{
+      radius = 70;
+    }
+    createCircle (politicalResultValue, 'politicalCandidate', radius)
+    createCircle (privateResultValue, 'privateCandidate', radius)
   }
 
   // Update progressbar & progresstext
@@ -100,6 +106,13 @@ $(document).ready(function (){
             if(currentQuestionOrderID < numberOfQuestions+numberOfChallenges){
               displayAnswers(questions);
               updateProgress(currentQuestionOrderID+1, (numberOfChallenges+numberOfQuestions));
+
+              // Scroll to question, when on mobile, for better usability
+              if($(window).width() < 500){
+                $("html, body").animate({
+                  scrollTop: $(".progress").offset().top
+                }, 100);
+              }
           }
           // If there are no more questions
           else {
@@ -283,8 +296,8 @@ $(document).ready(function (){
     $(".progress").hide();
 
     // Get results [return datatype is a two-dimensional array]
-    var privateResult = getResult("privat", "challenge");
-    var politicalResult = getResult("politisch");
+    privateResult = getResult("privat", "challenge");
+    politicalResult = getResult("politisch");
 
     // Iterate through candidates
     for(var w = 0; w < 4; w++){
@@ -312,11 +325,12 @@ $(document).ready(function (){
       $(".candidates:last-of-type .candidate:last-of-type .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
     }
 
-    createCircles(politicalResult[0][1], privateResult[0][1]);
+    // Create circles in depending on window size (mobile or not)
+    updateCircles(politicalResult[0][1], privateResult[0][1])
 
     // Show sharing container
     $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
-    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20'+politicalResult[1]+'%%20beim%20Kandidaten-Check%20erreicht%21&url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
+    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[0][1]+'%%20beim%20Kandidaten-Check%20erreicht%21%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20'+politicalResult[0][1]+'%%20beim%20Kandidaten-Check%20erreicht%21&url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
   }
 
   // Change from wahlkreis to display Text
@@ -410,6 +424,9 @@ $(document).ready(function (){
     headerImg.src = 'img/header_bg.jpg';
 
     displayedText = false;
+
+    lastWindowWidth = $(window).width();
+    console.log($(window).width());
   }
 
   init();
@@ -417,6 +434,11 @@ $(document).ready(function (){
   $( window ).resize(function() {
     //Set header background-image height
     setCorrectImgHeight ( "header" )
+
+    // Update Circles
+    if(politicalResult != null && ((lastWindowWidth >= 460 && $(window).width() <= 460)||(lastWindowWidth <= 460 && $(window).width() >= 460))){
+      updateCircles(politicalResult[0][1], privateResult[0][1])
+    }
 
     // !!! Check this before release
     // Hide issue, when starting the quiz
@@ -426,6 +448,8 @@ $(document).ready(function (){
     else if ($(window).width() > 350 && $("section.issues").is(":hidden")) {
       $("section.issues").show();
     }
+
+    lastWindowWidth = $(window).width();
   });
 
   /* Not own functions */

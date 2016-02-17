@@ -40,6 +40,9 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     color: white;
     text-align: right;
 
+    @media screen and (max-width: 625px){
+      padding: 2em 1em 0 40%;
+    }
     @media screen and (max-width: 350px){
       padding: 2em 1em 0 35%;
     }
@@ -84,7 +87,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     }
 
     p{
-      @media screen and (max-width: 350px){
+      @media screen and (max-width: 500px){
         display: none;
       }
     }
@@ -180,7 +183,8 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     }
   }
 
-  $candidate-size: 130px;
+  $candidate-normal-size: 130px;
+  $candidate-small-size: 70px;
   section.personal-result{
 
     .candidates{
@@ -188,19 +192,41 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       display: flex;
       justify-content: space-around;
 
+
       &:first-of-type{
+        @media screen and (max-width: 460px){
+          .percentage{
+            width: $candidate-small-size + 70px !important;
+            height: $candidate-small-size + 70px !important;
+          }
+          .picture{
+            width: $candidate-small-size + 50px !important;
+            height: $candidate-small-size + 50px !important;
+          }
+        }
+
         margin-bottom: 2rem;
 
         .candidate{
           opacity: 1;
         }
         .percentage{
-          width: $candidate-size + 70px !important;
-          height: $candidate-size + 70px !important;
+          width: $candidate-normal-size + 70px !important;
+          height: $candidate-normal-size + 70px !important;
+
+          @media screen and (max-width: 460px){
+            width: $candidate-small-size + 70px !important;
+            height: $candidate-small-size + 70px !important;
+          }
         }
         .picture{
-          width: $candidate-size + 50px !important;
-          height: $candidate-size + 50px !important;
+          width: $candidate-normal-size + 50px !important;
+          height: $candidate-normal-size + 50px !important;
+
+          @media screen and (max-width: 460px){
+            width: $candidate-small-size + 50px !important;
+            height: $candidate-small-size + 50px !important;
+          }
         }
       }
 
@@ -209,20 +235,24 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         opacity: 0.8;
 
         .percentage{
-          width: $candidate-size + 20px;
-          height: $candidate-size + 20px;
+          width: $candidate-normal-size + 20px;
+          height: $candidate-normal-size + 20px;
 
           margin: auto auto 1rem auto;
-
           position: relative;
+
+          @media screen and (max-width: 460px){
+            width: $candidate-small-size + 20px;
+            height: $candidate-small-size + 20px;
+          }
 
           .chart{
             position: absolute;
           }
 
           .picture{
-            width: $candidate-size;
-            height: $candidate-size;
+            width: $candidate-normal-size;
+            height: $candidate-normal-size;
             overflow: hidden;
             position: absolute;;
             margin: 10px;
@@ -231,6 +261,11 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 
             border-radius: 50%;
             -moz-border-radius: 50%;
+
+            @media screen and (max-width: 460px){
+              width: $candidate-small-size;
+              height: $candidate-small-size;
+            }
           }
         }
 
@@ -259,6 +294,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 
 .progress {
   display: none;
+  margin-top: 1rem;
 
   .progresstext{
     text-align: center;
@@ -282,6 +318,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 .sharing-container{
   margin-bottom: 6.5rem;
   padding-top: 1.4rem;
+  text-align: center;
 
   @media screen and (max-width: 940px) {
     margin-bottom: 5.5rem;
