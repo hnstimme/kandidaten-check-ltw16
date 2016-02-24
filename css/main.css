@@ -122,6 +122,18 @@ body {
       .lw section.issues p {
         text-align: left;
         padding: 0 1rem; } }
+  .lw div.moreAction {
+    text-align: center; }
+    .lw div.moreAction a.restartGame,
+    .lw div.moreAction a.wahlkreis {
+      border: none;
+      background: none;
+      outline: none;
+      text-decoration: none;
+      color: #D05C5C;
+      font-size: 1.1rem;
+      display: block;
+      cursor: pointer; }
   .lw section.wahlkreis h3,
   .lw section.question h3 {
     max-width: 85%;
@@ -366,6 +378,9 @@ body {
       background-image: url("../img/antwort-d.jpg"); }
   .lw .tile-grid .title {
     hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
     text-align: justify;
     font-weight: 300;
     max-width: 400px;
@@ -373,7 +388,7 @@ body {
     margin: auto auto 0.3rem auto;
     font-size: 1rem;
     word-wrap: break-word;
-    width: 97%; }
+    width: 93%; }
     @media screen and (max-width: 350px) {
       .lw .tile-grid .title {
         margin: 0 auto 1.2rem auto; } }
