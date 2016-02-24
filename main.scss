@@ -521,6 +521,9 @@ $tile-normal-width: 25%;
 
   .title {
     hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
     text-align: justify;
     font-weight: 300;
     max-width: 400px;
@@ -528,7 +531,7 @@ $tile-normal-width: 25%;
     margin: auto auto 0.3rem auto;
     font-size: 1rem;
     word-wrap: break-word;
-    width: 97%;
+    width: 93%;
 
     @media screen and (max-width: 350px){
       margin: 0 auto 1.2rem auto;

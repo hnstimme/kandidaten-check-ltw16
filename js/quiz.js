@@ -121,7 +121,7 @@ $(document).ready(function (){
         }
         // If user want to display the wahlkreise
         else {
-          changeToWahlkreis();
+          changeToWahlkreis("question");
         }
       }
 
@@ -143,7 +143,7 @@ $(document).ready(function (){
       $.each(val.antworten, function(key_answer, val_answer){
         if(val.id==currentQuestionID){
           if(val.typ != 'challenge'){
-            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
+            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title" lang="de">'+ val_answer +'</div></div>'
 
             $(".tiles").append(displayTile);
             i=i+1;
@@ -223,6 +223,7 @@ $(document).ready(function (){
       personsPoints = 0;
     }
 
+    // Sort result descending percentage of candidate result
     result.sort(function (a, b) {
       if( a[1] > b[1] ){
         return -1;
@@ -268,8 +269,8 @@ $(document).ready(function (){
   }
 
   // Change div containing a question to the wahlkreis selection
-  function changeToWahlkreis (){
-    $(".question").addClass("wahlkreis").removeClass("question");
+  function changeToWahlkreis (cssClassToRemove){
+    $("."+cssClassToRemove).addClass("wahlkreis").removeClass(cssClassToRemove);
     $(".tile-grid").empty()
     $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
     $(".tile-grid").append('<div class="tiles"></div>');
@@ -289,11 +290,13 @@ $(document).ready(function (){
 
   // Show personal result of user (change from questions to result div)
   function changeToResult (){
+    console.log("NICE");
     // Prepare HTML structure for candidates
     $(".question").addClass("personal-result").removeClass("question");
     $(".personal-result > h3").html("Dein Ergebnis");
     $(".tile-grid").remove();
     $(".progress").hide();
+    $(".progress").after('<div class="restartGame"><button>Zurück zum Start</button></div>');
 
     // Get results [return datatype is a two-dimensional array]
     privateResult = getResult("privat", "challenge");
@@ -301,6 +304,7 @@ $(document).ready(function (){
 
     // Iterate through candidates
     for(var w = 0; w < 4; w++){
+      console.log("WOHOOOO6");
       var privateCandidate = getCandidate(selectedWahlkreis, privateResult[w][0])
       var politicalCandidate = getCandidate(selectedWahlkreis, politicalResult[w][0])
 
@@ -347,6 +351,24 @@ $(document).ready(function (){
     }
   })
 
+  // Reset variables & start from beginning
+  function restartGame(){
+    $(".personal-result").empty();
+    $(".personal-result").append('<h3></h3>');
+    $(".personal-result").append('<div class="tile-grid"></div>')
+    $("button.restartGame").remove();
+
+    selectedWahlkreis = null,
+    currentQuestionID = 0,
+    currentQuestionOrderID = 0,
+    politicalResult = null,
+    privateResult = null,
+    selections = [];
+
+    changeToWahlkreis("personal-result");
+    console.log("OHO");
+  }
+
   // Save wahlkreis id, the user selected
   $("body").on('click', '.wahlkreis .tile' ,function () {
     selectedWahlkreis = $(this).attr("id");
@@ -359,6 +381,7 @@ $(document).ready(function (){
     }
     else{
       changeToQuestion('wahlkreis');
+      console.log("wechsel");
     }
   })
 
@@ -384,6 +407,10 @@ $(document).ready(function (){
 
   $("section").on( 'click', 'button.nextQuestion' ,function () {
     changeToQuestion('wahlkreis');
+  })
+
+  $("div").on( 'click', 'button.restartGame' ,function () {
+    restartGame();
   })
 
   // User selected an answer: Show "next" button & save picked answer
