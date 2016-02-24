@@ -33,8 +33,6 @@ $(document).ready(function (){
       var challengePosition = Math.round(((numberOfQuestions+numberOfChallenges)/(o+1))-1);
       questionOrder.splice(challengePosition, 0, numberOfQuestions+numberOfChallenges-o-1);
     }
-
-    console.log(questionOrder);
   }
 
   // Creates percentage circles at results (with jQuery library)
@@ -290,7 +288,6 @@ $(document).ready(function (){
 
   // Show personal result of user (change from questions to result div)
   function changeToResult (){
-    console.log("NICE");
     // Prepare HTML structure for candidates
     $(".question").addClass("personal-result").removeClass("question");
     $(".personal-result > h3").html("Dein Ergebnis");
@@ -304,7 +301,6 @@ $(document).ready(function (){
 
     // Iterate through candidates
     for(var w = 0; w < 4; w++){
-      console.log("WOHOOOO6");
       var privateCandidate = getCandidate(selectedWahlkreis, privateResult[w][0])
       var politicalCandidate = getCandidate(selectedWahlkreis, politicalResult[w][0])
 
@@ -366,7 +362,6 @@ $(document).ready(function (){
     selections = [];
 
     changeToWahlkreis("personal-result");
-    console.log("OHO");
   }
 
   // Save wahlkreis id, the user selected
@@ -381,7 +376,6 @@ $(document).ready(function (){
     }
     else{
       changeToQuestion('wahlkreis');
-      console.log("wechsel");
     }
   })
 
@@ -453,7 +447,6 @@ $(document).ready(function (){
     displayedText = false;
 
     lastWindowWidth = $(window).width();
-    console.log($(window).width());
   }
 
   init();
