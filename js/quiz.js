@@ -293,7 +293,7 @@ $(document).ready(function (){
     $(".personal-result > h3").html("Dein Ergebnis");
     $(".tile-grid").remove();
     $(".progress").hide();
-    $(".progress").after('<div class="restartGame"><button>Zurück zum Start</button></div>');
+    $(".progress").after('<div class="moreAction"><a class="restartGame">Zurück zum Start</a><a class="wahlkreis" href="http://www.stimme.de/themen/wahlen/landtagswahl2016/'+selectedWahlkreis+'">Mehr Infos zum Wahlkreis '+ selectedWahlkreis +'</a></div>');
 
     // Get results [return datatype is a two-dimensional array]
     privateResult = getResult("privat", "challenge");
@@ -352,7 +352,7 @@ $(document).ready(function (){
     $(".personal-result").empty();
     $(".personal-result").append('<h3></h3>');
     $(".personal-result").append('<div class="tile-grid"></div>')
-    $("button.restartGame").remove();
+    $("div.moreAction").remove();
 
     selectedWahlkreis = null,
     currentQuestionID = 0,
@@ -403,7 +403,7 @@ $(document).ready(function (){
     changeToQuestion('wahlkreis');
   })
 
-  $("div").on( 'click', 'button.restartGame' ,function () {
+  $("div").on( 'click', 'div.moreAction a.restartGame' ,function () {
     restartGame();
   })
 
