@@ -249,7 +249,7 @@
         {
           "Gall": "SelfieGall.jpg",
           "Lasotta": "SelfieLasotta.jpg",
-          "Waldbüßer": "SelfieWaldbuesser",
+          "Waldbüßer": "unbekannt.jpg",
           "Zeplin": "SelfieZeplin.jpg"
         },
         "typ": "challenge"
@@ -261,7 +261,7 @@
         {
           "Gall": "ThemaGall.jpg",
           "Lasotta": "ThemaLasotta.jpg",
-          "Waldbüßer": "ThemaWaldbuesser",
+          "Waldbüßer": "unbekannt.jpg",
           "Zeplin": "ThemaZeplin.jpg"
         },
         "typ": "challenge"
@@ -273,7 +273,7 @@
         {
           "Gall": "SelbstportraitGall.jpg",
           "Lasotta": "SelbstportraitLasotta.jpg",
-          "Waldbüßer": "SelbstportraitWaldbuesser",
+          "Waldbüßer": "unbekannt.jpg",
           "Zeplin": "SelbstportraitZeplin.jpg"
         },
         "typ": "challenge"

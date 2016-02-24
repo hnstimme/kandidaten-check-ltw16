@@ -9,7 +9,6 @@ quiz_data,
 numberOfQuestions,
 numberOfChallenges = 0,
 candidates,
-displayedText,
 aspectRatio,
 headerImg,
 privateResult,
@@ -254,13 +253,15 @@ $(document).ready(function (){
     return saveCandidate;
   }
 
-  /*>>CHANGE QUIZ HTML STRUCTURE<< FUNCTIONS **/
+  /* CHANGE QUIZ HTML STRUCTURE<< FUNCTIONS **/
   // Change div containing the wahlkreis selection to the question markup
   function changeToQuestion (cssClassToRemove){
     $("."+cssClassToRemove).addClass("question").removeClass(cssClassToRemove);
     $('.tiles').empty();
     $(".tile-grid .previousQuestion").replaceWith('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
     $(".progress").show();
+    $(".issues h2 > span").html(selectedWahlkreis);
+    $(".question h3").show();
 
     currentQuestionOrderID = 0
     processQuestion();
@@ -269,6 +270,7 @@ $(document).ready(function (){
   // Change div containing a question to the wahlkreis selection
   function changeToWahlkreis (cssClassToRemove){
     $("."+cssClassToRemove).addClass("wahlkreis").removeClass(cssClassToRemove);
+    $(".issues h2 > span").show().html("Wahlkreis wählen");
     $(".tile-grid").empty()
     $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
     $(".tile-grid").append('<div class="tiles"></div>');
@@ -278,7 +280,7 @@ $(document).ready(function (){
     $(".tiles").append('<div class="tile" id="Hohenlohe"><span class="logo"><span>HOH</span></span><div class="title">Hohenlohe</div></div>');
     $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
 
-    $(".wahlkreis h3").html('Wähle deinen Wahlkreis');
+    $(".wahlkreis h3").hide();
     $(".progress").hide();
 
     // Reset variables
@@ -290,10 +292,10 @@ $(document).ready(function (){
   function changeToResult (){
     // Prepare HTML structure for candidates
     $(".question").addClass("personal-result").removeClass("question");
-    $(".personal-result > h3").html("Dein Ergebnis");
+    $(".issues h2 > span").html("Dein Ergebnis");
+    $(".personal-result > h3").hide();
     $(".tile-grid").remove();
     $(".progress").hide();
-    $(".progress").after('<div class="moreAction"><a class="restartGame">Zurück zum Start</a><a class="wahlkreis" href="http://www.stimme.de/themen/wahlen/landtagswahl2016/'+selectedWahlkreis+'">Mehr Infos zum Wahlkreis '+ selectedWahlkreis +'</a></div>');
 
     // Get results [return datatype is a two-dimensional array]
     privateResult = getResult("privat", "challenge");
@@ -314,11 +316,11 @@ $(document).ready(function (){
 
       // Add first candidate
       $(".candidates:last-of-type").append('<div class="candidate"></div>');
-      $(".candidates:last-of-type .candidate:first-of-type").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p> <h2>'+politicalResult[w][1]+'%</h2><div class="topic">Politisch</div>');
+      $(".candidates:last-of-type .candidate:first-of-type").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p> <h2>'+politicalResult[w][1]+'%</h2>');
 
       // Add second candidate
       $(".candidates:last-of-type").append('<div class="candidate"></div>');
-      $(".candidates:last-of-type .candidate:last-of-type").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p> <h2>'+privateResult[w][1]+'%</h2> <div class="topic">Privat</div>');
+      $(".candidates:last-of-type .candidate:last-of-type").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p> <h2>'+privateResult[w][1]+'%</h2>');
 
       // Add candidate image
       $(".candidates:last-of-type .candidate:first-of-type .picture").css('background-image', 'url("img/kandidaten/'+ politicalCandidate.bild_url +'")')
@@ -328,24 +330,33 @@ $(document).ready(function (){
     // Create circles in depending on window size (mobile or not)
     updateCircles(politicalResult[0][1], privateResult[0][1])
 
+    // Add topic to column
+    $(".candidates:first-of-type .candidate:first-of-type .percentage").before('<div class="topic">Politisch</div>');
+    $(".candidates:first-of-type .candidate:last-of-type .percentage").before('<div class="topic">Privat</div>');
+
     // Show sharing container
-    $(".personal-result").append('<div class="sharing-container"><ul></ul></div>')
-    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=Ich%20habe%20'+politicalResult[0][1]+'%%20beim%20Kandidaten-Check%20erreicht%21%20:%20http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20'+politicalResult[0][1]+'%%20beim%20Kandidaten-Check%20erreicht%21&url=http%3A%2F%2Fwww.stimme.de%2Fltw16" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Landtagswahl%202016%20Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fltw16"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
-  }
+    $(".personal-result").after('<div class="sharing-container"><ul></ul></div>')
+    $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.stimme.de%2Fkandidatencheck" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20den%20%23KandidatenCheck%20von%20%40stimmeonline%20gecheckt!%20Welcher%20Landtagskandidat%20zu%20dir%20passt%2C%20erf%C3%A4hrst%20du%20hier%3A&url=http%3A%2F%2Fwww.stimme.de%2Fkandidatencheck" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Kandidaten-Check%20http%3A%2F%2Fwww.stimme.de%2Fkandidatencheck"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
 
-  // Change from wahlkreis to display Text
-  function changeToText(textString){
-    $(".tiles").empty();
-    $(".tiles").append('<p>'+textString + '</p>');
-  }
-
-  $("section").on('click', 'button.previousQuestion' ,function () {
-    // Initialize previous question
-    if($(".question").length != 0){
-      currentQuestionOrderID-=1;
-      processQuestion();
+    // Add text
+    var endingText = '';
+    if(selectedWahlkreis != 'Eppingen'){
+      endingText = 'Geschafft! Jetzt erfahren Sie, die Antworten welches Kandidaten Sie am häufigsten ausgewählt haben, und welche am seltensten. Auf der linken Seite sehen Sie die politische Übereinstimmung. Auf der rechten Seite sehen Sie, welcher Kandidat Ihnen persönlich am nächsten steht. Antworten zu persönlichen Vorlieben und die Zeichnungen und Bilder zählen als persönliche Übereinstimmung.  Gleiche Antworten auf Sachfragen wurden als politische Übereinstimmung gewertet.';
     }
-  })
+    else {
+      endingText = 'Geschafft! Jetzt erfahren Sie, die Antworten welches Kandidaten Sie am häufigsten ausgewählt haben, und welche am seltensten. Auf der linken Seite sehen Sie die politische Übereinstimmung. Gleiche Antworten auf Sachfragen wurden als politische Übereinstimmung gewertet. Auf der rechten Seite sehen Sie, welcher Kandidat Ihnen persönlich am nächsten steht. Gleiche Antworten zu persönlichen Vorlieben zählen als persönliche Übereinstimmung. In den anderen Wahlkreisen in der Region haben die Politiker drei Zusatzaufgaben wie kuriose Selfies und eine Zeichnung eingeschickt, die Kandidaten aus Eppingen wollten das nicht. Schade!';
+    }
+    $(".sharing-container").before('<section class="endingText"><p>' + endingText + '</p></section>');
+
+    // Add credits
+    var creditsText = 'Für den Kandidaten-Check haben Volontäre der Heilbronner Stimme die Kandidaten zur Landtagswahl nach Persönlichem und Politischem befragt. Eine Auswahl der Antworten und die Zusatzaufgaben haben es in den Check geschafft.</p>'
+    + '<p>Am Projekt beteiligt waren: Henri Chilla, Ranjo Doering, Janis Dietz, Christoph Feil, David Hilzendegen, Felix Klingel, Heiko Nicht, Kirsi-Fee Rexin, Daniel Stahl, Franziska Türk, Katrin Walter, Samantha Walther und Bianca Zäuner</p>'
+    +'<p>Wir danken den Politikern, dass sie sich – mehrheitlich – auf diese etwas andere Interviewform eingelassen haben.</p>';
+    $(".sharing-container").before('<section class="credits"><h3>Credits</h3><p>' + creditsText + '</section>');
+
+    // Add links for restarting the game & further links
+    $(".endingText").after('<div class="moreAction"><a class="restartGame">Zurück zum Start</a><a class="wahlkreis" href="http://www.stimme.de/themen/wahlen/landtagswahl2016/'+selectedWahlkreis+'">Mehr Infos zum Wahlkreis '+ selectedWahlkreis +'</a></div>');
+  }
 
   // Reset variables & start from beginning
   function restartGame(){
@@ -353,6 +364,9 @@ $(document).ready(function (){
     $(".personal-result").append('<h3></h3>');
     $(".personal-result").append('<div class="tile-grid"></div>')
     $("div.moreAction").remove();
+    $(".endingText").remove();
+    $(".credits").remove();
+    $(".sharing-container").remove();
 
     selectedWahlkreis = null,
     currentQuestionID = 0,
@@ -364,19 +378,20 @@ $(document).ready(function (){
     changeToWahlkreis("personal-result");
   }
 
+  /* EVENTS */
+  $("section").on('click', 'button.previousQuestion' ,function () {
+    // Initialize previous question
+    if($(".question").length != 0){
+      currentQuestionOrderID-=1;
+      processQuestion();
+    }
+  })
+
   // Save wahlkreis id, the user selected
   $("body").on('click', '.wahlkreis .tile' ,function () {
     selectedWahlkreis = $(this).attr("id");
 
-    if(selectedWahlkreis == 'Eppingen' && displayedText == false){
-      var text = 'Die Kandidaten des Wahlkreises Eppingen haben leider nicht an unseren Challenges teilnehmen wollen, bitte entschuldigen sie das!';
-      changeToText(text);
-      displayedText = true;
-      $("div.nextQuestion").replaceWith('<button class="nextQuestion"><img src="img/next.svg"></button>');
-    }
-    else{
-      changeToQuestion('wahlkreis');
-    }
+    changeToQuestion('wahlkreis');
   })
 
   // User selected an answer: load next question & save picked answer
@@ -425,6 +440,7 @@ $(document).ready(function (){
     }
   })
 
+  /* INITIALIZE */
   function init (){
     // Load quiz JSON
     $.getJSON('js/quiz.json', function (json){
@@ -443,8 +459,6 @@ $(document).ready(function (){
       setCorrectImgHeight ( "header" )
     }
     headerImg.src = 'img/header_bg.jpg';
-
-    displayedText = false;
 
     lastWindowWidth = $(window).width();
   }
@@ -472,7 +486,7 @@ $(document).ready(function (){
     lastWindowWidth = $(window).width();
   });
 
-  /* Not own functions */
+  /* NOT OWN FUNCTIONS */
   // Randomize order of potential answers
   $.fn.randomize = function (selector){
     (selector ? this.find(selector) : this).parent().each(function(){

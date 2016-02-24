@@ -85,12 +85,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         font-size: 1rem;
       }
     }
-
-    p{
-      @media screen and (max-width: 500px){
-        display: none;
-      }
-    }
   }
   section{
     margin-bottom: 2rem;
@@ -111,55 +105,23 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 
   section.issues{
     h2{
-      margin: 3rem auto 1rem auto;
-      line-height: 0.25;
+      margin: 1.5rem auto 1rem auto;
       text-align: center;
-
-      @media screen and (max-width: 460px){
-        margin: 1.5rem auto 1rem auto;
-      }
+      width: 90%;
+      height: 1rem;
+      border-bottom: 1px solid black;
 
       span{
-        display: inline-block;
-        position: relative;
-
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          border-bottom: 1px solid black;
-          top: 0;
-          width: 120%;
-
-          @media screen and (max-width: 900px) {
-            width: 90%;
-          }
-          @media screen and (max-width: 801px) {
-            width: 70%;
-          }
-          @media screen and (max-width: 625px) {
-            width: 50%;
-          }
-          @media screen and (max-width: 500px) {
-            width: 30%;
-          }
-          @media (max-width: 350px) {
-            width: 10%;
-          }
-        }
-        &:before {
-          right: 100%;
-          margin-right: 15px;
-        }
-        &:after {
-          left: 100%;
-          margin-left: 15px;
-        }
+        background-color: white;
+        padding: 0 1rem;
       }
     }
+  }
 
-    p{
-      text-align: center;
+  section.issues p,
+  .endingText,
+  .credits{
+      text-align: justify;
       width: 70%;
       margin: auto;
       padding: 1rem;
@@ -172,6 +134,21 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         text-align: left;
         padding: 0 1rem;
       }
+  }
+
+  div.moreAction{
+    text-align: center;
+
+    a.restartGame,
+    a.wahlkreis{
+      border: none;
+      background: none;
+      outline: none;
+      text-decoration: none;
+      color: $primary;
+      font-size: 1.1rem;
+      display: block;
+      cursor: pointer;
     }
   }
 
@@ -180,6 +157,12 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     h3{
       max-width: 85%;
       margin: auto;
+    }
+  }
+
+  section.wahlkreis{
+    .title{
+      text-align: center;
     }
   }
 
@@ -234,6 +217,14 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         max-width: 50%;
         opacity: 0.8;
 
+        .topic{
+          font-size: 1.2rem;
+          font-weight: 600;
+          text-align: center;
+          display: block;
+          margin-bottom: 1rem;
+        }
+
         .percentage{
           width: $candidate-normal-size + 20px;
           height: $candidate-normal-size + 20px;
@@ -281,11 +272,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
           font-size: 3rem;
           font-weight: 300;
           margin: 0.3rem 0;
-        }
-        .topic{
-          font-size: 0.9rem;
-          text-align: center;
-          display: block;
         }
       }
     }
@@ -524,7 +510,7 @@ $tile-normal-width: 25%;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-    text-align: justify;
+    text-align: left;
     font-weight: 300;
     max-width: 400px;
     box-sizing: border-box;
