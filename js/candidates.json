@@ -4,59 +4,59 @@
       "id": 0,
       "kandidaten_name": "Friedlinde Gurr-Hirsch",
       "partei": "CDU",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "gurr-hirsch.jpg",
+      "alter": 61
     },
     {
       "id": 1,
       "kandidaten_name": "Hans-Heribert Blättgen",
       "partei": "SPD",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "blaettgen.jpg",
+      "alter": 60
     },
     {
       "id": 2,
       "kandidaten_name": "Jürgen Winkler",
       "partei": "Grüne",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "winkler.jpg",
+      "alter": 51
     },
     {
       "id": 3,
       "kandidaten_name": "Georg Heitlinger",
       "partei": "FDP",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "heitlinger.jpg",
+      "alter": 44
     }
   ],
   "Neckarsulm": [
     {
       "id": 0,
       "kandidaten_name": "Reinhold Gall",
-      "partei": "CDU",
-      "bild_url": "Gall.jpg",
-      "alter": 0
+      "partei": "SPD",
+      "bild_url": "gall.jpg",
+      "alter": 59
     },
     {
       "id": 1,
       "kandidaten_name": "Bernhard Lasotta",
-      "partei": "SPD",
-      "bild_url": "Lasotta.jpg",
-      "alter": 0
+      "partei": "CDU",
+      "bild_url": "lasotta.jpg",
+      "alter": 47
     },
     {
       "id": 2,
       "kandidaten_name": "Armin Waldbüßer",
       "partei": "Grüne",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "waldbuesser.jpg",
+      "alter": 54
     },
     {
       "id": 3,
       "kandidaten_name": "Harald Zeplin",
       "partei": "FDP",
-      "bild_url": "Zeplin.jpg",
-      "alter": 0
+      "bild_url": "zeplin.jpg",
+      "alter": 66
     }
   ],
   "Heilbronn": [
@@ -64,29 +64,29 @@
       "id": 0,
       "kandidaten_name": "Alexander Throm",
       "partei": "CDU",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "throm.jpg",
+      "alter": 47
     },
     {
       "id": 1,
       "kandidaten_name": "Rainer Hinderer",
       "partei": "SPD",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "hinderer.jpg",
+      "alter": 53
     },
     {
       "id": 2,
       "kandidaten_name": "Susanne Bay",
       "partei": "Grüne",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "bay.jpg",
+      "alter": 51
     },
     {
       "id": 3,
       "kandidaten_name": "Nico Weinmann",
       "partei": "FDP",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "weinmann.jpg",
+      "alter": 43
     }
   ],
   "Hohenlohe": [
@@ -94,29 +94,29 @@
       "id": 0,
       "kandidaten_name": "Arnulf von Eyb",
       "partei": "CDU",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "von-eyb.jpg",
+      "alter": 61
     },
     {
       "id": 1,
       "kandidaten_name": "Hans-Jürgen Saknus",
       "partei": "SPD",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "saknus.jpg",
+      "alter": 58
     },
     {
       "id": 2,
       "kandidaten_name": "Catherine Kern",
       "partei": "Grüne",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "kern.jpg",
+      "alter": 54
     },
     {
       "id": 3,
       "kandidaten_name": "Stephen Brauer",
       "partei": "FDP",
-      "bild_url": "",
-      "alter": 0
+      "bild_url": "brauer.jpg",
+      "alter": 45
     }
   ]
 }
