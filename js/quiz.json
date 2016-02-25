@@ -2,7 +2,7 @@
   "Eppingen":[
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
+      "frage": "Welches Lieblingsgericht der Wahlkreiskandidaten schmeckt Ihnen besonders gut?",
       "antworten":
         {
           "Gurr-Hirsch": "Selbstgemachte Maultaschen mit Kartoffelsalat",
@@ -19,7 +19,7 @@
         {
           "Gurr-Hirsch": "Joggingstrecke durch Untergruppenbach",
           "Blättgen": "Wald, egal wo",
-          "Winkler": "Weinausschank am Zweifelberg bei gutem Wetter, bei mir daheim vorm Kachelofen bei schlechtem Wetter",
+          "Winkler": "Weinausschank am Zweifelberg bei gutem Wetter, bei schlechtem Wetter bei mir daheim vorm Kachelofen",
           "Heitlinger": "Drei-Burgen-Blick Rohrbach"
         },
         "typ": "privat"
@@ -30,15 +30,15 @@
       "antworten":
         {
           "Gurr-Hirsch": "Die Gedanken sind frei",
-          "Blättgen": "Bruce Guthro: The Songsmith",
-          "Winkler": "Somewhere aus der West Side Story",
+          "Blättgen": "Bruce Guthro - The Songsmith",
+          "Winkler": "West Side Story - Somewhere",
           "Heitlinger": "Nirvana - Smells like Teen Spirit"
         },
         "typ": "privat"
     },
     {
       "id": 3,
-      "frage": "Welchen Lieblingsfilm der Kandidaten mögen Sie am meisten?",
+      "frage": "Welcher Lieblingsfilm der Kandidaten ist Ihr Favorit?",
       "antworten":
         {
           "Gurr-Hirsch": "Vom Winde verweht",
@@ -77,16 +77,16 @@
       "frage": "Der Umgang mit den Flüchtlingen ist eine der zentralen Herausforderungen in den nächsten Jahren. Welcher Lösungsansatz klingt am vielversprechendsten?",
       "antworten":
         {
-          "Gurr-Hirsch": "Flüchtlinge müssen alle registriert werden, sollen sofort Deutsch lernen, Kommune muss sich dem Thema stellen und Ehrenamtliche stärken",
-          "Blättgen": "Wir nehmen die Menschen auf, versorgen und integrieren sie. Diejenigen, die keine Anerkennung als Flüchtling erhalten, schicken wir wieder nach Hause. Wir arbeiten mit der EU parallel intensiv daran, die Flüchtlinge zu kontingentieren und innerhalb der EU zu verteilen. Mit der EU und anderen Partnern bekämpfen wir aber vor allem die Fluchtursachen, um den Zustrom zu stoppen.",
+          "Gurr-Hirsch": "Alle Flüchtlinge müssen registriert werden, sie sollen sofort Deutsch lernen, die Kommune muss sich dem Thema stellen und Ehrenamtliche stärken.",
+          "Blättgen": "Wir nehmen die Menschen auf, versorgen und integrieren sie. Diejenigen, die nicht als Flüchtling anerkannt werden, schicken wir nach Hause. Wir arbeiten mit der EU daran, Flüchtlinge zu kontingentieren und zu verteilen, gemeinsam mit anderen Partnern bekämpfen wir die Fluchtursachen, um den Zustrom zu stoppen.",
           "Winkler": "Ich wünsche mir, dass die derzeit erlebbare Willkommenskultur durch viele ehrenamtliche Helfer weitergeführt werden kann.",
-          "Heitlinger": "Freundlich aufnehmen; aber bei Verfehlungen hart durchgreifen. Am besten in dezentrale kleine Einheiten verteilen."
+          "Heitlinger": "Wir sollten sie freundlich aufnehmen, aber bei Verfehlungen hart durchgreifen. Am besten Flüchtlinge in dezentrale kleine Einheiten verteilen."
         },
         "typ": "politisch"
     },
     {
       "id": 7,
-      "frage": "Wie können die Politiker den Wahlkreis noch  familienfreundlicher machen?",
+      "frage": "Wie können die Politiker den Wahlkreis noch familienfreundlicher machen?",
       "antworten":
         {
           "Gurr-Hirsch": "Vereinbarkeit von Familie und Beruf durch gute Strukturen muss weiter gewährleistet werden, Schaffung von Familienzentren",
@@ -101,10 +101,10 @@
       "frage": "Welche Idee halten Sie für am Besten, um den Wahlkreis für junge Menschen attraktiv zu machen?",
       "antworten":
         {
-          "Gurr-Hirsch": "Angebote in Sport, Freizeit, Kultur, Jugendzentren als Begegnungsmöglichkeiten, zwei Mal im Jahr sollen Jugendliche im Gemeinderat gehört werden und kleines Budget für eigene Projekte bekommen",
+          "Gurr-Hirsch": "Angebote in Sport, Freizeit, Kultur, Jugendzentren als Begegnungsmöglichkeiten, zwei Mal im Jahr sollen Jugendliche im Gemeinderat gehört werden und kleines Budget für eigene Projekte bekommen.",
           "Blättgen": "Dafür sorgen, dass der ländliche Raum als Lebensort erhalten bleibt. Dazu gehören ein attraktiver Nahverkehr, wohnortnahe Bildungsstandorte und lebendige Ortskerne. Das städtebauliche Sanierungsprogramm der Landesregierung leistet hier wertvolle Hilfe.",
           "Winkler": "Das Thema Mobilitätskonzept steht bei mir im Vordergrund. Hier sehe ich in der Region durchaus noch Entwicklungsmöglichkeiten.",
-          "Heitlinger": "Flächendeckendes Breitbandinternet, bezahlbares Bauland"
+          "Heitlinger": "Flächendeckendes Breitband-Internet, bezahlbares Bauland"
         },
         "typ": "politisch"
     },
@@ -113,9 +113,9 @@
       "frage": "Wie gelingt es am ehesten, die Region noch nachhaltiger und grüner machen?",
       "antworten":
         {
-          "Gurr-Hirsch": "Regionale Wirtschaftskreisläufe unterstützen, „grüne Berufe“ wertschätzen, Ökopunktesystem z.B. für Bewirtschaftung von Mauerweinbergen oder Streuobstwiesen",
-          "Blättgen": "Die regionale Landwirtschaft stärken. Regionale Produkte sind eine Marke und unterstützen die heimischen Erzeuger. Außerdem setzt die Landesregierung im Forschungsbereich auf  nachhaltige Mobilität und Umwelttechnik. Durch eine moderne und nachhaltige Industriepolitik machen wir die Wirtschaft fit für die Zukunft und tun etwas für die Umwelt.",
-          "Winkler": "Einerseits durch das Thema Mobilitätskonzept, andererseits setzte ich mich dafür ein, dass wir uns über eine regionale Energieversorgung mehr Gedanken machen. Es müsste noch ein, zwei Standorte mit kleineren Windparks hier geben. Außerdem setze ich mich dafür ein, dass der anfallende Biomüll in der Region zur Energiegewinnung eingesetzt wird und Wirtschaftsbereiche ohne erhöhten Ressourcenverbrauch gestärkt werden.",
+          "Gurr-Hirsch": "Regionale Wirtschaftskreisläufe unterstützen, „grüne Berufe“ wertschätzen, Ökopunktesystem zum Beispiel für Bewirtschaftung von Mauer-Weinbergen oder Streuobstwiesen",
+          "Blättgen": "Die regionale Landwirtschaft stärken. Regionale Produkte sind eine Marke und unterstützen die heimischen Erzeuger. Außerdem setzt die Landesregierung im Forschungsbereich auf nachhaltige Mobilität und Umwelttechnik. Durch eine moderne und nachhaltige Industriepolitik machen wir die Wirtschaft fit für die Zukunft und tun etwas für die Umwelt.",
+          "Winkler": "Durch ein Mobilitätskonzept, außerdem setzte ich mich dafür ein, dass wir uns über eine regionale Energieversorgung mehr Gedanken machen. Es müsste noch ein, zwei Standorte mit kleineren Windparks hier geben. Der anfallende Biomüll sollte in der Region zur Energiegewinnung eingesetzt und Wirtschaftsbereiche ohne erhöhten Ressourcenverbrauch gestärkt werden.",
           "Heitlinger": "Förderung von bäuerlichen Familienbetrieben"
         },
         "typ": "politisch"
@@ -124,11 +124,11 @@
   "Neckarsulm": [
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
+      "frage": "Welches Lieblingsgericht der Wahlkreiskandidaten schmeckt Ihnen besonders gut?",
       "antworten":
         {
           "Gall": "Bratengerichte",
-          "Lasotta": "Fisch und Gemüse.",
+          "Lasotta": "Fisch und Gemüse",
           "Waldbüßer": "Indische Küche",
           "Zeplin": "Erbspüree mit Kassler und Saubohnen"
         },
@@ -139,10 +139,10 @@
       "frage": "Auch Politiker singen gerne unter der Dusche. Welches Lied ist das Beste?",
       "antworten":
         {
-          "Gall": "„Mademoiselle chante le blues“ von Patricia Kaas",
-          "Lasotta": "Namika – Lieblingsmensch oder Joris – Herz über Kopf.",
-          "Waldbüßer": "Wish You Were Here von Pink Floyd",
-          "Zeplin": "Going Home von den Dire Straits"
+          "Gall": "„Patricia Kaas - Mademoiselle chante le blues",
+          "Lasotta": "Namika – Lieblingsmensch oder Joris – Herz über Kopf",
+          "Waldbüßer": "Pink Floyd - Wish You Were Here",
+          "Zeplin": "Dire Straits - Going Home"
         },
         "typ": "privat"
     },
@@ -151,10 +151,10 @@
       "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten?",
       "antworten":
         {
-          "Gall": "emotional, Kumpeltyp, zuverlässig",
-          "Lasotta": "- offen<br>- engagiert<br>- manchmal etwas dickköpfig",
-          "Waldbüßer": "authentisch, hilfsbereit, freundlich",
-          "Zeplin": "Locker / Frech / Belesen"
+          "Gall": "Emotional, Kumpeltyp, zuverlässig",
+          "Lasotta": "Offen, engagiert, manchmal etwas dickköpfig",
+          "Waldbüßer": "Authentisch, hilfsbereit, freundlich",
+          "Zeplin": "Locker, frech, belesen"
         },
         "typ": "privat"
     },
@@ -164,7 +164,7 @@
       "antworten":
         {
           "Gall": "Papillon mit Dustin Hoffmann",
-          "Lasotta": "Alle Teile von Star Wars.",
+          "Lasotta": "Alle Teile von Star Wars",
           "Waldbüßer": "Ziemlich Beste Freunde",
           "Zeplin": "Soylent Green"
         },
@@ -172,12 +172,12 @@
     },
     {
       "id": 4,
-      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin würden Sie am liebsten mitkommen?",
+      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen, wohin es geht. Wohin würden Sie am liebsten mitkommen?",
       "antworten":
         {
-          "Gall": "In die 1920er, um den Lebensstil den man aus Filmen kennt einmal zu erleben. Obwohl die Realität oft anders war.",
-          "Lasotta": "Etwa 500 Jahre in die Zukunft.",
-          "Waldbüßer": "200 Jahre in die Zukunft, ins Jahr 2216.",
+          "Gall": "In die 1920er, um den Lebensstil den man aus Filmen kennt einmal zu erleben, obwohl die Realität oft anders war.",
+          "Lasotta": "Etwa 500 Jahre in die Zukunft",
+          "Waldbüßer": "200 Jahre in die Zukunft, ins Jahr 2216",
           "Zeplin": "In das Rom zu Caesars Zeiten"
         },
         "typ": "privat"
@@ -188,9 +188,9 @@
       "antworten":
         {
           "Gall": "Flächendeckende Internetverbindung, Ausbau der Ganztages- und Gemeinschaftsschulen, gelungene Integration der Flüchtlinge",
-          "Lasotta": "Medizinische Versorgung<br>Integration<br>Verkehrsinfrastruktur",
-          "Waldbüßer": "Flüchtlingssituation / Klimawandel, erneuerbare Energien / sozialer Mietwohnungsbau",
-          "Zeplin": "Verbesserung der Infrastruktur / Verbesserund der Medizinischen Versorgung / Optimierung des Schulwesens"
+          "Lasotta": "Medizinische Versorgung, Integration, Verkehrsinfrastruktur",
+          "Waldbüßer": "Flüchtlingssituation, Klimawandel, erneuerbare Energien, sozialer Mietwohnungsbau",
+          "Zeplin": "Verbesserung der Infrastruktur, Verbesserund der Medizinischen Versorgung, Optimierung des Schulwesens"
         },
         "typ": "politisch"
     },
@@ -199,10 +199,10 @@
       "frage": "Die Kandidaten haben die Menschen im Wahlkreis in wenigen Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
-          "Gall": "verantwortungsbewusst, eigen-verantwortlich, sehr hohes bürgerliches Engagement, lebensfroh",
-          "Lasotta": "Weltoffen<br>Heimatverbunden<br>Engagier",
+          "Gall": "Verantwortungsbewusst, eigen-verantwortlich, sehr hohes bürgerliches Engagement, lebensfroh",
+          "Lasotta": "Weltoffen, heimatverbunden, engagiert",
           "Waldbüßer": "Fleißig, gesellig, dickköpfig, naturverbunden, hilfsbereit",
-          "Zeplin": "Selbstbewusst/ Eher konservativ / Heimatbewusst"
+          "Zeplin": "Selbstbewusst, eher konservativ, heimatbewusst"
         },
         "typ": "politisch"
     },
@@ -211,9 +211,9 @@
       "frage": "Die Flüchtlinge sind ein zentrales Thema, auch auf Landesebene. Doch wie sollte man mit den Neuankömmlingen umgehen?",
       "antworten":
         {
-          "Gall": "Die Menschen mit offenen Armen aufnehmen, in Ruhe entscheiden wie es weitergeht",
-          "Lasotta": "Das Land und die Kommunen müssen für eine gute Integration derer Menschen sorgen, die länger hierbleiben. Ansätze zur Begrenzung der Flüchtlinge laufen dann vor allem auf europäischer Ebene.",
-          "Waldbüßer": "Landratsämter und ehrenamtliche Helfer müssen eng zusammenarbeiten, Vereine und Menschen Scheu verlieren vor den Menschen, schnell Sprache erlernen, Wirtschaft muss Arbeitsplätze anbieten (besonders im Handwerk)",
+          "Gall": "Die Menschen mit offenen Armen aufnehmen und in Ruhe entscheiden wie es weitergeht.",
+          "Lasotta": "Das Land und die Kommunen müssen für eine gute Integration der Menschen sorgen, die länger hierbleiben. Ansätze zur Begrenzung der Flüchtlinge laufen dann vor allem auf europäischer Ebene.",
+          "Waldbüßer": "Landratsämter und ehrenamtliche Helfer müssen eng zusammenarbeiten, Vereine und Menschen sollten die Scheu vor den Menschen verlieren. Flüchtlinge müssen schnell die Sprache erlernen, Wirtschaft muss Arbeitsplätze anbieten (besonders im Handwerk).",
           "Zeplin": "Man sollte klar unterscheiden zwischen Kriegsflüchtling und Wirtschaftsflüchtling. Außerdem braucht es ein Einwanderungsgesetz."
         },
         "typ": "politisch"
@@ -224,9 +224,9 @@
       "antworten":
         {
           "Gall": "Ausbildung und Bildung fördern, Lebensperspektive geben, Anreize bieten, dass andere Menschen zum Arbeiten kommen und bleiben",
-          "Lasotta": "Durch gute Ausbildungs-  und Arbeitsverhältnisse und innovative Hochschulen.",
-          "Waldbüßer": "Heilbronn zur Universitätsstadt formen schafft Anreize für junge Menschen, viele Jugendtreffs, Vereine, Einrichtungen vorhanden",
-          "Zeplin": "Die duale Ausbildung fördern und den jugendlichen klar machen, dass es nicht unbedingt ein Studium sein muss, um beruflich weiter zu kommen"
+          "Lasotta": "Durch gute Ausbildungs- und Arbeitsverhältnisse und innovative Hochschulen",
+          "Waldbüßer": "Heilbronn zur Universitätsstadt formen, schafft Anreize für junge Menschen. Es sind bereits viele Jugendtreffs, Vereine, Einrichtungen vorhanden.",
+          "Zeplin": "Die duale Ausbildung fördern und den Jugendlichen klar machen, dass es nicht unbedingt ein Studium sein muss, um beruflich weiter zu kommen."
         },
         "typ": "politisch"
     },
@@ -237,7 +237,7 @@
         {
           "Gall": "Auf dem Land gleiche Infrastruktur wie in Ballungsräumen schaffen, Internetanbindung verbessern, Kommunen attraktiv machen, Zugang zu Bildung, Freizeit, Wirtschaft fördern",
           "Lasotta": "Es gibt noch Potenzial beim Ausbau der regenerativen Projekte. Außerdem sollte die Nutzung von Wasserstraßen gefördert werden. Auch beim Thema Mobilität sollte das Land Unternehmen und Forschungen zum Thema Elektromobilität unterstützen.",
-          "Waldbüßer": "Ausbau erneuerbarer Energien / Kohlekraftwerk Heilbronn in absehbarer Zeit abschalten / Weinbau auf kontrolliert biologischen Anbau umstellen / Nachhaltige Waldwirtschaft",
+          "Waldbüßer": "Erneuerbare Energien ausbauen, Kohlekraftwerk Heilbronn in absehbarer Zeit abschalten, den Weinbau auf kontrolliert biologischen Anbau umstellen, nachhaltige Waldwirtschaft fördern",
           "Zeplin": "Biomasse und Holzschnitzelkraftwerke finde ich sinnvoll, außerdem Biogasanalgen"
         },
         "typ": "politisch"
@@ -282,7 +282,7 @@
   "Heilbronn": [
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten? ",
+      "frage": "Welches Lieblingsgericht der Wahlkreiskandidaten schmeckt Ihnen am besten? ",
       "antworten":
         {
           "Throm": "Gute Pasta",
@@ -294,13 +294,13 @@
     },
     {
       "id": 1,
-      "frage": "Die Kandidaten haben uns ihren Lieblingsort in ihrem Wahlkreis verraten? Wo gefällt es Ihnen am besten?",
+      "frage": "Die Kandidaten haben uns ihren Lieblingsort in ihrem Wahlkreis verraten. Wo gefällt es Ihnen besonders gut?",
       "antworten":
         {
           "Throm": "Heilbronner Wald rund um den Gaffenberg",
-          "Hinderer": "Die renaturierte Waldheide – vom Militärstandort zum Naherholungsgebiet",
+          "Hinderer": "Die renaturierte Waldheide",
           "Bay": "Gaffenberg",
-          "Weinmann": "Der WeinPanoramaWeg unterhalb des Wartbergs"
+          "Weinmann": "Der Weinpanoramaweg unterhalb des Wartbergs"
         },
         "typ": "privat"
     },
@@ -309,34 +309,34 @@
       "frage": "Welcher Lieblingssong der Kandidaten ist der Beste?",
       "antworten":
         {
-          "Throm": "Scorpions, Bryan Adams",
+          "Throm": "Bryan Adams - Scorpions",
           "Hinderer": "Der Mond ist aufgegangen",
-          "Bay": "Over The Rainbow & What A Wonderful World",
+          "Bay": "Over The Rainbow und What A Wonderful World",
           "Weinmann": "Fleetwood Mac – Don't stop thinking about tomorrow"
         },
         "typ": "privat"
     },
     {
       "id": 3,
-      "frage": "Welches dieser Bücher gefällt Ihnen am meisten?",
+      "frage": "Welches dieser Bücher haben auch Sie besonders gern gelesen?",
       "antworten":
         {
-          "Throm": "„Die Firma“ von John Grisham",
-          "Hinderer": "die Bibel, als Fundgrube wegweisender und bereichernder Weisheit ",
-          "Bay": "„Amerika“ von T. C. Boyle",
-          "Weinmann": "Martin Suter: Montecristo"
+          "Throm": "John Grisham - Die Firma",
+          "Hinderer": "Die Bibel, als Fundgrube wegweisender und bereichernder Weisheit ",
+          "Bay": "T. C. Boyle - Amerika",
+          "Weinmann": "Martin Suter - Montecristo"
         },
         "typ": "privat"
     },
     {
       "id": 4,
-      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin  würden Sie am liebsten mitkommen?",
+      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen, wohin es geht. Wohin würden Sie am liebsten mitkommen?",
       "antworten":
         {
           "Throm": "In die Zukunft",
           "Hinderer": "Auf den 14. März 2016, um auf eine erfolgreiche Landtagswahl zurückzublicken",
           "Bay": "In die Flower Power-Zeit der 60er Jahre",
-          "Weinmann": "2200"
+          "Weinmann": "In das Jahr 2200"
         },
         "typ": "privat"
     },
@@ -358,21 +358,21 @@
       "antworten":
         {
           "Throm": "Die aktuelle Flüchtlingsthematik, die starke Zunahme an Wohnungseinbrüchen und Diebstählen und das unstrukturierte Bildungssystem",
-          "Hinderer": "die Frage der Integration der Flüchtlinge, gute und sichere Arbeitsplätze, dass Familien - Junge und Alte - gut und zukunftssicher miteinander zusammenleben können",
+          "Hinderer": "Die Integration der Flüchtlinge, gute und sichere Arbeitsplätze, dass Familien - Junge und Alte - gut und zukunftssicher zusammenleben können",
           "Bay": "Gesundheitsversorgung, Schule und Bildung, Wohnraumversorgung, Flüchtlinge",
-          "Weinmann": "Flüchtlingspolitik inkl. Wohnungsbau, Wirtschaftspolitik und Rechtstaatlichkeit"
+          "Weinmann": "Flüchtlingspolitik inklusive Wohnungsbau, Wirtschaftspolitik und Rechtstaatlichkeit"
         },
         "typ": "politisch"
     },
     {
       "id": 7,
-      "frage": "Die Kandidaten haben die Heilbronner in drei Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
+      "frage": "Die Kandidaten haben die Heilbronner in wenigen Worten beschrieben. Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
           "Throm": "Fleißig, ideenreich, bodenständig",
-          "Hinderer": "fleißig, freundlich, solidarisch.",
-          "Bay": "gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
-          "Weinmann": "leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
+          "Hinderer": "Fleißig, freundlich, solidarisch",
+          "Bay": "Gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
+          "Weinmann": "Leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
         },
         "typ": "politisch"
     },
@@ -381,22 +381,22 @@
       "frage": "Welche Idee halten Sie für am Besten, um den Wahlkreis für junge Menschen attraktiv zu machen?",
       "antworten":
         {
-          "Throm": "Heilbronn ist für Berufseinsteiger bereits hochattraktiv. Die Region bietet interessante Arbeitsplätze, die allerdings weiter ausgebaut werden müssen – ebenso wie die berufliche Bildung und Hochschulen",
-          "Hinderer": "Vielfältige Beteiligungsmöglichkeiten schaffen, gute Ausbildungsangebote sichern und jugendgemäße Freizeitangebote weiterentwickeln (z.B. Hip Island)",
-          "Bay": "Junge Menschen sollten unser kulturelles Leben mit ihren eigenen Ideen mitgestalten können – dazu müssen wir ihnen Raum zur Entfaltung geben. Mehr und unterschiedlichere Orte zum Feiern.",
-          "Weinmann": "Weitere Verbesserung der Ausgeh- und Einkaufsmöglichkeiten, Willkommenskultur für Studierende inkl. ausreichend bezahlbarem Wohnraum, bessere und technisch zeitgemäße Ausstattung unserer Schulen"
+          "Throm": "Heilbronn ist für Berufseinsteiger bereits hochattraktiv. Die Region bietet interessante Arbeitsplätze, die allerdings weiter ausgebaut werden müssen – ebenso wie die berufliche Bildung und Hochschulen.",
+          "Hinderer": "Vielfältige Beteiligungsmöglichkeiten schaffen, gute Ausbildungsangebote sichern und jugendgemäße Freizeitangebote weiterentwickeln (wie das Hip Island)",
+          "Bay": "Junge Menschen sollten unser kulturelles Leben mit ihren eigenen Ideen mitgestalten können – dazu müssen wir ihnen Raum zur Entfaltung geben. Wir brauchen mehr und unterschiedlichere Orte zum Feiern.",
+          "Weinmann": "Weitere Verbesserung der Ausgeh- und Einkaufsmöglichkeiten, Willkommenskultur für Studierende inklusive ausreichend bezahlbarem Wohnraum, bessere und technisch zeitgemäße Ausstattung unserer Schulen"
         },
         "typ": "politisch"
     },
     {
       "id": 9,
-      "frage": "Heilbronn in fünf Jahren:  Was sollte sich bis dahin geändert haben?",
+      "frage": "Heilbronn in fünf Jahren: Was sollte sich bis dahin geändert haben?",
       "antworten":
         {
-          "Throm": "Die Attraktivität der Heilbronner Innenstadt sollte weiter zunehmen, sowohl im Einzelhandel als auch in der Gastronomie",
+          "Throm": "Die Attraktivität der Heilbronner Innenstadt sollte weiter zunehmen, sowohl im Einzelhandel als auch in der Gastronomie.",
           "Hinderer": "In fünf Jahren wird ein erheblicher Teil der Flüchtlinge gut Deutsch sprechen, eine Berufsausbildung machen oder in Arbeit zur Wertschöpfung in unserer Region beitragen und unsere Gesellschaft bereichern.",
-          "Bay": "Wegen erfolgreicher Buga und allem, was damit zusammen hängt gilt HN als attraktive Stadt, es gibt genug bezahlbare Wohnungen, im Straßenverkehr herrscht Rücksichtsmaßnahme.",
-          "Weinmann": "Durch die BUGA hat die Region weiter an Attraktivität gewonnen, Studierende aus allen Ländern bereichern das Stadtbild, die Integration ist gelungen, wir gelten noch immer als eine dynamische und wirtschaftlich starke Region, Heilbronn ist die sicherste Großstadt in Land"
+          "Bay": "Wegen erfolgreicher Buga und allem, was damit zusammen hängt, gilt Heilbronn als attraktive Stadt, es gibt genug bezahlbare Wohnungen, im Straßenverkehr herrscht Rücksichtsmaßnahme.",
+          "Weinmann": "Durch die Buga hat die Region weiter an Attraktivität gewonnen, Studierende aus allen Ländern bereichern das Stadtbild, die Integration ist gelungen, wir gelten noch immer als eine dynamische und wirtschaftlich starke Region, Heilbronn ist die sicherste Großstadt in Land."
         },
         "typ": "politisch"
     },
@@ -440,7 +440,7 @@
   "Hohenlohe": [
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten  schmeckt Ihnen am meisten? ",
+      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen besonders gut? ",
       "antworten":
         {
           "Eyb": "Bartkartoffeln mit Spiegelei",
@@ -456,15 +456,15 @@
       "antworten":
         {
           "Eyb": "Unter der Dusche übe ich meine Reden",
-          "Saknus": "Hello von Adele",
-          "Kern": "Happy von Pharell Williams",
-          "Brauer": "Maschin von Bilderbuch"
+          "Saknus": "Adele - Hello",
+          "Kern": "Pharell Williams - Happy",
+          "Brauer": "Bilderbuch - Maschin"
         },
         "typ": "privat"
     },
     {
       "id": 2,
-      "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten ?",
+      "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten?",
       "antworten":
         {
           "Eyb": "Zuverlässig und ausgeglichen",
@@ -479,22 +479,22 @@
       "frage": "Welches dieser Bücher gefällt Ihnen am meisten?",
       "antworten":
         {
-          "Eyb": "Albert Camus – der erste Mensch",
-          "Saknus": "Joachim Bauer –Warum ich fühle, was du fühlst, das Geheimnis der Spiegelneuronen",
-          "Kern": "Carlos Ruiz Zafón – er Schatten des Windes",
-          "Brauer": "Ayn Rand – der Streik"
+          "Eyb": "Albert Camus – Der erste Mensch",
+          "Saknus": "Joachim Bauer – Warum ich fühle, was du fühlst, das Geheimnis der Spiegelneuronen",
+          "Kern": "Carlos Ruiz Zafón – Der Schatten des Windes",
+          "Brauer": "Ayn Rand – Der Streik"
         },
         "typ": "privat"
     },
     {
       "id": 4,
-      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten  gerne einmal lesen?",
+      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten gerne einmal lesen?",
       "antworten":
         {
-          "Eyb": "„Tatsächlich 100 Jahre alt geworden und pumperlgesund“",
-          "Saknus": "„Hohenlohe schickt einen SPD-Abgeordneten nach Stuttgart“",
-          "Kern": "Grüne schaffen S-Bahn-Finanzierung! (bis nach Waldenburg)",
-          "Brauer": "„Brauer deutlich in Landtag“"
+          "Eyb": "Tatsächlich 100 Jahre alt geworden und pumperlgesund",
+          "Saknus": "Hohenlohe schickt einen SPD-Abgeordneten nach Stuttgart",
+          "Kern": "Grüne schaffen S-Bahn-Finanzierung bis nach Waldenburg",
+          "Brauer": "Brauer deutlich in Landtag"
         },
         "typ": "privat"
     },
@@ -503,8 +503,8 @@
       "frage": "Die Kandidaten haben uns ihre wichtigsten Themen verraten. Welche davon haben auch für Sie höchste Priorität?",
       "antworten":
         {
-          "Eyb": "Ressourcen und Infrastruktur für den ländlichen Raum und Berufspolitik",
-          "Saknus": "Bildung, Jugend und Familie",
+          "Eyb": "Ressourcen und Infrastruktur für den ländlichen Raum, Berufspolitik",
+          "Saknus": "Bildung, Jugend, Familie",
           "Kern": "Mobilität, Barrierefreiheit, ökologische Landwirtschaft",
           "Brauer": "Bildung, Wirtschaft, Bürgerrechte"
         },
@@ -515,16 +515,16 @@
       "frage": "Was fehlt im Wahlkreis am meisten?",
       "antworten":
         {
-          "Eyb": "Würde mir wünschen, dass mehr Menschen Hohenlohe, nicht nur wirtschaftlich ein Begriff ist",
-          "Saknus": "Der Nahverkehr sollte besser ausgebaut werden, gerade für die Jugend",
-          "Kern": "Die Barrierefreiheit steht noch am Anfang",
+          "Eyb": "Würde mir wünschen, dass mehr Menschen Hohenlohe nicht nur wirtschaftlich ein Begriff ist.",
+          "Saknus": "Der Nahverkehr sollte besser ausgebaut werden, gerade für die Jugend.",
+          "Kern": "Die Barrierefreiheit steht noch am Anfang.",
           "Brauer": "Bezahlbarer Wohnraum"
         },
         "typ": "politisch"
     },
     {
       "id": 7,
-      "frage": "Die Kandidaten haben die Hohenloher in fünf Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
+      "frage": "Die Kandidaten haben die Hohenloher in fünf Eigenschaften beschrieben. Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
           "Eyb": "Zurückhaltend, fleißig, zuverlässig, knits, schätzen das Ehrenamt",
@@ -539,10 +539,10 @@
       "frage": "Die Flüchtlinge sind ein zentrales Thema, auch auf Landesebene. Doch wie sollte man mit den Neuankömmlingen umgehen?",
       "antworten":
         {
-          "Eyb": "Solange sie bei uns sind, müssen wir sie so gut behandeln, wie es die Umstände zulassen",
+          "Eyb": "Solange sie bei uns sind, müssen wir sie so gut behandeln, wie es die Umstände zulassen.",
           "Saknus": "Menschlich, wertschätzend, unterstützend und freundlich",
-          "Kern": "Experten sagen seit Jahren, dass unsere Insel der Glückseligkeit nicht so bleiben wird, deshalb sollten wir die Flüchtlingsströme als Chance sehen",
-          "Brauer": "Man muss ihnen vorab mitteilen, was wir von ihnen erwarten und was unsere Werte sind"
+          "Kern": "Experten sagen seit Jahren, dass unsere Insel der Glückseligkeit nicht so bleiben wird, deshalb sollten wir die Flüchtlingsströme als Chance sehen.",
+          "Brauer": "Man muss ihnen vorab mitteilen, was wir von ihnen erwarten und was unsere Werte sind."
         },
         "typ": "politisch"
     },
@@ -551,7 +551,7 @@
       "frage": "Wie können die Politiker den Wahlkreis noch familienfreundlicher machen?",
       "antworten":
         {
-          "Eyb": "Der Staat sollte nicht zu viel vorgeben, alle Menschen sollten ihre Pläne verwirklichen können",
+          "Eyb": "Der Staat sollte nicht zu viel vorgeben, alle Menschen sollten ihre Pläne verwirklichen können.",
           "Saknus": "Erziehungsurlaub für Väter stärken, Kinderbetreuung und Beratungsangebote ausbauen",
           "Kern": "Gute Kleinkindbetreuung, gute Ganztagsschulen, flexible Arbeitsmöglichkeiten",
           "Brauer": "Kinderbetreuung, die auf Wahlfreiheit setzt"

@@ -140,7 +140,7 @@ $(document).ready(function (){
       $.each(val.antworten, function(key_answer, val_answer){
         if(val.id==currentQuestionID){
           if(val.typ != 'challenge'){
-            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
+            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title" lang="de">'+ val_answer +'</div></div>'
 
             // If answer is small, then center it
             if ( val_answer.length < 20 ){
@@ -275,9 +275,12 @@ $(document).ready(function (){
   // Change div containing a question to the wahlkreis selection
   function changeToWahlkreis (cssClassToRemove){
     $("."+cssClassToRemove).addClass("wahlkreis").removeClass(cssClassToRemove);
+<<<<<<< HEAD
     $(".issues p").show();
     $(".issues h2 > span").show().html("Wahlkreis wählen");
     $(".issues p").show().html("Für unseren Kandidaten-Check haben die Landtagskandidaten von CDU, Grünen, SPD und FDP persönliche und politische Fragen beantwortet. Die Highlights haben wir ausgewählt. Klicken Sie jeweils auf die Antwort, die Ihnen am besten gefällt. Am Ende erfahren Sie, mit welchem Kandidaten Sie – politisch und privat – am meisten Übereinstimmungen haben.");
+=======
+>>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
     $(".tile-grid").empty()
     $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
     $(".tile-grid").append('<div class="tiles"></div>');
@@ -304,6 +307,7 @@ $(document).ready(function (){
     $(".personal-result > h3").hide();
     $(".tile-grid").remove();
     $(".progress").hide();
+    $(".progress").after('<div class="moreAction"><a class="restartGame">Zurück zum Start</a><a class="wahlkreis" href="http://www.stimme.de/themen/wahlen/landtagswahl2016/'+selectedWahlkreis+'">Mehr Infos zum Wahlkreis '+ selectedWahlkreis +'</a></div>');
 
     // Get results [return datatype is a two-dimensional array]
     privateResult = getResult("privat", "challenge");
@@ -394,6 +398,23 @@ $(document).ready(function (){
       processQuestion();
     }
   })
+
+  // Reset variables & start from beginning
+  function restartGame(){
+    $(".personal-result").empty();
+    $(".personal-result").append('<h3></h3>');
+    $(".personal-result").append('<div class="tile-grid"></div>')
+    $("div.moreAction").remove();
+
+    selectedWahlkreis = null,
+    currentQuestionID = 0,
+    currentQuestionOrderID = 0,
+    politicalResult = null,
+    privateResult = null,
+    selections = [];
+
+    changeToWahlkreis("personal-result");
+  }
 
   // Save wahlkreis id, the user selected
   $("body").on('click', '.wahlkreis .tile' ,function () {

@@ -156,6 +156,22 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     }
   }
 
+  div.moreAction{
+    text-align: center;
+
+    a.restartGame,
+    a.wahlkreis{
+      border: none;
+      background: none;
+      outline: none;
+      text-decoration: none;
+      color: $primary;
+      font-size: 1.1rem;
+      display: block;
+      cursor: pointer;
+    }
+  }
+
   section.wahlkreis,
   section.question{
     h3{
