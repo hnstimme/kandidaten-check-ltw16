@@ -151,10 +151,10 @@
       "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten?",
       "antworten":
         {
-          "Gall": "emotional, Kumpeltyp, zuverlässig",
-          "Lasotta": "offen, engagiert, manchmal etwas dickköpfig",
-          "Waldbüßer": "authentisch, hilfsbereit, freundlich",
-          "Zeplin": "locker, frech, belesen"
+          "Gall": "Emotional, Kumpeltyp, zuverlässig",
+          "Lasotta": "Offen, engagiert, manchmal etwas dickköpfig",
+          "Waldbüßer": "Authentisch, hilfsbereit, freundlich",
+          "Zeplin": "Locker, frech, belesen"
         },
         "typ": "privat"
     },
@@ -175,7 +175,7 @@
       "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin würden Sie am liebsten mitkommen?",
       "antworten":
         {
-          "Gall": "In die 1920er, um den Lebensstil den man aus Filmen kennt einmal zu erleben. Obwohl die Realität oft anders war.",
+          "Gall": "In die 1920er, um den Lebensstil den man aus Filmen kennt einmal zu erleben, obwohl die Realität oft anders war.",
           "Lasotta": "Etwa 500 Jahre in die Zukunft",
           "Waldbüßer": "200 Jahre in die Zukunft, ins Jahr 2216",
           "Zeplin": "In das Rom zu Caesars Zeiten"
@@ -199,10 +199,10 @@
       "frage": "Die Kandidaten haben die Menschen im Wahlkreis in wenigen Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
-          "Gall": "verantwortungsbewusst, eigen-verantwortlich, sehr hohes bürgerliches Engagement, lebensfroh",
-          "Lasotta": "weltoffen, heimatverbunden, engagiert",
-          "Waldbüßer": "fleißig, gesellig, dickköpfig, naturverbunden, hilfsbereit",
-          "Zeplin": "selbstbewusst, eher konservativ, heimatbewusst"
+          "Gall": "Verantwortungsbewusst, eigen-verantwortlich, sehr hohes bürgerliches Engagement, lebensfroh",
+          "Lasotta": "Weltoffen, heimatverbunden, engagiert",
+          "Waldbüßer": "Fleißig, gesellig, dickköpfig, naturverbunden, hilfsbereit",
+          "Zeplin": "Selbstbewusst, eher konservativ, heimatbewusst"
         },
         "typ": "politisch"
     },
@@ -300,7 +300,7 @@
           "Throm": "Heilbronner Wald rund um den Gaffenberg",
           "Hinderer": "Die renaturierte Waldheide",
           "Bay": "Gaffenberg",
-          "Weinmann": "Der WeinpanoramaWeg unterhalb des Wartbergs"
+          "Weinmann": "Der Weinpanoramaweg unterhalb des Wartbergs"
         },
         "typ": "privat"
     },
@@ -370,9 +370,9 @@
       "antworten":
         {
           "Throm": "fleißig, ideenreich, bodenständig",
-          "Hinderer": "fleißig, freundlich, solidarisch.",
-          "Bay": "gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
-          "Weinmann": "leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
+          "Hinderer": "Fleißig, freundlich, solidarisch.",
+          "Bay": "Gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
+          "Weinmann": "Leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
         },
         "typ": "politisch"
     },
@@ -467,10 +467,10 @@
       "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten ?",
       "antworten":
         {
-          "Eyb": "zuverlässig und ausgeglichen",
-          "Saknus": "neugierig, rastlos, zuverlässig",
-          "Kern": "lustig, engagiert, originell",
-          "Brauer": "direkt, ehrlich, humorvoll"
+          "Eyb": "Zuverlässig und ausgeglichen",
+          "Saknus": "Neugierig, rastlos, zuverlässig",
+          "Kern": "Lustig, engagiert, originell",
+          "Brauer": "Direkt, ehrlich, humorvoll"
         },
         "typ": "privat"
     },
@@ -488,7 +488,7 @@
     },
     {
       "id": 4,
-      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten  gerne einmal lesen?",
+      "frage": "Welche Schlagzeile würden Sie ebenso wie die Kandidaten gerne einmal lesen?",
       "antworten":
         {
           "Eyb": "Tatsächlich 100 Jahre alt geworden und pumperlgesund",
@@ -527,10 +527,10 @@
       "frage": "Die Kandidaten haben die Hohenloher in fünf Worten beschrieben. Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
-          "Eyb": "zurückhaltend, fleißig, zuverlässig, knits, schätzen das Ehrenamt",
-          "Saknus": "eigenwillig, zurückhaltend, zuverlässig, treu und hilfsbereit",
-          "Kern": "fleißig, bodenständig, genügsam, loyal, verbindlich",
-          "Brauer": "schaffig, ehrlich, herzlich, wenig diplomatisch und können genießen"
+          "Eyb": "Zurückhaltend, fleißig, zuverlässig, knits, schätzen das Ehrenamt",
+          "Saknus": "Eigenwillig, zurückhaltend, zuverlässig, treu und hilfsbereit",
+          "Kern": "Fleißig, bodenständig, genügsam, loyal, verbindlich",
+          "Brauer": "Schaffig, ehrlich, herzlich, wenig diplomatisch und können genießen"
         },
         "typ": "politisch"
     },
