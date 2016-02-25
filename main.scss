@@ -85,6 +85,11 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
         font-size: 1rem;
       }
     }
+    p{
+      @media screen and (max-width: 500px){
+        display: none;
+      }
+    }
   }
   section{
     margin-bottom: 2rem;
@@ -119,7 +124,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
   }
 
   section.issues p,
-  .endingText,
   .credits{
       text-align: justify;
       width: 70%;
@@ -245,10 +249,11 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
             width: $candidate-normal-size;
             height: $candidate-normal-size;
             overflow: hidden;
-            position: absolute;;
+            position: absolute;
             margin: 10px;
 
             background-size: cover;
+            background-position: center;
 
             border-radius: 50%;
             -moz-border-radius: 50%;
@@ -359,7 +364,7 @@ $tile-normal-width: 25%;
   flex-wrap: nowrap;
   justify-content: space-around;
 
-  width: 85%;
+  width: 90%;
   margin: 1rem auto;
 
   a{
@@ -373,7 +378,7 @@ $tile-normal-width: 25%;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     justify-content: space-around;
-    @include flex-size( 80% );
+    @include flex-size( 90% );
 
     margin: auto;
 
@@ -469,6 +474,7 @@ $tile-normal-width: 25%;
 
       .challenge{
         width: 100%;
+        border: 2px solid $primary;
       }
 
       .glow{
@@ -526,7 +532,6 @@ $tile-normal-width: 25%;
 
   button.nextQuestion,
   button.previousQuestion{
-    @include flex-size( 10% );
     background: none;
     border: none;
     outline: none;
@@ -535,9 +540,9 @@ $tile-normal-width: 25%;
     padding: 0;
     margin: 0;
   }
-  div.nextQuestion,
-  div.previousQuestion{
-    @include flex-size( 10% );
+  .nextQuestion,
+  .previousQuestion{
+    @include flex-size( 5% );
   }
 }
 

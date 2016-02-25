@@ -140,7 +140,12 @@ $(document).ready(function (){
       $.each(val.antworten, function(key_answer, val_answer){
         if(val.id==currentQuestionID){
           if(val.typ != 'challenge'){
-            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title" lang="de">'+ val_answer +'</div></div>'
+            var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
+
+            // If answer is small, then center it
+            if ( val_answer.length < 20 ){
+              displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title" style="text-align: center;">'+ val_answer +'</div></div>'
+            }
 
             $(".tiles").append(displayTile);
             i=i+1;
@@ -261,7 +266,7 @@ $(document).ready(function (){
     $(".tile-grid .previousQuestion").replaceWith('<button class="previousQuestion"><img class="twisted" src="img/next.svg"></button>');
     $(".progress").show();
     $(".issues h2 > span").html(selectedWahlkreis);
-    $(".question h3").show();
+    $(".issues p").hide();
 
     currentQuestionOrderID = 0
     processQuestion();
@@ -270,7 +275,9 @@ $(document).ready(function (){
   // Change div containing a question to the wahlkreis selection
   function changeToWahlkreis (cssClassToRemove){
     $("."+cssClassToRemove).addClass("wahlkreis").removeClass(cssClassToRemove);
+    $(".issues p").show();
     $(".issues h2 > span").show().html("Wahlkreis wählen");
+    $(".issues p").show().html("Für unseren Kandidaten-Check haben die Landtagskandidaten von CDU, Grünen, SPD und FDP persönliche und politische Fragen beantwortet. Die Highlights haben wir ausgewählt. Klicken Sie jeweils auf die Antwort, die Ihnen am besten gefällt. Am Ende erfahren Sie, mit welchem Kandidaten Sie – politisch und privat – am meisten Übereinstimmungen haben.");
     $(".tile-grid").empty()
     $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
     $(".tile-grid").append('<div class="tiles"></div>');
@@ -280,7 +287,7 @@ $(document).ready(function (){
     $(".tiles").append('<div class="tile" id="Hohenlohe"><span class="logo"><span>HOH</span></span><div class="title">Hohenlohe</div></div>');
     $(".tiles").after('<div class="waitForTheButton nextQuestion"></div>');
 
-    $(".wahlkreis h3").hide();
+    $(".wahlkreis h3").show().html("Wählen Sie Ihren Wahlkreis");
     $(".progress").hide();
 
     // Reset variables
@@ -292,7 +299,8 @@ $(document).ready(function (){
   function changeToResult (){
     // Prepare HTML structure for candidates
     $(".question").addClass("personal-result").removeClass("question");
-    $(".issues h2 > span").html("Dein Ergebnis");
+    $(".issues h2 > span").html("Ihr Ergebnis");
+    $(".wahlkreis h3").hide();
     $(".personal-result > h3").hide();
     $(".tile-grid").remove();
     $(".progress").hide();
@@ -346,7 +354,7 @@ $(document).ready(function (){
     else {
       endingText = 'Geschafft! Jetzt erfahren Sie, die Antworten welches Kandidaten Sie am häufigsten ausgewählt haben, und welche am seltensten. Auf der linken Seite sehen Sie die politische Übereinstimmung. Gleiche Antworten auf Sachfragen wurden als politische Übereinstimmung gewertet. Auf der rechten Seite sehen Sie, welcher Kandidat Ihnen persönlich am nächsten steht. Gleiche Antworten zu persönlichen Vorlieben zählen als persönliche Übereinstimmung. In den anderen Wahlkreisen in der Region haben die Politiker drei Zusatzaufgaben wie kuriose Selfies und eine Zeichnung eingeschickt, die Kandidaten aus Eppingen wollten das nicht. Schade!';
     }
-    $(".sharing-container").before('<section class="endingText"><p>' + endingText + '</p></section>');
+    $(".issues p").show().html( endingText );
 
     // Add credits
     var creditsText = 'Für den Kandidaten-Check haben Volontäre der Heilbronner Stimme die Kandidaten zur Landtagswahl nach Persönlichem und Politischem befragt. Eine Auswahl der Antworten und die Zusatzaufgaben haben es in den Check geschafft.</p>'
@@ -355,7 +363,7 @@ $(document).ready(function (){
     $(".sharing-container").before('<section class="credits"><h3>Credits</h3><p>' + creditsText + '</section>');
 
     // Add links for restarting the game & further links
-    $(".endingText").after('<div class="moreAction"><a class="restartGame">Zurück zum Start</a><a class="wahlkreis" href="http://www.stimme.de/themen/wahlen/landtagswahl2016/'+selectedWahlkreis+'">Mehr Infos zum Wahlkreis '+ selectedWahlkreis +'</a></div>');
+    $(".credits").before('<div class="moreAction"><a class="restartGame">Zurück zum Start</a><a class="wahlkreis" href="http://www.stimme.de/themen/wahlen/landtagswahl2016/'+selectedWahlkreis+'">Mehr Infos zum Wahlkreis '+ selectedWahlkreis +'</a></div>');
   }
 
   // Reset variables & start from beginning
