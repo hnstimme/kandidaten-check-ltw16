@@ -143,7 +143,7 @@ $(document).ready(function (){
             var displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title">'+ val_answer +'</div></div>'
 
             // If answer is small, then center it
-            if ( val_answer.length < 20 ){
+            if ( val_answer.length < 60 ){
               displayTile = '<div class="tile" data-index="'+ i +'"><span class="logo answer"></span><div class="title" style="text-align: center;">'+ val_answer +'</div></div>'
             }
 

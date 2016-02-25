@@ -73,7 +73,6 @@ body {
     .lw section h2 {
       font-size: 1.35rem; }
   .lw section.issues h2 {
-<<<<<<< HEAD
     margin: 1.5rem auto 1rem auto;
     text-align: center;
     width: 90%;
@@ -85,64 +84,17 @@ body {
   .lw section.issues p,
   .lw .credits {
     text-align: justify;
-=======
-    margin: 3rem auto 1rem auto;
-    line-height: 0.25;
-    text-align: center; }
-    @media screen and (max-width: 460px) {
-      .lw section.issues h2 {
-        margin: 1.5rem auto 1rem auto; } }
-    .lw section.issues h2 span {
-      display: inline-block;
-      position: relative; }
-      .lw section.issues h2 span:before, .lw section.issues h2 span:after {
-        content: "";
-        position: absolute;
-        border-bottom: 1px solid black;
-        top: 0;
-        width: 120%; }
-        @media screen and (max-width: 900px) {
-          .lw section.issues h2 span:before, .lw section.issues h2 span:after {
-            width: 90%; } }
-        @media screen and (max-width: 801px) {
-          .lw section.issues h2 span:before, .lw section.issues h2 span:after {
-            width: 70%; } }
-        @media screen and (max-width: 625px) {
-          .lw section.issues h2 span:before, .lw section.issues h2 span:after {
-            width: 50%; } }
-        @media screen and (max-width: 500px) {
-          .lw section.issues h2 span:before, .lw section.issues h2 span:after {
-            width: 30%; } }
-        @media (max-width: 350px) {
-          .lw section.issues h2 span:before, .lw section.issues h2 span:after {
-            width: 10%; } }
-      .lw section.issues h2 span:before {
-        right: 100%;
-        margin-right: 15px; }
-      .lw section.issues h2 span:after {
-        left: 100%;
-        margin-left: 15px; }
-  .lw section.issues p {
-    text-align: center;
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
     width: 70%;
     margin: auto;
     padding: 1rem;
     box-sizing: border-box; }
     @media screen and (max-width: 625px) {
-<<<<<<< HEAD
       .lw section.issues p,
       .lw .credits {
         width: 100%; } }
     @media screen and (max-width: 460px) {
       .lw section.issues p,
       .lw .credits {
-=======
-      .lw section.issues p {
-        width: 100%; } }
-    @media screen and (max-width: 460px) {
-      .lw section.issues p {
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
         text-align: left;
         padding: 0 1rem; } }
   .lw div.moreAction {
@@ -161,11 +113,8 @@ body {
   .lw section.question h3 {
     max-width: 85%;
     margin: auto; }
-<<<<<<< HEAD
   .lw section.wahlkreis .title {
     text-align: center; }
-=======
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
   .lw section.personal-result .candidates {
     display: -ms-flexbox;
     display: flex;
@@ -180,7 +129,10 @@ body {
           width: 120px !important;
           height: 120px !important; } }
       .lw section.personal-result .candidates:first-of-type .candidate {
-        opacity: 1; }
+        opacity: 1;
+        margin-bottom: 0; }
+        .lw section.personal-result .candidates:first-of-type .candidate .info {
+          margin-top: 0.5rem; }
       .lw section.personal-result .candidates:first-of-type .percentage {
         width: 200px !important;
         height: 200px !important; }
@@ -197,20 +149,18 @@ body {
             height: 120px !important; } }
     .lw section.personal-result .candidates .candidate {
       max-width: 50%;
-      opacity: 0.8; }
-<<<<<<< HEAD
+      opacity: 0.8;
+      margin-bottom: 1rem; }
       .lw section.personal-result .candidates .candidate .topic {
         font-size: 1.2rem;
         font-weight: 600;
         text-align: center;
         display: block;
         margin-bottom: 1rem; }
-=======
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
       .lw section.personal-result .candidates .candidate .percentage {
         width: 150px;
         height: 150px;
-        margin: auto auto 1rem auto;
+        margin: auto;
         position: relative; }
         @media screen and (max-width: 460px) {
           .lw section.personal-result .candidates .candidate .percentage {
@@ -225,10 +175,7 @@ body {
           position: absolute;
           margin: 10px;
           background-size: cover;
-<<<<<<< HEAD
           background-position: center;
-=======
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
           border-radius: 50%;
           -moz-border-radius: 50%; }
           @media screen and (max-width: 460px) {
@@ -244,14 +191,7 @@ body {
         color: #A84A46;
         font-size: 3rem;
         font-weight: 300;
-        margin: 0.3rem 0; }
-<<<<<<< HEAD
-=======
-      .lw section.personal-result .candidates .candidate .topic {
-        font-size: 0.9rem;
-        text-align: center;
-        display: block; }
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
+        margin: 0; }
 
 .progress {
   display: none;
@@ -315,11 +255,7 @@ body {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   justify-content: space-around;
-<<<<<<< HEAD
   width: 90%;
-=======
-  width: 85%;
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
   margin: 1rem auto; }
   .lw .tile-grid a {
     text-decoration: none;
@@ -330,15 +266,9 @@ body {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     justify-content: space-around;
-<<<<<<< HEAD
     -ms-flex-preferred-size: 90%;
     flex-basis: 90%;
     max-width: 90%;
-=======
-    -ms-flex-preferred-size: 80%;
-    flex-basis: 80%;
-    max-width: 80%;
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
     margin: auto; }
     .lw .tile-grid .tiles .tile {
       -ms-flex-preferred-size: 25%;
@@ -406,12 +336,8 @@ body {
         .lw .tile-grid .tiles .tile.blind:hover {
           opacity: 1; }
       .lw .tile-grid .tiles .tile .challenge {
-<<<<<<< HEAD
         width: 100%;
         border: 2px solid #D05C5C; }
-=======
-        width: 100%; }
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
       .lw .tile-grid .tiles .tile .glow {
         animation-name: glowing;
         animation-duration: 0.3s;
@@ -440,11 +366,7 @@ body {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
-<<<<<<< HEAD
     text-align: left;
-=======
-    text-align: justify;
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
     font-weight: 300;
     max-width: 400px;
     box-sizing: border-box;
@@ -457,12 +379,6 @@ body {
         margin: 0 auto 1.2rem auto; } }
   .lw .tile-grid button.nextQuestion,
   .lw .tile-grid button.previousQuestion {
-<<<<<<< HEAD
-=======
-    -ms-flex-preferred-size: 10%;
-    flex-basis: 10%;
-    max-width: 10%;
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
     background: none;
     border: none;
     outline: none;
@@ -470,19 +386,11 @@ body {
     height: 125px;
     padding: 0;
     margin: 0; }
-<<<<<<< HEAD
   .lw .tile-grid .nextQuestion,
   .lw .tile-grid .previousQuestion {
     -ms-flex-preferred-size: 5%;
     flex-basis: 5%;
     max-width: 5%; }
-=======
-  .lw .tile-grid div.nextQuestion,
-  .lw .tile-grid div.previousQuestion {
-    -ms-flex-preferred-size: 10%;
-    flex-basis: 10%;
-    max-width: 10%; }
->>>>>>> 69ed4d1d10a9be268d276a840bd9e049a1a952d3
 
 @media screen and (max-width: 625px) {
   .lw .tile-grid .tiles .tile {

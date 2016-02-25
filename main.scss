@@ -196,6 +196,11 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 
         .candidate{
           opacity: 1;
+          margin-bottom: 0;
+
+          .info{
+            margin-top: 0.5rem;
+          }
         }
         .percentage{
           width: $candidate-normal-size + 70px !important;
@@ -220,6 +225,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       .candidate{
         max-width: 50%;
         opacity: 0.8;
+        margin-bottom: 1rem;
 
         .topic{
           font-size: 1.2rem;
@@ -233,7 +239,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
           width: $candidate-normal-size + 20px;
           height: $candidate-normal-size + 20px;
 
-          margin: auto auto 1rem auto;
+          margin: auto;
           position: relative;
 
           @media screen and (max-width: 460px){
@@ -276,7 +282,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
           color: $secondary;
           font-size: 3rem;
           font-weight: 300;
-          margin: 0.3rem 0;
+          margin: 0;
         }
       }
     }
