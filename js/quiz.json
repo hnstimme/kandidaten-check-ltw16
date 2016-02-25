@@ -2,7 +2,7 @@
   "Eppingen":[
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
+      "frage": "Welches Lieblingsgericht der Wahlkreiskandidaten schmeckt Ihnen besonders gut?",
       "antworten":
         {
           "Gurr-Hirsch": "Selbstgemachte Maultaschen mit Kartoffelsalat",
@@ -38,7 +38,7 @@
     },
     {
       "id": 3,
-      "frage": "Welchen Lieblingsfilm der Kandidaten mögen Sie am meisten?",
+      "frage": "Welcher Lieblingsfilm der Kandidaten ist Ihr Favorit?",
       "antworten":
         {
           "Gurr-Hirsch": "Vom Winde verweht",
@@ -80,7 +80,7 @@
           "Gurr-Hirsch": "Alle Flüchtlinge müssen registriert werden, sie sollen sofort Deutsch lernen, die Kommune muss sich dem Thema stellen und Ehrenamtliche stärken.",
           "Blättgen": "Wir nehmen die Menschen auf, versorgen und integrieren sie. Diejenigen, die nicht als Flüchtling anerkannt werden, schicken wir nach Hause. Wir arbeiten mit der EU daran, Flüchtlinge zu kontingentieren und zu verteilen, gemeinsam mit anderen Partnern bekämpfen wir die Fluchtursachen, um den Zustrom zu stoppen.",
           "Winkler": "Ich wünsche mir, dass die derzeit erlebbare Willkommenskultur durch viele ehrenamtliche Helfer weitergeführt werden kann.",
-          "Heitlinger": "Freundlich aufnehmen; aber bei Verfehlungen hart durchgreifen. Am besten in dezentrale kleine Einheiten verteilen."
+          "Heitlinger": "Wir sollten sie freundlich aufnehmen, aber bei Verfehlungen hart durchgreifen. Am besten Flüchtlinge in dezentrale kleine Einheiten verteilen."
         },
         "typ": "politisch"
     },
@@ -104,7 +104,7 @@
           "Gurr-Hirsch": "Angebote in Sport, Freizeit, Kultur, Jugendzentren als Begegnungsmöglichkeiten, zwei Mal im Jahr sollen Jugendliche im Gemeinderat gehört werden und kleines Budget für eigene Projekte bekommen.",
           "Blättgen": "Dafür sorgen, dass der ländliche Raum als Lebensort erhalten bleibt. Dazu gehören ein attraktiver Nahverkehr, wohnortnahe Bildungsstandorte und lebendige Ortskerne. Das städtebauliche Sanierungsprogramm der Landesregierung leistet hier wertvolle Hilfe.",
           "Winkler": "Das Thema Mobilitätskonzept steht bei mir im Vordergrund. Hier sehe ich in der Region durchaus noch Entwicklungsmöglichkeiten.",
-          "Heitlinger": "Flächendeckendes Breitbandinternet, bezahlbares Bauland"
+          "Heitlinger": "Flächendeckendes Breitband-Internet, bezahlbares Bauland"
         },
         "typ": "politisch"
     },
@@ -113,7 +113,7 @@
       "frage": "Wie gelingt es am ehesten, die Region noch nachhaltiger und grüner machen?",
       "antworten":
         {
-          "Gurr-Hirsch": "Regionale Wirtschaftskreisläufe unterstützen, „grüne Berufe“ wertschätzen, Ökopunktesystem zum Beispiel für Bewirtschaftung von Mauerweinbergen oder Streuobstwiesen",
+          "Gurr-Hirsch": "Regionale Wirtschaftskreisläufe unterstützen, „grüne Berufe“ wertschätzen, Ökopunktesystem zum Beispiel für Bewirtschaftung von Mauer-Weinbergen oder Streuobstwiesen",
           "Blättgen": "Die regionale Landwirtschaft stärken. Regionale Produkte sind eine Marke und unterstützen die heimischen Erzeuger. Außerdem setzt die Landesregierung im Forschungsbereich auf nachhaltige Mobilität und Umwelttechnik. Durch eine moderne und nachhaltige Industriepolitik machen wir die Wirtschaft fit für die Zukunft und tun etwas für die Umwelt.",
           "Winkler": "Durch ein Mobilitätskonzept, außerdem setzte ich mich dafür ein, dass wir uns über eine regionale Energieversorgung mehr Gedanken machen. Es müsste noch ein, zwei Standorte mit kleineren Windparks hier geben. Der anfallende Biomüll sollte in der Region zur Energiegewinnung eingesetzt und Wirtschaftsbereiche ohne erhöhten Ressourcenverbrauch gestärkt werden.",
           "Heitlinger": "Förderung von bäuerlichen Familienbetrieben"
@@ -124,7 +124,7 @@
   "Neckarsulm": [
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten?",
+      "frage": "Welches Lieblingsgericht der Wahlkreiskandidaten schmeckt Ihnen besonders gut?",
       "antworten":
         {
           "Gall": "Bratengerichte",
@@ -172,7 +172,7 @@
     },
     {
       "id": 4,
-      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin würden Sie am liebsten mitkommen?",
+      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen, wohin es geht. Wohin würden Sie am liebsten mitkommen?",
       "antworten":
         {
           "Gall": "In die 1920er, um den Lebensstil den man aus Filmen kennt einmal zu erleben, obwohl die Realität oft anders war.",
@@ -225,7 +225,7 @@
         {
           "Gall": "Ausbildung und Bildung fördern, Lebensperspektive geben, Anreize bieten, dass andere Menschen zum Arbeiten kommen und bleiben",
           "Lasotta": "Durch gute Ausbildungs- und Arbeitsverhältnisse und innovative Hochschulen",
-          "Waldbüßer": "Heilbronn zur Universitätsstadt formen schafft Anreize für junge Menschen. Es sind bereits viele Jugendtreffs, Vereine, Einrichtungen vorhanden.",
+          "Waldbüßer": "Heilbronn zur Universitätsstadt formen, schafft Anreize für junge Menschen. Es sind bereits viele Jugendtreffs, Vereine, Einrichtungen vorhanden.",
           "Zeplin": "Die duale Ausbildung fördern und den Jugendlichen klar machen, dass es nicht unbedingt ein Studium sein muss, um beruflich weiter zu kommen."
         },
         "typ": "politisch"
@@ -282,7 +282,7 @@
   "Heilbronn": [
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten? ",
+      "frage": "Welches Lieblingsgericht der Wahlkreiskandidaten schmeckt Ihnen am besten? ",
       "antworten":
         {
           "Throm": "Gute Pasta",
@@ -294,7 +294,7 @@
     },
     {
       "id": 1,
-      "frage": "Die Kandidaten haben uns ihren Lieblingsort in ihrem Wahlkreis verraten. Wo gefällt es Ihnen am besten?",
+      "frage": "Die Kandidaten haben uns ihren Lieblingsort in ihrem Wahlkreis verraten. Wo gefällt es Ihnen besonders gut?",
       "antworten":
         {
           "Throm": "Heilbronner Wald rund um den Gaffenberg",
@@ -318,7 +318,7 @@
     },
     {
       "id": 3,
-      "frage": "Welches dieser Bücher gefällt Ihnen am meisten?",
+      "frage": "Welches dieser Bücher haben auch Sie besonders gern gelesen?",
       "antworten":
         {
           "Throm": "John Grisham - Die Firma",
@@ -330,7 +330,7 @@
     },
     {
       "id": 4,
-      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen wohin es geht. Wohin würden Sie am liebsten mitkommen?",
+      "frage": "Die Kandidaten bekommen eine Zeitreise und dürfen sich aussuchen, wohin es geht. Wohin würden Sie am liebsten mitkommen?",
       "antworten":
         {
           "Throm": "In die Zukunft",
@@ -366,11 +366,11 @@
     },
     {
       "id": 7,
-      "frage": "Die Kandidaten haben die Heilbronner in drei Worten beschrieben Welche Charakterisierung trifft am meisten zu?",
+      "frage": "Die Kandidaten haben die Heilbronner in wenigen Worten beschrieben. Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
-          "Throm": "fleißig, ideenreich, bodenständig",
-          "Hinderer": "Fleißig, freundlich, solidarisch.",
+          "Throm": "Fleißig, ideenreich, bodenständig",
+          "Hinderer": "Fleißig, freundlich, solidarisch",
           "Bay": "Gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
           "Weinmann": "Leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
         },
@@ -383,14 +383,14 @@
         {
           "Throm": "Heilbronn ist für Berufseinsteiger bereits hochattraktiv. Die Region bietet interessante Arbeitsplätze, die allerdings weiter ausgebaut werden müssen – ebenso wie die berufliche Bildung und Hochschulen.",
           "Hinderer": "Vielfältige Beteiligungsmöglichkeiten schaffen, gute Ausbildungsangebote sichern und jugendgemäße Freizeitangebote weiterentwickeln (wie das Hip Island)",
-          "Bay": "Junge Menschen sollten unser kulturelles Leben mit ihren eigenen Ideen mitgestalten können – dazu müssen wir ihnen Raum zur Entfaltung geben. Es brauch mehr und unterschiedlichere Orte zum Feiern.",
+          "Bay": "Junge Menschen sollten unser kulturelles Leben mit ihren eigenen Ideen mitgestalten können – dazu müssen wir ihnen Raum zur Entfaltung geben. Wir brauchen mehr und unterschiedlichere Orte zum Feiern.",
           "Weinmann": "Weitere Verbesserung der Ausgeh- und Einkaufsmöglichkeiten, Willkommenskultur für Studierende inklusive ausreichend bezahlbarem Wohnraum, bessere und technisch zeitgemäße Ausstattung unserer Schulen"
         },
         "typ": "politisch"
     },
     {
       "id": 9,
-      "frage": "Heilbronn in fünf Jahren:  Was sollte sich bis dahin geändert haben?",
+      "frage": "Heilbronn in fünf Jahren: Was sollte sich bis dahin geändert haben?",
       "antworten":
         {
           "Throm": "Die Attraktivität der Heilbronner Innenstadt sollte weiter zunehmen, sowohl im Einzelhandel als auch in der Gastronomie.",
@@ -440,7 +440,7 @@
   "Hohenlohe": [
     {
       "id": 0,
-      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen am meisten? ",
+      "frage": "Welches der Lieblingsgerichte der Wahlkreiskandidaten schmeckt Ihnen besonders gut? ",
       "antworten":
         {
           "Eyb": "Bartkartoffeln mit Spiegelei",
@@ -464,7 +464,7 @@
     },
     {
       "id": 2,
-      "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten ?",
+      "frage": "So beschreiben Freunde die Kandidaten. Welche Beschreibung klingt am symphatischsten?",
       "antworten":
         {
           "Eyb": "Zuverlässig und ausgeglichen",
@@ -524,7 +524,7 @@
     },
     {
       "id": 7,
-      "frage": "Die Kandidaten haben die Hohenloher in fünf Worten beschrieben. Welche Charakterisierung trifft am meisten zu?",
+      "frage": "Die Kandidaten haben die Hohenloher in fünf Eigenschaften beschrieben. Welche Charakterisierung trifft am meisten zu?",
       "antworten":
         {
           "Eyb": "Zurückhaltend, fleißig, zuverlässig, knits, schätzen das Ehrenamt",
