@@ -25,6 +25,9 @@ body {
     @media screen and (max-width: 460px) {
       .lw header {
         padding: 2em 1em 0 35%; } }
+    @media screen and (max-width: 306px) {
+      .lw header {
+        padding: 0.5em 1em 0 35%; } }
     .lw header h1 {
       font-weight: 300;
       font-size: 3rem;
@@ -61,6 +64,9 @@ body {
       @media screen and (max-width: 350px) {
         .lw header h2 {
           font-size: 1rem; } }
+      @media screen and (max-width: 306px) {
+        .lw header h2 {
+          margin: 0; } }
     .lw header p {
       margin-left: 30%; }
       @media screen and (max-width: 715px) {

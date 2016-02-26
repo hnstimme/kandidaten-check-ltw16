@@ -46,6 +46,9 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     @media screen and (max-width: 460px){
       padding: 2em 1em 0 35%;
     }
+    @media screen and (max-width: 306px){
+      padding: 0.5em 1em 0 35%;
+    }
 
     h1{
       font-weight: 300;
@@ -86,6 +89,9 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       }
       @media screen and (max-width: 350px) {
         font-size: 1rem;
+      }
+      @media screen and (max-width: 306px){
+        margin: 0;
       }
     }
     p{
