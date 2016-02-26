@@ -58,9 +58,14 @@ body {
       @media screen and (max-width: 350px) {
         .lw header h2 {
           font-size: 1rem; } }
-    @media screen and (max-width: 500px) {
-      .lw header p {
-        display: none; } }
+    .lw header p {
+      margin-left: 30%; }
+      @media screen and (max-width: 715px) {
+        .lw header p {
+          margin-left: 0; } }
+      @media screen and (max-width: 500px) {
+        .lw header p {
+          display: none; } }
   .lw section {
     margin-bottom: 2rem; }
     @media screen and (max-width: 625px) {

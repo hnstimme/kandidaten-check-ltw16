@@ -86,6 +86,10 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       }
     }
     p{
+      margin-left: 30%;
+      @media screen and (max-width: 715px){
+        margin-left: 0;
+      }
       @media screen and (max-width: 500px){
         display: none;
       }
