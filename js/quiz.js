@@ -277,7 +277,7 @@ $(document).ready(function (){
     $("."+cssClassToRemove).addClass("wahlkreis").removeClass(cssClassToRemove);
     $(".issues p").show();
     $(".issues h2 > span").show().html("Wahlkreis wählen");
-    $(".issues p").show().html("Mach den Test und schau, welcher Kandidat persönlich und politisch am besten zu dir passt.");
+    $(".issues p").show().html("Für unseren Kandidaten-Check haben die Landtagskandidaten von CDU, Grünen, SPD und FDP persönliche und politische Fragen beantwortet. Die Highlights haben wir ausgewählt. Klicken Sie jeweils auf die Antwort, die Ihnen am besten gefällt. Am Ende erfahren Sie, mit welchem Kandidaten Sie – politisch und privat – am meisten Übereinstimmungen haben.");
     $(".tile-grid").empty()
     $(".tile-grid").append('<div class="waitForTheButton previousQuestion"></div>');
     $(".tile-grid").append('<div class="tiles"></div>');
