@@ -356,7 +356,7 @@ $(document).ready(function (){
     $(".candidates:first-of-type .candidate:last-of-type .percentage").before('<div class="topic">Privat</div>');
 
     // If two identical results
-    if(politicalResult[1][1] == politicalResult[0][1] || true==true){
+    /*if(politicalResult[1][1] == politicalResult[0][1]){
       var candidateId = 'secondPoliticalCandidate';
       $(".candidates:eq(1) .candidate:first-of-type").attr('id', candidateId);
       updateSecondCircle(privateResult[1][1], candidateId);
@@ -365,7 +365,7 @@ $(document).ready(function (){
       var candidateId = 'secondPrivateCandidate';
       $(".candidates:eq(1) .candidate:last-of-type").attr('id', candidateId);
       updateSecondCircle(privateResult[1][1], candidateId);
-    }
+    }*/
 
     // Show sharing container
     $(".personal-result").after('<div class="sharing-container"><ul></ul></div>')
