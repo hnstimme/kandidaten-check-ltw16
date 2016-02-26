@@ -43,7 +43,7 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     @media screen and (max-width: 625px){
       padding: 2em 1em 0 40%;
     }
-    @media screen and (max-width: 350px){
+    @media screen and (max-width: 460px){
       padding: 2em 1em 0 35%;
     }
 
@@ -72,14 +72,17 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       margin: 0;
       font-weight: 300;
 
+      @media screen and (max-width: 800px) {
+        padding-top: 1rem;
+      }
       @media screen and (max-width: 625px) {
         margin: 0 0 0.6em 0;
-        padding-top: 0;
       }
       @media screen and (max-width: 460px) {
         text-transform: uppercase;
         font-weight: 300;
         font-size: 1.2rem;
+        padding-top: 0;
       }
       @media screen and (max-width: 350px) {
         font-size: 1rem;
@@ -88,9 +91,9 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
     p{
       margin-left: 30%;
       @media screen and (max-width: 715px){
-        margin-left: 0;
+        margin: 0.3rem auto 0.3rem 0;
       }
-      @media screen and (max-width: 500px){
+      @media screen and (max-width: 625px){
         display: none;
       }
     }
@@ -321,29 +324,6 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
 .sharing-container{
   margin-bottom: 1.5rem;
   text-align: center;
-
-  @media screen and (max-width: 940px) {
-    margin-bottom: 5.5rem;
-    padding-top: 1rem;
-  }
-  @media screen and (max-width: 900px) {
-    margin-bottom: 6rem;
-    padding-top: 1rem;
-  }
-  @media screen and (max-width: 800px) {
-    margin-bottom: 4rem;
-    padding-top: 1rem;
-  }
-  @media screen and (max-width: 715px) {
-    margin-bottom: 1.5rem;
-    padding-top: 0.5rem;
-  }
-  @media screen and (max-width: 625px) {
-    margin-bottom: 0;
-  }
-  @media screen and (max-width: 460px) {
-    padding-left: 0.5rem;
-  }
 
   ul{
     list-style: none;
