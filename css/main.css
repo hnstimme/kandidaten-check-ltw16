@@ -124,32 +124,50 @@ body {
     display: -ms-flexbox;
     display: flex;
     justify-content: space-around; }
-    .lw section.personal-result .candidates:first-of-type {
+    .lw section.personal-result .candidates:first-of-type,
+    .lw section.personal-result .candidates #secondPoliticalCandidate,
+    .lw section.personal-result .candidates #secondPrivateCandidate {
       margin-bottom: 2rem; }
       @media screen and (max-width: 460px) {
-        .lw section.personal-result .candidates:first-of-type .percentage {
+        .lw section.personal-result .candidates:first-of-type .percentage,
+        .lw section.personal-result .candidates #secondPoliticalCandidate .percentage,
+        .lw section.personal-result .candidates #secondPrivateCandidate .percentage {
           width: 140px !important;
           height: 140px !important; }
-        .lw section.personal-result .candidates:first-of-type .picture {
+        .lw section.personal-result .candidates:first-of-type .picture,
+        .lw section.personal-result .candidates #secondPoliticalCandidate .picture,
+        .lw section.personal-result .candidates #secondPrivateCandidate .picture {
           width: 120px !important;
           height: 120px !important; } }
-      .lw section.personal-result .candidates:first-of-type .candidate {
+      .lw section.personal-result .candidates:first-of-type .candidate,
+      .lw section.personal-result .candidates #secondPoliticalCandidate .candidate,
+      .lw section.personal-result .candidates #secondPrivateCandidate .candidate {
         opacity: 1;
         margin-bottom: 0; }
-        .lw section.personal-result .candidates:first-of-type .candidate .info {
+        .lw section.personal-result .candidates:first-of-type .candidate .info,
+        .lw section.personal-result .candidates #secondPoliticalCandidate .candidate .info,
+        .lw section.personal-result .candidates #secondPrivateCandidate .candidate .info {
           margin-top: 0.5rem; }
-      .lw section.personal-result .candidates:first-of-type .percentage {
+      .lw section.personal-result .candidates:first-of-type .percentage,
+      .lw section.personal-result .candidates #secondPoliticalCandidate .percentage,
+      .lw section.personal-result .candidates #secondPrivateCandidate .percentage {
         width: 200px !important;
         height: 200px !important; }
         @media screen and (max-width: 460px) {
-          .lw section.personal-result .candidates:first-of-type .percentage {
+          .lw section.personal-result .candidates:first-of-type .percentage,
+          .lw section.personal-result .candidates #secondPoliticalCandidate .percentage,
+          .lw section.personal-result .candidates #secondPrivateCandidate .percentage {
             width: 140px !important;
             height: 140px !important; } }
-      .lw section.personal-result .candidates:first-of-type .picture {
+      .lw section.personal-result .candidates:first-of-type .picture,
+      .lw section.personal-result .candidates #secondPoliticalCandidate .picture,
+      .lw section.personal-result .candidates #secondPrivateCandidate .picture {
         width: 180px !important;
         height: 180px !important; }
         @media screen and (max-width: 460px) {
-          .lw section.personal-result .candidates:first-of-type .picture {
+          .lw section.personal-result .candidates:first-of-type .picture,
+          .lw section.personal-result .candidates #secondPoliticalCandidate .picture,
+          .lw section.personal-result .candidates #secondPrivateCandidate .picture {
             width: 120px !important;
             height: 120px !important; } }
     .lw section.personal-result .candidates .candidate {

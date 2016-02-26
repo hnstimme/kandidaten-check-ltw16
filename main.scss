@@ -184,7 +184,9 @@ $bg-mobile-url: '../img/bg-mobil.jpg';
       justify-content: space-around;
 
 
-      &:first-of-type{
+      &:first-of-type,
+      #secondPoliticalCandidate,
+      #secondPrivateCandidate{
         @media screen and (max-width: 460px){
           .percentage{
             width: $candidate-small-size + 70px !important;
