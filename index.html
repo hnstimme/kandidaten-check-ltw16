@@ -8,13 +8,12 @@
       <link rel="stylesheet" href="css/main.min.css">
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
 
-      <!-- For productive: <script src="js/all.js"></script> -->
-
       <script src="js/jquery-2.2.0.min.js"></script>
-      <script src="js/quiz.js"></script>
+      <script src="js/quiz.min.js"></script>
       <script src="js/circles.min.js"></script>
   </head>
   <body>
+    <base target="_parent" />
     <div class="lw">
       <header>
         <h2>Welcher Kandidat passt zu Ihnen?</h2>
@@ -49,10 +48,5 @@
       <!-- /Frage -->
 
     </div>
-    <script>
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-      $("#whatsapp-sharing").css("display", "inline");
-    }
-    </script>
   </body>
 </html>

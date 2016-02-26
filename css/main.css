@@ -233,8 +233,7 @@ body {
       background-color: #D05C5C; }
 
 .sharing-container {
-  margin-bottom: 6.5rem;
-  padding-top: 1.4rem;
+  margin-bottom: 1.5rem;
   text-align: center; }
   @media screen and (max-width: 940px) {
     .sharing-container {

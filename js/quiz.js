@@ -371,6 +371,10 @@ $(document).ready(function (){
     $(".personal-result").after('<div class="sharing-container"><ul></ul></div>')
     $(".sharing-container ul").append('<li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.stimme.de%2Fkandidatencheck" target="_blank" ><img src="img/facebook.png" alt="Facebook Share Icon"></a></li><li><a href="https://twitter.com/intent/tweet?text=Ich%20habe%20den%20%23KandidatenCheck%20von%20%40stimmeonline%20gecheckt!%20%23ltwbw%20Erfahre%2C%20welcher%20Landtagskandidat%20zu%20dir%20passt%3A%20&url=http%3A%2F%2Fwww.stimme.de%2Fkandidatencheck" target="_blank"><img src="img/twitter.png" alt="Twitter Share Icon"></a></li><li id="whatsapp-sharing" style="display: none;"><a href="whatsapp://send?text=Mein%20Ergebnis%20beim%20Kandidaten-Check%3A%20xyz%20passt%20politisch%20und%20zyx%20pers%C3%B6nlich%20am%20besten%20zu%20mir.%20Welcher%20Politiker%20aus%20deinem%20Wahlkreis%20dir%20am%20%C3%A4hnlichsten%20ist%2C%20erf%C3%A4hrst%20du%20unter%3A%20www.stimme.de%2Fkandidatencheck"><img src="img/whatsapp.png" alt="WhatsApp Share Icon"></a></li>');
 
+    if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $("#whatsapp-sharing").css("display", "inline");
+    }
+
     // Add text
     var endingText = '';
     if(selectedWahlkreis != 'Eppingen'){
@@ -505,15 +509,6 @@ $(document).ready(function (){
     // Update Circles
     if(politicalResult != null && ((lastWindowWidth >= 460 && $(window).width() <= 460)||(lastWindowWidth <= 460 && $(window).width() >= 460))){
       updateCircles(politicalResult[0][1], privateResult[0][1])
-    }
-
-    // !!! Check this before release
-    // Hide issue, when starting the quiz
-    if($(window).width() < 350 ){
-      $("section.issues").hide();
-    }
-    else if ($(window).width() > 350 && $("section.issues").is(":hidden")) {
-      $("section.issues").show();
     }
 
     lastWindowWidth = $(window).width();
