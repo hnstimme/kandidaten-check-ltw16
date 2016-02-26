@@ -347,7 +347,7 @@
         {
           "Throm": "Förderung von jungen Familien, gute Bildung, sicheres Leben",
           "Hinderer": "Soziale Gerechtigkeit, gute Bildungschancen, Gesundheitspolitik",
-          "Bay": "Klimaschutz und Wirtschaft zusammen bringen, Bildung, sozialer Zusammenhalt in der Gesellschaft",
+          "Bay": "Klimaschutz, Bildung, sozialer Zusammenhalt in der Gesellschaft",
           "Weinmann": "Bildung, Marktwirtschaft und Bürgerrechte"
         },
         "typ": "politisch"
@@ -357,9 +357,9 @@
       "frage": "Welche drei Themen bewegen die Menschen im Wahlkreis am meisten?",
       "antworten":
         {
-          "Throm": "Die aktuelle Flüchtlingsthematik, die starke Zunahme an Wohnungseinbrüchen und Diebstählen und das unstrukturierte Bildungssystem",
+          "Throm": "Die aktuelle Flüchtlingsthematik, die starke Zunahme an Wohnungseinbrüchen und Diebstählen, das unstrukturierte Bildungssystem",
           "Hinderer": "Die Integration der Flüchtlinge, gute und sichere Arbeitsplätze, dass Familien - Junge und Alte - gut und zukunftssicher zusammenleben können",
-          "Bay": "Gesundheitsversorgung, Schule und Bildung, Wohnraumversorgung, Flüchtlinge",
+          "Bay": "Gesundheitsversorgung, Schule und Bildung, Flüchtlinge",
           "Weinmann": "Flüchtlingspolitik inklusive Wohnungsbau, Wirtschaftspolitik und Rechtstaatlichkeit"
         },
         "typ": "politisch"
@@ -371,8 +371,8 @@
         {
           "Throm": "Fleißig, ideenreich, bodenständig",
           "Hinderer": "Fleißig, freundlich, solidarisch",
-          "Bay": "Gesellig, heimatverbunden, tüftlerisch, reisefreudig, fleißig",
-          "Weinmann": "Leistungsbereit, humorvoll, bodenständig, knitz, verantwortungsbewusst"
+          "Bay": "Gesellig, nachdenklich, heimatverbunden",
+          "Weinmann": "Bodenständig, verantwortungsbewusst, humorvoll"
         },
         "typ": "politisch"
     },
