@@ -285,8 +285,7 @@ body {
       max-width: 25%;
       -ms-flex: 1 1;
       flex: 1 1;
-      padding: 4px;
-      box-sizing: border-box; }
+      padding: 4px; }
       .lw .tile-grid .tiles .tile .logo {
         width: 100px;
         height: 100px;
