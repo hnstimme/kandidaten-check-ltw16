@@ -45,6 +45,7 @@ $(document).ready(function (){
       colors:              ['white', '#D05C5C'],
       duration:            400,
     });
+    console.log(candidateId+ '  '+percentageValue);
   }
 
   // Update both circles
@@ -337,16 +338,20 @@ $(document).ready(function (){
 
       // Add first candidate
       $(".candidates:last-of-type").append('<div class="candidate"></div>');
-      $(".candidates:last-of-type .candidate:first-of-type").html('<div class="percentage"><div class="chart" id="politicalCandidate"></div><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p><h2>'+politicalResult[w][1]+'%</h2>');
+      $(".candidates:last-of-type .candidate:first-of-type").html('<div class="percentage"><div class="picture"></div></div><p class="info">'+politicalCandidate.kandidaten_name+', '+politicalCandidate.partei+', '+ politicalCandidate.alter +' Jahre</p><h2>'+politicalResult[w][1]+'%</h2>');
 
       // Add second candidate
       $(".candidates:last-of-type").append('<div class="candidate"></div>');
-      $(".candidates:last-of-type .candidate:last-of-type").html('<div class="percentage"><div class="chart" id="privateCandidate"></div><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p><h2>'+privateResult[w][1]+'%</h2>');
+      $(".candidates:last-of-type .candidate:last-of-type").html('<div class="percentage"><div class="picture"></div></div><p class="info">'+privateCandidate.kandidaten_name+', '+privateCandidate.partei+', '+ privateCandidate.alter +' Jahre</p><h2>'+privateResult[w][1]+'%</h2>');
 
       // Add candidate image
       $(".candidates:last-of-type .candidate:first-of-type .picture").css('background-image', 'url("img/kandidaten/'+ politicalCandidate.bild_url +'")')
       $(".candidates:last-of-type .candidate:last-of-type .picture").css('background-image', 'url("img/kandidaten/'+ privateCandidate.bild_url +'")')
     }
+
+    // Append container (at first candidates) for circles
+    $(".candidates:first-of-type .candidate:first-of-type .percentage .picture").before('<div class="chart" id="politicalCandidate"></div>')
+    $(".candidates:first-of-type .candidate:last-of-type .percentage .picture").before('<div class="chart" id="privateCandidate"></div>');
 
     // Create circles in depending on window size (mobile or not)
     updateCircles(politicalResult[0][1], privateResult[0][1])
@@ -356,16 +361,20 @@ $(document).ready(function (){
     $(".candidates:first-of-type .candidate:last-of-type .percentage").before('<div class="topic">Privat</div>');
 
     // If two identical results
-    /*if(politicalResult[1][1] == politicalResult[0][1]){
+    if(politicalResult[1][1] == politicalResult[0][1]){
       var candidateId = 'secondPoliticalCandidate';
-      $(".candidates:eq(1) .candidate:first-of-type").attr('id', candidateId);
-      updateSecondCircle(privateResult[1][1], candidateId);
+      $(".candidates:eq(1) .candidate:first-of-type").attr('id', candidateId+'Wrapper').css('opacity', '1');
+      $(".candidates:eq(1) .candidate:first-of-type .percentage .picture").before('<div class="chart" id="'+candidateId+'"></div>')
+      updateSecondCircle(politicalResult[1][1], candidateId);
+      console.log('11:'+politicalResult[1][1]+'  01:'+politicalResult[0][1]);
     }
     else if(privateResult[1][1] == privateResult[0][1]){
       var candidateId = 'secondPrivateCandidate';
-      $(".candidates:eq(1) .candidate:last-of-type").attr('id', candidateId);
+      $(".candidates:eq(1) .candidate:eq(1)").attr('id', candidateId+'Wrapper').css('opacity', '1');
+      $(".candidates:eq(1) .candidate:eq(1) .percentage .picture").before('<div class="chart" id="'+candidateId+'"></div>');
       updateSecondCircle(privateResult[1][1], candidateId);
-    }*/
+      console.log('11:'+privateResult[1][1]+'  01:'+privateResult[0][1]);
+    }
 
     // Show sharing container
     var privateCandidate = getCandidate(selectedWahlkreis, privateResult[0][0])
